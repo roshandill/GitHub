@@ -643,7 +643,7 @@ vars.put(&quot;BillingWaiverToDate&quot;,BillingWaiverToDate);
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:${__Random(1,100,)},&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;selected_filters&quot;:[],&quot;search_text&quot;:&quot;&quot;}</stringProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:${__Random(1,100,)},&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;signed&quot;]}],&quot;search_text&quot;:&quot;&quot;}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -712,7 +712,7 @@ vars.put(&quot;BillingWaiverToDate&quot;,BillingWaiverToDate);
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
             <hashTree/>
-            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Tekion IDs to CSV" enabled="true">
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Tekion IDs to CSV" enabled="false">
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
               <boolProp name="resetInterpreter">false</boolProp>
@@ -3468,7 +3468,7 @@ f.close();</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:${__Random(1,100,)},&quot;rows&quot;:50},&quot;selected_filters&quot;:[]}</stringProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:${__Random(1,100,)},&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;selected_filters&quot;:[],&quot;search_text&quot;:&quot;&quot;}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
