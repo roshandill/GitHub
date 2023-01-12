@@ -174,7 +174,7 @@
         <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
       </DNSCacheManager>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -280,7 +280,7 @@
     ],&#xd;
     &quot;first_name&quot;: &quot;NADAPerformance&quot;,&#xd;
     &quot;last_name&quot;: &quot;Testing${__RandomString(10,abcdef,)}&quot;,&#xd;
-    &quot;email&quot;: &quot;nadaperformance${__Random(1111,9999,)}@tekion.com&quot;,&#xd;
+    &quot;email&quot;: &quot;nadaperformance${__Random(1111111,9999999,)}@tekion.com&quot;,&#xd;
     &quot;phone&quot;: &quot;1234567890&quot;,&#xd;
     &quot;country_code&quot;: &quot;+1&quot;,&#xd;
     &quot;preferred_date&quot;: 1672997568,&#xd;
@@ -522,7 +522,7 @@
             <intProp name="InterleaveControl.style">1</intProp>
           </RandomController>
           <hashTree>
-            <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller-Main Flow" enabled="true">
+            <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller-Main Flow" enabled="false">
               <intProp name="ThroughputController.style">1</intProp>
               <boolProp name="ThroughputController.perThread">false</boolProp>
               <intProp name="ThroughputController.maxThroughput">1</intProp>
@@ -2277,7 +2277,7 @@ vars.put(&quot;data2&quot;, new groovy.json.JsonBuilder(jsonData).toPrettyString
               <intProp name="ThroughputController.maxThroughput">1</intProp>
               <FloatProperty>
                 <name>ThroughputController.percentThroughput</name>
-                <value>5.0</value>
+                <value>100.0</value>
                 <savedValue>0.0</savedValue>
               </FloatProperty>
             </ThroughputController>
