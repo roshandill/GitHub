@@ -247,7 +247,7 @@
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="NADA Flow" enabled="true">
         <stringProp name="TestPlan.comments">shed call</stringProp>
-        <stringProp name="ThreadGroup.on_sample_error">stopthread</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
@@ -290,8 +290,8 @@
     &quot;guests&quot;: [],&#xd;
     &quot;additional_notes&quot;: &quot;&quot;,&#xd;
     &quot;company&quot;: &quot;Tvs toll gate&quot;,&#xd;
-    &quot;latitude&quot;: 10.7832744,&#xd;
-    &quot;longitude&quot;: 78.69712799999999,&#xd;
+    &quot;latitude&quot;: ${__Random(10,60,)},&#xd;
+    &quot;longitude&quot;: ${__Random(10,60,)},&#xd;
     &quot;country&quot;: &quot;India&quot;,&#xd;
     &quot;state&quot;: &quot;Tamil Nadu&quot;,&#xd;
     &quot;city&quot;: &quot;Tiruchirappalli&quot;,&#xd;
