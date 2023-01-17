@@ -174,7 +174,7 @@
         <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
       </DNSCacheManager>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -250,11 +250,11 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <intProp name="LoopController.loops">-1</intProp>
+          <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.num_threads">2</stringProp>
         <stringProp name="ThreadGroup.ramp_time">50</stringProp>
-        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">1850</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
@@ -1014,7 +1014,7 @@
                   <stringProp name="HTTPSampler.port"></stringProp>
                   <stringProp name="HTTPSampler.protocol">https</stringProp>
                   <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-                  <stringProp name="HTTPSampler.path">/tapapi/tap-crm-activity-management/public/v1/calendar-schedule/range?uuid=ceqgvj126unahu9qi0mg&amp;start_date=2023-01-01&amp;end_date=2023-01-30&amp;timezone=US/Alaska</stringProp>
+                  <stringProp name="HTTPSampler.path">/tapapi/tap-crm-activity-management/public/v1/calendar-schedule/range?uuid=ceq074h26uneiff0de70&amp;start_date=2023-01-01&amp;end_date=2023-01-30&amp;timezone=US/Alaska</stringProp>
                   <stringProp name="HTTPSampler.method">GET</stringProp>
                   <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
                   <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1024,7 +1024,7 @@
                   <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
                   <stringProp name="HTTPSampler.connect_timeout"></stringProp>
                   <stringProp name="HTTPSampler.response_timeout"></stringProp>
-                  <stringProp name="TestPlan.comments">Created from cURL on 2023-01-05T12:08:23.282</stringProp>
+                  <stringProp name="TestPlan.comments">Created from cURL on 2023-01-17T18:18:43.126</stringProp>
                 </HTTPSamplerProxy>
                 <hashTree>
                   <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
@@ -1061,8 +1061,24 @@
                         <stringProp name="Header.name">sec-fetch-site</stringProp>
                         <stringProp name="Header.value">same-site</stringProp>
                       </elementProp>
+                      <elementProp name="sec-gpc" elementType="Header">
+                        <stringProp name="Header.name">sec-gpc</stringProp>
+                        <stringProp name="Header.value">1</stringProp>
+                      </elementProp>
+                      <elementProp name="tap-api-token" elementType="Header">
+                        <stringProp name="Header.name">tap-api-token</stringProp>
+                        <stringProp name="Header.value">eyJraWQiOiJ0dlVUTWJFTFpNbndpS0JFQlFoUklwcEpNd1o2NXo3UDEzVzZxajBmQlJJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlQ0R1lxNzBGSWtjQnVLTmZmZHptbnM4VlBKcXljVTZseDNkLURiOVliam8iLCJpc3MiOiJodHRwczovL2VtcGxveWVlLnRla2lvbi5jb20vb2F1dGgyL2F1czJtcTFqN2xrV1RlNjhBNHg3IiwiYXVkIjoiYXBpOi8vZGVmYXVsdCIsImlhdCI6MTY3MzkzNDE0OSwiZXhwIjoxNjczOTYyOTQ5LCJjaWQiOiIwb2Exb3gwanh5QWlFaVR2OTR4NyIsInVpZCI6IjAwdTIxNzVldXlQVjFjUjFiNHg3Iiwic2NwIjpbImVtYWlsIiwicHJvZmlsZSIsIm9wZW5pZCJdLCJhdXRoX3RpbWUiOjE2NzI4MDk5NjEsInN1YiI6InBlcmZvcm1hbmNldGVzdGluZ0B0ZWtpb24uY29tIn0.Udj4hcG-SMqgYIhqHCbUoUl6CK6N1mozm-RXuCb4sways0KFDClxLcZ-CMIucAotbYS-y80vibYdfKROsg2sJZEg2r-vLhm10VXfn0rs6NboPJpAqTX8aOOWjK2oKGAF0i4KkzYpyhNDZQlRLrFce3m3tshJiaZRfbLJ4tSpD_vlgt9YbaSmlONY644ScgNoCQTES0KHMlaOSbB5AfA_PTrgmfMhyy9XFnWQi0gliqyDufD3gXIjjHWlQz_GIDf0hkiz7kkMnayJbVW0Ct8s_cEBkmwiORZJ_gFKHHs5IpPEaszIK0RzMwQJwKfk9MqV3cTR15Gyktwu8BeZaVmj8A</stringProp>
+                      </elementProp>
+                      <elementProp name="user-agent" elementType="Header">
+                        <stringProp name="Header.name">user-agent</stringProp>
+                        <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36</stringProp>
+                      </elementProp>
+                      <elementProp name="Accept-Encoding" elementType="Header">
+                        <stringProp name="Header.name">Accept-Encoding</stringProp>
+                        <stringProp name="Header.value">gzip, deflate</stringProp>
+                      </elementProp>
                     </collectionProp>
-                    <stringProp name="TestPlan.comments">Created from cURL on 2023-01-05T12:08:23.284</stringProp>
+                    <stringProp name="TestPlan.comments">Created from cURL on 2023-01-17T18:18:43.13</stringProp>
                   </HeaderManager>
                   <hashTree/>
                   <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_date" enabled="true">
@@ -1092,7 +1108,7 @@
                   <stringProp name="HTTPSampler.port"></stringProp>
                   <stringProp name="HTTPSampler.protocol">https</stringProp>
                   <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-                  <stringProp name="HTTPSampler.path">/tapapi/tap-crm-activity-management/public/v1/calendar-schedule/range?uuid=cemlp6p26unf5f3psgo0&amp;start_date=2023-01-01&amp;end_date=2023-01-30&amp;timezone=US/Alaska</stringProp>
+                  <stringProp name="HTTPSampler.path">/tapapi/tap-crm-activity-management/public/v1/calendar-schedule/range?uuid=cemlpp126un8fmrblri0&amp;start_date=2023-01-01&amp;end_date=2023-01-30&amp;timezone=US/Alaska</stringProp>
                   <stringProp name="HTTPSampler.method">GET</stringProp>
                   <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
                   <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1102,7 +1118,110 @@
                   <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
                   <stringProp name="HTTPSampler.connect_timeout"></stringProp>
                   <stringProp name="HTTPSampler.response_timeout"></stringProp>
-                  <stringProp name="TestPlan.comments">Created from cURL on 2023-01-05T12:09:10.187</stringProp>
+                  <stringProp name="TestPlan.comments">Created from cURL on 2023-01-17T18:19:11.312</stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="authority" elementType="Header">
+                        <stringProp name="Header.name">authority</stringProp>
+                        <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name="accept" elementType="Header">
+                        <stringProp name="Header.name">accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                      <elementProp name="accept-language" elementType="Header">
+                        <stringProp name="Header.name">accept-language</stringProp>
+                        <stringProp name="Header.value">en-GB,en;q=0.6</stringProp>
+                      </elementProp>
+                      <elementProp name="origin" elementType="Header">
+                        <stringProp name="Header.name">origin</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name="referer" elementType="Header">
+                        <stringProp name="Header.name">referer</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-dest" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                        <stringProp name="Header.value">empty</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-mode" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                        <stringProp name="Header.value">cors</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-site" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-site</stringProp>
+                        <stringProp name="Header.value">same-site</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-gpc" elementType="Header">
+                        <stringProp name="Header.name">sec-gpc</stringProp>
+                        <stringProp name="Header.value">1</stringProp>
+                      </elementProp>
+                      <elementProp name="tap-api-token" elementType="Header">
+                        <stringProp name="Header.name">tap-api-token</stringProp>
+                        <stringProp name="Header.value">eyJraWQiOiJ0dlVUTWJFTFpNbndpS0JFQlFoUklwcEpNd1o2NXo3UDEzVzZxajBmQlJJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlQ0R1lxNzBGSWtjQnVLTmZmZHptbnM4VlBKcXljVTZseDNkLURiOVliam8iLCJpc3MiOiJodHRwczovL2VtcGxveWVlLnRla2lvbi5jb20vb2F1dGgyL2F1czJtcTFqN2xrV1RlNjhBNHg3IiwiYXVkIjoiYXBpOi8vZGVmYXVsdCIsImlhdCI6MTY3MzkzNDE0OSwiZXhwIjoxNjczOTYyOTQ5LCJjaWQiOiIwb2Exb3gwanh5QWlFaVR2OTR4NyIsInVpZCI6IjAwdTIxNzVldXlQVjFjUjFiNHg3Iiwic2NwIjpbImVtYWlsIiwicHJvZmlsZSIsIm9wZW5pZCJdLCJhdXRoX3RpbWUiOjE2NzI4MDk5NjEsInN1YiI6InBlcmZvcm1hbmNldGVzdGluZ0B0ZWtpb24uY29tIn0.Udj4hcG-SMqgYIhqHCbUoUl6CK6N1mozm-RXuCb4sways0KFDClxLcZ-CMIucAotbYS-y80vibYdfKROsg2sJZEg2r-vLhm10VXfn0rs6NboPJpAqTX8aOOWjK2oKGAF0i4KkzYpyhNDZQlRLrFce3m3tshJiaZRfbLJ4tSpD_vlgt9YbaSmlONY644ScgNoCQTES0KHMlaOSbB5AfA_PTrgmfMhyy9XFnWQi0gliqyDufD3gXIjjHWlQz_GIDf0hkiz7kkMnayJbVW0Ct8s_cEBkmwiORZJ_gFKHHs5IpPEaszIK0RzMwQJwKfk9MqV3cTR15Gyktwu8BeZaVmj8A</stringProp>
+                      </elementProp>
+                      <elementProp name="user-agent" elementType="Header">
+                        <stringProp name="Header.name">user-agent</stringProp>
+                        <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36</stringProp>
+                      </elementProp>
+                      <elementProp name="Accept-Encoding" elementType="Header">
+                        <stringProp name="Header.name">Accept-Encoding</stringProp>
+                        <stringProp name="Header.value">gzip, deflate</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                    <stringProp name="TestPlan.comments">Created from cURL on 2023-01-17T18:19:11.313</stringProp>
+                  </HeaderManager>
+                  <hashTree/>
+                  <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+                    <stringProp name="scriptLanguage">groovy</stringProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
+                    <stringProp name="script">def Endtime = new java.text.SimpleDateFormat(&apos;yyyy.MM.dd hh:mm:ss&apos;).parse(&apos;2023.01.${c_date} ${c_slots_g1}:00&apos;)
+def Starttime = new java.text.SimpleDateFormat(&apos;yyyy.MM.dd hh:mm:ss&apos;).parse(&apos;2023.01.${c_date} ${c_slots_g2}:00&apos;)
+
+log.info(&apos;Starttime:    &apos; + Starttime)
+log.info(&apos;Endtime:    &apos; + Endtime)
+
+log.info(&apos;Starttime epoch   : &apos; + Starttime.getTime())
+
+
+log.info(&apos;Endtime epoch   : &apos; + Endtime.getTime())
+
+//vars.put(&quot;Starttime&quot;,Starttime.getTime());
+//vars.put(&quot;Endtime&quot;,Endtime.getTime());
+
+//vars.put(&quot;Start_time&quot;,Starttime.getTime())
+//vars.put(&quot;End_time&quot;,Endtime.getTime())
+String Start_time= Starttime.getTime()/1000;
+String End_time= Endtime.getTime()/1000;
+vars.put(&quot;Start_time&quot;,Start_time);
+vars.put(&quot;End_time&quot;,End_time);</stringProp>
+                  </JSR223PostProcessor>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET-/tapapi/tap-crm-activity-management/public/v1/calendar-schedule/range?uuid=&lt;uuid&gt;&amp;start_date=2023-01-01&amp;end_date=2023-01-30&amp;timezone=US/Alaska" enabled="false">
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                    <collectionProp name="Arguments.arguments"/>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">/tapapi/tap-crm-activity-management/public/v1/calendar-schedule/range?uuid=ceqgvj126unahu9qi0mg&amp;start_date=2023-01-01&amp;end_date=2023-01-30&amp;timezone=US/Alaska</stringProp>
+                  <stringProp name="HTTPSampler.method">GET</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                  <stringProp name="TestPlan.comments">old</stringProp>
                 </HTTPSamplerProxy>
                 <hashTree>
                   <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
@@ -1143,32 +1262,65 @@
                     <stringProp name="TestPlan.comments">Created from cURL on 2023-01-05T12:08:23.284</stringProp>
                   </HeaderManager>
                   <hashTree/>
-                  <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
-                    <stringProp name="scriptLanguage">groovy</stringProp>
-                    <stringProp name="parameters"></stringProp>
-                    <stringProp name="filename"></stringProp>
-                    <stringProp name="cacheKey">true</stringProp>
-                    <stringProp name="script">def Endtime = new java.text.SimpleDateFormat(&apos;yyyy.MM.dd hh:mm:ss&apos;).parse(&apos;2023.01.${c_date} ${c_slots_g1}:00&apos;)
-def Starttime = new java.text.SimpleDateFormat(&apos;yyyy.MM.dd hh:mm:ss&apos;).parse(&apos;2023.01.${c_date} ${c_slots_g2}:00&apos;)
-
-log.info(&apos;Starttime:    &apos; + Starttime)
-log.info(&apos;Endtime:    &apos; + Endtime)
-
-log.info(&apos;Starttime epoch   : &apos; + Starttime.getTime())
-
-
-log.info(&apos;Endtime epoch   : &apos; + Endtime.getTime())
-
-//vars.put(&quot;Starttime&quot;,Starttime.getTime());
-//vars.put(&quot;Endtime&quot;,Endtime.getTime());
-
-//vars.put(&quot;Start_time&quot;,Starttime.getTime())
-//vars.put(&quot;End_time&quot;,Endtime.getTime())
-String Start_time= Starttime.getTime()/1000;
-String End_time= Endtime.getTime()/1000;
-vars.put(&quot;Start_time&quot;,Start_time);
-vars.put(&quot;End_time&quot;,End_time);</stringProp>
-                  </JSR223PostProcessor>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET-/tapapi/tap-crm-activity-management/public/v1/calendar-schedule/range?uuid=&lt;uuid2&gt;start_date=2023-01-01&amp;end_date=2023-01-30&amp;timezone=US/Alaska" enabled="false">
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                    <collectionProp name="Arguments.arguments"/>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">/tapapi/tap-crm-activity-management/public/v1/calendar-schedule/range?uuid=cemlp6p26unf5f3psgo0&amp;start_date=2023-01-01&amp;end_date=2023-01-30&amp;timezone=US/Alaska</stringProp>
+                  <stringProp name="HTTPSampler.method">GET</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                  <stringProp name="TestPlan.comments">old</stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="authority" elementType="Header">
+                        <stringProp name="Header.name">authority</stringProp>
+                        <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name="accept" elementType="Header">
+                        <stringProp name="Header.name">accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                      <elementProp name="accept-language" elementType="Header">
+                        <stringProp name="Header.name">accept-language</stringProp>
+                        <stringProp name="Header.value">en-GB,en;q=0.6</stringProp>
+                      </elementProp>
+                      <elementProp name="origin" elementType="Header">
+                        <stringProp name="Header.name">origin</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name="referer" elementType="Header">
+                        <stringProp name="Header.name">referer</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-dest" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                        <stringProp name="Header.value">empty</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-mode" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                        <stringProp name="Header.value">cors</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-site" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-site</stringProp>
+                        <stringProp name="Header.value">same-site</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                    <stringProp name="TestPlan.comments">Created from cURL on 2023-01-05T12:08:23.284</stringProp>
+                  </HeaderManager>
                   <hashTree/>
                 </hashTree>
                 <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-account-management/public/v1/contacts/basic-info" enabled="true">
