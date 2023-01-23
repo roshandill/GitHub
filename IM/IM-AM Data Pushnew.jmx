@@ -14781,6 +14781,138 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/account/dealer-group" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;record_type_id&quot;: 1,&#xd;
+	&quot;request_type&quot;: &quot;long&quot;,&#xd;
+	&quot;is_drafted&quot;: 0,&#xd;
+	&quot;basic_detail&quot;: {&#xd;
+		&quot;dealer_group_name&quot;: &quot;CanadasampleDealerGroup&quot;,&#xd;
+		&quot;dba_name&quot;: &quot;CanadasampleDealerGroup&quot;,&#xd;
+		&quot;legal_name&quot;: &quot;CanadasampleDealerGroup&quot;&#xd;
+	},&#xd;
+	&quot;dealers&quot;: {&#xd;
+		&quot;no_of_rooftops&quot;: 34&#xd;
+	},&#xd;
+	&quot;account_owner&quot;: [&#xd;
+		{&#xd;
+			&quot;role&quot;: &quot;Solution Development Specialist&quot;,&#xd;
+			&quot;email_id&quot;: &quot;karun@tekion.com&quot;&#xd;
+		}&#xd;
+	],&#xd;
+	&quot;account_contact&quot;: [&#xd;
+		{&#xd;
+			&quot;contact_id&quot;: 146091&#xd;
+		}&#xd;
+	],&#xd;
+	&quot;dealer_group_tenant_id&quot;: &quot;&quot;,&#xd;
+	&quot;dealer_group_tenant_code&quot;: &quot;&quot;,&#xd;
+	&quot;provider&quot;: {&#xd;
+		&quot;dms_provider&quot;: null,&#xd;
+		&quot;dms_provider_name&quot;: &quot;&quot;,&#xd;
+		&quot;contract_term_months&quot;: null,&#xd;
+		&quot;contract_term_type&quot;: null&#xd;
+	},&#xd;
+	&quot;campaign&quot;: {&#xd;
+		&quot;campaign_id&quot;: 13326,&#xd;
+		&quot;campaign_name&quot;: &quot;PerformanceCampaign_73309&quot;&#xd;
+	},&#xd;
+	&quot;account_info&quot;: {&#xd;
+		&quot;staff_count&quot;: [],&#xd;
+		&quot;oem_makes&quot;: [&#xd;
+			{&#xd;
+				&quot;oem_bac_id&quot;: &quot;&quot;,&#xd;
+				&quot;oem_name&quot;: &quot;ADOBE OEM 3&quot;,&#xd;
+				&quot;oem&quot;: 35,&#xd;
+				&quot;makes&quot;: [&#xd;
+					{&#xd;
+						&quot;makes_name&quot;: &quot;test&quot;,&#xd;
+						&quot;makes_id&quot;: 97&#xd;
+					}&#xd;
+				],&#xd;
+				&quot;is_dealer_id_bac&quot;: &quot;&quot;&#xd;
+			}&#xd;
+		],&#xd;
+		&quot;decision_making&quot;: &quot;&quot;,&#xd;
+		&quot;currency_type&quot;: &quot;USD&quot;,&#xd;
+		&quot;annual_revenue&quot;: null&#xd;
+	},&#xd;
+	&quot;account_communication&quot;: {&#xd;
+		&quot;country&quot;: &quot;Canada&quot;,&#xd;
+		&quot;state&quot;: &quot;Quebec&quot;,&#xd;
+		&quot;city&quot;: &quot;Adstock&quot;,&#xd;
+		&quot;street&quot;: &quot;somestreet&quot;,&#xd;
+		&quot;zip_code&quot;: &quot;234234&quot;,&#xd;
+		&quot;timezone&quot;: &quot;Canada/Pacific&quot;&#xd;
+	},&#xd;
+	&quot;account_billing&quot;: {&#xd;
+		&quot;country&quot;: &quot;Canada&quot;,&#xd;
+		&quot;state&quot;: &quot;Quebec&quot;,&#xd;
+		&quot;city&quot;: &quot;Adstock&quot;,&#xd;
+		&quot;street&quot;: &quot;somestreet&quot;,&#xd;
+		&quot;zip_code&quot;: &quot;234234&quot;,&#xd;
+		&quot;timezone&quot;: &quot;Canada/Pacific&quot;&#xd;
+	},&#xd;
+	&quot;account_territory_name&quot;: &quot;&quot;,&#xd;
+	&quot;address_communication&quot;: {&#xd;
+		&quot;country_code&quot;: &quot;+91&quot;,&#xd;
+		&quot;website&quot;: &quot;https://&quot;,&#xd;
+		&quot;contact_number&quot;: &quot;&quot;,&#xd;
+		&quot;timezone&quot;: &quot;&quot;,&#xd;
+		&quot;country&quot;: &quot;&quot;,&#xd;
+		&quot;latitude&quot;: 44.9672661,&#xd;
+		&quot;longitude&quot;: -103.772847,&#xd;
+		&quot;zip_code&quot;: &quot;&quot;,&#xd;
+		&quot;state&quot;: &quot;&quot;,&#xd;
+		&quot;city&quot;: &quot;&quot;,&#xd;
+		&quot;street&quot;: &quot;&quot;&#xd;
+	}&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-account-management/public/v1/account/dealer-group</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">canadasample</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="new_dealer_group_id" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">new_dealer_group_id</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.message</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/account/dealer-group" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -14794,8 +14926,8 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
 	&quot;basic_detail&quot;: {&#xd;
 		&quot;dealer_group_name&quot;: &quot;Performance_${__Random(10000,99999,MYVAR_1)}_DealerGroup_${__Random(10000,99999,MYVAR_2)}&quot;,&#xd;
 		&quot;dba_name&quot;: &quot;Performance_${MYVAR_1}_DealerGroup_${MYVAR_2}&quot;,&#xd;
-		&quot;legal_name&quot;: &quot;Performance_${MYVAR_1}_DealerGroup_${MYVAR_2}&quot;,&#xd;
-		&quot;dealer_group_region&quot;: &quot;USA&quot;&#xd;
+		&quot;legal_name&quot;: &quot;Performance_${MYVAR_1}_DealerGroup_${MYVAR_2}&quot;&#xd;
+		&#xd;
 	},&#xd;
 	&quot;dealers&quot;: {&#xd;
 		&quot;no_of_rooftops&quot;: ${__Random(10,99,)}&#xd;
@@ -14832,7 +14964,7 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
 			&quot;is_dealer_id_bac&quot;: &quot;&quot;&#xd;
 		}],&#xd;
 		&quot;decision_making&quot;: &quot;&quot;,&#xd;
-		&quot;currency_type&quot;: &quot;USD&quot;,&#xd;
+		&quot;currency_type&quot;: &quot;CAD&quot;,&#xd;
 		&quot;annual_revenue&quot;: null&#xd;
 	},&#xd;
 	&quot;account_communication&quot;: {&#xd;
@@ -14857,15 +14989,13 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
 		&quot;website&quot;: &quot;https://&quot;,&#xd;
 		&quot;contact_number&quot;: &quot;&quot;,&#xd;
 		&quot;timezone&quot;: &quot;&quot;,&#xd;
-		&quot;country&quot;: &quot;United States&quot;,&#xd;
+		&quot;country&quot;: &quot;&quot;,&#xd;
 		&quot;latitude&quot;: 44.9672661,&#xd;
 		&quot;longitude&quot;: -103.772847,&#xd;
-		&quot;zip_code&quot;: &quot;57717&quot;,&#xd;
-		&quot;state&quot;: &quot;South Dakota&quot;,&#xd;
-		&quot;city&quot;: &quot;Belle Fourche&quot;,&#xd;
-		&quot;cityZone&quot;: &quot;Butte County&quot;,&#xd;
-		&quot;street&quot;: &quot;Old US Hwy 85, Belle Fourche, SD 57717, USA&quot;,&#xd;
-		&quot;fullAddress&quot;: &quot;Old US Hwy 85, Belle Fourche, SD 57717, USA&quot;&#xd;
+		&quot;zip_code&quot;: &quot;&quot;,&#xd;
+		&quot;state&quot;: &quot;&quot;,&#xd;
+		&quot;city&quot;: &quot;&quot;,&#xd;
+		&quot;street&quot;: &quot;&quot;&#xd;
 	}&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
@@ -16143,7 +16273,7 @@ ${__jexl3(${__timeShift(,,P15D,,)}/1000,expiry)}</stringProp>
                   &quot;makes_name&quot;:&quot;${make_name}&quot;&#xd;
 			}]&#xd;
 		}],&#xd;
-		&quot;currency_type&quot;: &quot;USD&quot;,&#xd;
+		&quot;currency_type&quot;: &quot;CAD&quot;,&#xd;
 		&quot;annual_revenue&quot;: null,&#xd;
 		&quot;bill_to&quot;: &quot;dealer_group&quot;,&#xd;
 		&quot;new_vehicle_sales_count&quot;: null,&#xd;
@@ -16193,15 +16323,13 @@ ${__jexl3(${__timeShift(,,P15D,,)}/1000,expiry)}</stringProp>
 		&quot;website&quot;: &quot;https://&quot;,&#xd;
 		&quot;contact_number&quot;: &quot;&quot;,&#xd;
 		&quot;timezone&quot;: &quot;&quot;,&#xd;
-		&quot;country&quot;: &quot;United States&quot;,&#xd;
+		&quot;country&quot;: &quot;&quot;,&#xd;
 		&quot;latitude&quot;: 44.9672661,&#xd;
 		&quot;longitude&quot;: -103.772847,&#xd;
-		&quot;zip_code&quot;: &quot;57717&quot;,&#xd;
-		&quot;state&quot;: &quot;South Dakota&quot;,&#xd;
-		&quot;city&quot;: &quot;Belle Fourche&quot;,&#xd;
-		&quot;cityZone&quot;: &quot;Butte County&quot;,&#xd;
-		&quot;street&quot;: &quot;Old US Hwy 85, Belle Fourche, SD 57717, USA&quot;,&#xd;
-		&quot;fullAddress&quot;: &quot;Old US Hwy 85, Belle Fourche, SD 57717, USA&quot;&#xd;
+		&quot;zip_code&quot;: &quot;&quot;,&#xd;
+		&quot;state&quot;: &quot;&quot;,&#xd;
+		&quot;city&quot;: &quot;&quot;,&#xd;
+		&quot;street&quot;: &quot;&quot;&#xd;
 	}&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
@@ -17599,7 +17727,7 @@ vars.put(&quot;record_type_name&quot;,record_type_name)</stringProp>
 	&quot;no_of_roof_tops&quot;: ${no_of_rooftop},&#xd;
 	&quot;dealer_group&quot;: &quot;${dealer_group_name}&quot;,&#xd;
 	&quot;customer_type&quot;: &quot;${record_type_name}&quot;,&#xd;
-	&quot;opportunity_country&quot;: &quot;United States&quot;,&#xd;
+	&quot;opportunity_country&quot;: &quot;Canada&quot;,&#xd;
 	&quot;opportunity_state&quot;: &quot;${State}&quot;,&#xd;
 	&quot;opportunity_city&quot;: &quot;${c_city}&quot;,&#xd;
 	&quot;activity&quot;: {},&#xd;
