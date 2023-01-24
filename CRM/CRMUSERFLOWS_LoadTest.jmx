@@ -66,25 +66,25 @@
           </elementProp>
           <elementProp name="DelayOffset_High" elementType="Argument">
             <stringProp name="Argument.name">DelayOffset_High</stringProp>
-            <stringProp name="Argument.value">1000</stringProp>
+            <stringProp name="Argument.value">0</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">7500</stringProp>
           </elementProp>
           <elementProp name="DelayOffset_VHigh" elementType="Argument">
             <stringProp name="Argument.name">DelayOffset_VHigh</stringProp>
-            <stringProp name="Argument.value">1500</stringProp>
+            <stringProp name="Argument.value">0</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">12000</stringProp>
           </elementProp>
           <elementProp name="DelayOffset_Pacing" elementType="Argument">
             <stringProp name="Argument.name">DelayOffset_Pacing</stringProp>
-            <stringProp name="Argument.value">100</stringProp>
+            <stringProp name="Argument.value">0</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">20000</stringProp>
           </elementProp>
           <elementProp name="DelayOffset_PacingHigh" elementType="Argument">
             <stringProp name="Argument.name">DelayOffset_PacingHigh</stringProp>
-            <stringProp name="Argument.value">300</stringProp>
+            <stringProp name="Argument.value">0</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">30000</stringProp>
           </elementProp>
@@ -226,6 +226,7 @@
         <collectionProp name="DNSCacheManager.servers"/>
         <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
         <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+        <collectionProp name="DNSCacheManager.hosts"/>
       </DNSCacheManager>
       <hashTree/>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS Ultimate - Order Froms" enabled="false">
