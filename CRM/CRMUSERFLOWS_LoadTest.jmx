@@ -226,7 +226,6 @@
         <collectionProp name="DNSCacheManager.servers"/>
         <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
         <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
-        <collectionProp name="DNSCacheManager.hosts"/>
       </DNSCacheManager>
       <hashTree/>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS Ultimate - Order Froms" enabled="false">
@@ -12880,9 +12879,10 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             <value>5.0</value>
             <savedValue>0.0</savedValue>
           </FloatProperty>
+          <stringProp name="TestPlan.comments">5</stringProp>
         </ThroughputController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/contacts/filter" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/contacts/filter" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -13227,11 +13227,6 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             &quot;entity_id&quot;:${contact_id},&#xd;
             &quot;entity_name&quot;:&quot;contact&quot;,&#xd;
             &quot;entity_value&quot;:&quot;${contact_first_name} ${contact_last_name}&quot;&#xd;
-         },&#xd;
-         {&#xd;
-            &quot;entity_id&quot;:${contact_dealer_group_id},&#xd;
-            &quot;entity_name&quot;:&quot;dealer_group&quot;,&#xd;
-            &quot;entity_value&quot;:&quot;${contact_dealer_group_name}&quot;&#xd;
          }&#xd;
       ],&#xd;
       &quot;activity_assignees&quot;:[&#xd;
@@ -13354,7 +13349,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-activity-management/public/v1/activity/comment" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-activity-management/public/v1/activity/comment" enabled="false">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                 <collectionProp name="Arguments.arguments">
@@ -13605,11 +13600,6 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             &quot;entity_id&quot;:${contact_id},&#xd;
             &quot;entity_name&quot;:&quot;contact&quot;,&#xd;
             &quot;entity_value&quot;:&quot;${contact_first_name} ${contact_last_name}&quot;&#xd;
-         },&#xd;
-         {&#xd;
-            &quot;entity_id&quot;:${contact_dealer_group_id},&#xd;
-            &quot;entity_name&quot;:&quot;dealer_group&quot;,&#xd;
-            &quot;entity_value&quot;:&quot;${contact_dealer_group_name}&quot;&#xd;
          }&#xd;
       ],&#xd;
       &quot;activity_assignees&quot;:[&#xd;
@@ -13677,7 +13667,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-activity-management/public/v1/activity/comment" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-activity-management/public/v1/activity/comment" enabled="false">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                 <collectionProp name="Arguments.arguments">
@@ -13815,11 +13805,6 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             &quot;entity_id&quot;:${contact_id},&#xd;
             &quot;entity_name&quot;:&quot;contact&quot;,&#xd;
             &quot;entity_value&quot;:&quot;${contact_first_name} ${contact_last_name}&quot;&#xd;
-         },&#xd;
-         {&#xd;
-            &quot;entity_id&quot;:${contact_dealer_group_id},&#xd;
-            &quot;entity_name&quot;:&quot;dealer_group&quot;,&#xd;
-            &quot;entity_value&quot;:&quot;${contact_dealer_group_name}&quot;&#xd;
          }&#xd;
       ],&#xd;
       &quot;activity_assignees&quot;:[&#xd;
@@ -13895,7 +13880,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-activity-management/public/v1/activity/comment" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-activity-management/public/v1/activity/comment" enabled="false">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                 <collectionProp name="Arguments.arguments">
@@ -14032,11 +14017,6 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             &quot;entity_id&quot;:${contact_id},&#xd;
             &quot;entity_name&quot;:&quot;contact&quot;,&#xd;
             &quot;entity_value&quot;:&quot;${contact_first_name} ${contact_last_name}&quot;&#xd;
-         },&#xd;
-         {&#xd;
-            &quot;entity_id&quot;:${contact_dealer_group_id},&#xd;
-            &quot;entity_name&quot;:&quot;dealer_group&quot;,&#xd;
-            &quot;entity_value&quot;:&quot;${contact_dealer_group_name}&quot;&#xd;
          }&#xd;
       ],&#xd;
       &quot;activity_assignees&quot;:[&#xd;
@@ -14103,7 +14083,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-activity-management/public/v1/activity/comment" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-activity-management/public/v1/activity/comment" enabled="false">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                 <collectionProp name="Arguments.arguments">
@@ -14242,11 +14222,6 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             &quot;entity_id&quot;:${contact_id},&#xd;
             &quot;entity_name&quot;:&quot;contact&quot;,&#xd;
             &quot;entity_value&quot;:&quot;${contact_first_name} ${contact_last_name}&quot;&#xd;
-         },&#xd;
-         {&#xd;
-            &quot;entity_id&quot;:${contact_dealer_group_id},&#xd;
-            &quot;entity_name&quot;:&quot;dealer_group&quot;,&#xd;
-            &quot;entity_value&quot;:&quot;${contact_dealer_group_name}&quot;&#xd;
          }&#xd;
       ],&#xd;
       &quot;activity_assignees&quot;:[&#xd;
@@ -14314,7 +14289,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-activity-management/public/v1/activity/comment" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-activity-management/public/v1/activity/comment" enabled="false">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                 <collectionProp name="Arguments.arguments">
@@ -14375,6 +14350,74 @@ prev.setStartNextThreadLoop(true);}</stringProp>
           </hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="CreateToDo" enabled="true"/>
           <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-activity-management/public/v1/activity/todo" enabled="false">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&#xd;
+   &quot;activity_associations&quot;:[&#xd;
+	    {&#xd;
+	       &quot;entity_id&quot;:${contact_id},&#xd;
+	       &quot;entity_name&quot;:&quot;contact&quot;,&#xd;
+	       &quot;entity_value&quot;:&quot;${contact_first_name} ${contact_last_name}&quot;&#xd;
+	    }&#xd;
+   ],&#xd;
+   &quot;activity_assignees&quot;:[&#xd;
+         {&#xd;
+            &quot;assignee_email_id&quot;:&quot;${solution_manager_email}&quot;,&#xd;
+            &quot;activity_assignee_role_id&quot;:1,&#xd;
+            &quot;activity_assignee_role_name&quot;:&quot;Solution Manager&quot;&#xd;
+         },&#xd;
+         {&#xd;
+            &quot;assignee_email_id&quot;:&quot;${solution_dev_spl_email}&quot;,&#xd;
+            &quot;activity_assignee_role_id&quot;:2,&#xd;
+            &quot;activity_assignee_role_name&quot;:&quot;Solution Development Specialist&quot;&#xd;
+         }&#xd;
+   ],&#xd;
+      &quot;activity_description&quot;:&quot;PerformanceTestingMeeting_${__Random(10000,99999)}&quot;,&#xd;
+      &quot;activity_internal_notes&quot;:&quot;&quot;,&#xd;
+      &quot;activity_title&quot;:&quot;PerformanceTestMeeting_${__Random(10000,99999)} Log_${__Random(10000,99999)}&quot;,&#xd;
+   &quot;timezone&quot;:&quot;Asia/Calcutta&quot;,&#xd;
+   &quot;activity_scheduled_start_datetime&quot;:${schedule_from_time},&#xd;
+   &quot;action_type&quot;:&quot;schedule&quot;,&#xd;
+   &quot;activity_status&quot;:&quot;scheduled&quot;,&#xd;
+   &quot;recurring_type&quot;:&quot;not_recurring&quot;&#xd;
+}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">tapapi/tap-crm-activity-management/public/v1/activity/todo</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-activity-management/public/v1/activity/todo" enabled="true">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -14387,11 +14430,6 @@ prev.setStartNextThreadLoop(true);}</stringProp>
 	       &quot;entity_id&quot;:${contact_id},&#xd;
 	       &quot;entity_name&quot;:&quot;contact&quot;,&#xd;
 	       &quot;entity_value&quot;:&quot;${contact_first_name} ${contact_last_name}&quot;&#xd;
-	    },&#xd;
-	    {&#xd;
-	       &quot;entity_id&quot;:${contact_dealer_group_id},&#xd;
-	       &quot;entity_name&quot;:&quot;dealer_group&quot;,&#xd;
-	       &quot;entity_value&quot;:&quot;${contact_dealer_group_name}&quot;&#xd;
 	    }&#xd;
    ],&#xd;
    &quot;activity_assignees&quot;:[&#xd;
@@ -14517,11 +14555,6 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             &quot;entity_id&quot;:${contact_id},&#xd;
             &quot;entity_name&quot;:&quot;contact&quot;,&#xd;
             &quot;entity_value&quot;:&quot;${contact_first_name} ${contact_last_name}&quot;&#xd;
-         },&#xd;
-         {&#xd;
-            &quot;entity_id&quot;:${contact_dealer_group_id},&#xd;
-            &quot;entity_name&quot;:&quot;dealer_group&quot;,&#xd;
-            &quot;entity_value&quot;:&quot;${contact_dealer_group_name}&quot;&#xd;
          }&#xd;
    ]&#xd;
 }</stringProp>
@@ -14650,11 +14683,6 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             &quot;entity_id&quot;:${contact_id},&#xd;
             &quot;entity_name&quot;:&quot;contact&quot;,&#xd;
             &quot;entity_value&quot;:&quot;${contact_first_name} ${contact_last_name}&quot;&#xd;
-         },&#xd;
-         {&#xd;
-            &quot;entity_id&quot;:${contact_dealer_group_id},&#xd;
-            &quot;entity_name&quot;:&quot;dealer_group&quot;,&#xd;
-            &quot;entity_value&quot;:&quot;${contact_dealer_group_name}&quot;&#xd;
          }&#xd;
       ],&#xd;
       &quot;activity_assignees&quot;:[&#xd;
@@ -14831,11 +14859,6 @@ prev.setStartNextThreadLoop(true);}</stringProp>
 				&quot;entity_id&quot;: ${contact_id},&#xd;
 				&quot;entity_name&quot;: &quot;contact&quot;,&#xd;
 				&quot;entity_value&quot;: &quot;${contact_first_name} ${contact_last_name}&quot;&#xd;
-			},&#xd;
-			{&#xd;
-				&quot;entity_id&quot;: ${contact_dealer_group_id},&#xd;
-				&quot;entity_name&quot;: &quot;dealer_group&quot;,&#xd;
-				&quot;entity_value&quot;: &quot;${contact_dealer_group_name}&quot;&#xd;
 			}&#xd;
 		],&#xd;
 		&quot;activity_assignees&quot;: [&#xd;
@@ -14995,11 +15018,6 @@ prev.setStartNextThreadLoop(true);}</stringProp>
 				&quot;entity_id&quot;: ${contact_id},&#xd;
 				&quot;entity_name&quot;: &quot;contact&quot;,&#xd;
 				&quot;entity_value&quot;: &quot;${contact_first_name} ${contact_last_name}&quot;&#xd;
-			},&#xd;
-			{&#xd;
-				&quot;entity_id&quot;: ${contact_dealer_group_id},&#xd;
-				&quot;entity_name&quot;: &quot;dealer_group&quot;,&#xd;
-				&quot;entity_value&quot;: &quot;${contact_dealer_group_name}&quot;&#xd;
 			}&#xd;
 		],&#xd;
 		&quot;activity_assignees&quot;: [&#xd;
@@ -15160,11 +15178,6 @@ prev.setStartNextThreadLoop(true);}</stringProp>
 				&quot;entity_id&quot;: ${contact_id},&#xd;
 				&quot;entity_name&quot;: &quot;contact&quot;,&#xd;
 				&quot;entity_value&quot;: &quot;${contact_first_name} ${contact_last_name}&quot;&#xd;
-			},&#xd;
-			{&#xd;
-				&quot;entity_id&quot;: ${contact_dealer_group_id},&#xd;
-				&quot;entity_name&quot;: &quot;dealer_group&quot;,&#xd;
-				&quot;entity_value&quot;: &quot;${contact_dealer_group_name}&quot;&#xd;
 			}&#xd;
 		],&#xd;
 		&quot;activity_assignees&quot;: [&#xd;
@@ -17541,6 +17554,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             <value>5.0</value>
             <savedValue>0.0</savedValue>
           </FloatProperty>
+          <stringProp name="TestPlan.comments">5</stringProp>
         </ThroughputController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/campaigns/filter" enabled="true">
