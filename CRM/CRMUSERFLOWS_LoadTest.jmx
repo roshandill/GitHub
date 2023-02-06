@@ -44297,7 +44297,7 @@ vars.put(&quot;opportunity_edited&quot;, new groovy.json.JsonBuilder(jsonData).t
               <stringProp name="TestPlan.comments">Created from cURL on 2022-11-24T12:07:30.785</stringProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="dealer_implementation_type" enabled="true">
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="dealer_implementation_type" enabled="false">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">dealer_implementation_type</stringProp>
                 <stringProp name="RegexExtractor.regex">dealer_implementation_type&quot;:&quot;(.+?)&quot;,&quot;dealer_dma_name</stringProp>
@@ -44381,6 +44381,75 @@ vars.put(&quot;opportunity_edited&quot;, new groovy.json.JsonBuilder(jsonData).t
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
               </RegexExtractor>
               <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_statecity" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">c_statecity</stringProp>
+                <stringProp name="RegexExtractor.regex">state&quot;:&quot;(.+?)&quot;,&quot;city&quot;:&quot;(.+?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$$2$</stringProp>
+                <stringProp name="RegexExtractor.default">c_statecityNA</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET-tapapi/tap-crm-account-management/public/v1/account/{c_linkedaccount}" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/tapapi/tap-crm-account-management/public/v1/account/${c_linkedaccount}</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">Created from cURL on 2023-02-06T12:38:39.331</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="authority" elementType="Header">
+                    <stringProp name="Header.name">authority</stringProp>
+                    <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                  </elementProp>
+                  <elementProp name="accept" elementType="Header">
+                    <stringProp name="Header.name">accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="accept-language" elementType="Header">
+                    <stringProp name="Header.name">accept-language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="cache-control" elementType="Header">
+                    <stringProp name="Header.name">cache-control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="origin" elementType="Header">
+                    <stringProp name="Header.name">origin</stringProp>
+                    <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                  </elementProp>
+                  <elementProp name="pragma" elementType="Header">
+                    <stringProp name="Header.name">pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="referer" elementType="Header">
+                    <stringProp name="Header.name">referer</stringProp>
+                    <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot;Not_A Brand&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;109&quot;, &quot;Chromium&quot;;v=&quot;109&quot;</stringProp>
+                  </elementProp>
+                </collectionProp>
+                <stringProp name="TestPlan.comments">Created from cURL on 2023-02-06T12:38:39.335</stringProp>
+              </HeaderManager>
+              <hashTree/>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_account_size" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">c_account_size</stringProp>
@@ -44390,21 +44459,21 @@ vars.put(&quot;opportunity_edited&quot;, new groovy.json.JsonBuilder(jsonData).t
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
               </RegexExtractor>
               <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_dealer_implementation_type" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">c_dealer_implementation_type</stringProp>
+                <stringProp name="RegexExtractor.regex">dealer_implementation_type&quot;:&quot;(.+?)&quot;,</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">c_dealer_implementation_typeNA</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_account_total_staff_count" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">c_account_total_staff_count</stringProp>
                 <stringProp name="RegexExtractor.regex">account_total_staff_count&quot;:(\d+),</stringProp>
                 <stringProp name="RegexExtractor.template">$1$</stringProp>
                 <stringProp name="RegexExtractor.default">c_account_total_staff_countNA</stringProp>
-                <stringProp name="RegexExtractor.match_number">1</stringProp>
-              </RegexExtractor>
-              <hashTree/>
-              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_statecity" enabled="true">
-                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-                <stringProp name="RegexExtractor.refname">c_statecity</stringProp>
-                <stringProp name="RegexExtractor.regex">state&quot;:&quot;(.+?)&quot;,&quot;city&quot;:&quot;(.+?)&quot;</stringProp>
-                <stringProp name="RegexExtractor.template">$1$$2$</stringProp>
-                <stringProp name="RegexExtractor.default">c_statecityNA</stringProp>
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
               </RegexExtractor>
               <hashTree/>
