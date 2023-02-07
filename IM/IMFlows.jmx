@@ -9247,7 +9247,7 @@ vars.put(&quot;BillingWaiverToDate&quot;,BillingWaiverToDate);
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:${__Random(1,100,)},&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;selected_filters&quot;:[],&quot;search_text&quot;:&quot;&quot;}</stringProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:${__Random(1,100,)},&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;signed&quot;]}],&quot;search_text&quot;:&quot;&quot;}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -10214,6 +10214,7 @@ f.close();</stringProp>
           <boolProp name="ThroughputController.perThread">false</boolProp>
           <intProp name="ThroughputController.maxThroughput">1</intProp>
           <stringProp name="ThroughputController.percentThroughput">${Credit_Deferral}</stringProp>
+          <stringProp name="TestPlan.comments">date change</stringProp>
         </ThroughputController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET-tapapi/tap-crm-implementations-backend/public/v1/credit-note/{c_tekionid}" enabled="true">
@@ -11154,46 +11155,6 @@ f.close();</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://stage-nca-tap-api.tekioncloud.xyz/tapapi/tap-crm-implementations-backend/public/v1/implementations-basic" enabled="false">
-              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:9999},&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;dealer_actual_launch_date_value&quot;,&quot;operator&quot;:&quot;BTW&quot;,&quot;values&quot;:[1659312000,1696118399]},{&quot;operator&quot;:&quot;IN&quot;,&quot;type&quot;:&quot;status&quot;,&quot;values&quot;:[&quot;live&quot;]}],&quot;search_text&quot;:&quot;&quot;}</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-              <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
-              <stringProp name="HTTPSampler.port"></stringProp>
-              <stringProp name="HTTPSampler.protocol">https</stringProp>
-              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/implementations-basic</stringProp>
-              <stringProp name="HTTPSampler.method">POST</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-              <stringProp name="HTTPSampler.response_timeout"></stringProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
-                  </elementProp>
-                  <elementProp name="Content-Type" elementType="Header">
-                    <stringProp name="Header.name">Content-Type</stringProp>
-                    <stringProp name="Header.value">application/json</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-            </hashTree>
           </hashTree>
           <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="GotoOnholdPage" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
@@ -11334,6 +11295,7 @@ f.close();</stringProp>
           <boolProp name="ThroughputController.perThread">false</boolProp>
           <intProp name="ThroughputController.maxThroughput">1</intProp>
           <stringProp name="ThroughputController.percentThroughput">${AddRemoveDep}</stringProp>
+          <stringProp name="TestPlan.comments">Not required</stringProp>
         </ThroughputController>
         <hashTree>
           <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="AddDependency" enabled="true">
@@ -11476,7 +11438,7 @@ f.close();</stringProp>
             </hashTree>
           </hashTree>
         </hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think TIme" enabled="true">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think TIme" enabled="false">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration"></stringProp>
@@ -11856,11 +11818,12 @@ f.close();</stringProp>
           </UniformRandomTimer>
           <hashTree/>
         </hashTree>
-        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Signed Lost" enabled="true">
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Signed Lost" enabled="false">
           <intProp name="ThroughputController.style">1</intProp>
           <boolProp name="ThroughputController.perThread">false</boolProp>
           <intProp name="ThroughputController.maxThroughput">1</intProp>
           <stringProp name="ThroughputController.percentThroughput">${Signedlost}</stringProp>
+          <stringProp name="TestPlan.comments">temp disabled</stringProp>
         </ThroughputController>
         <hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="View Contract Signedlost" enabled="true"/>
@@ -12072,7 +12035,7 @@ f.close();</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:${__Random(1,100,)},&quot;rows&quot;:50},&quot;selected_filters&quot;:[]}</stringProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:${__Random(1,100,)},&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;selected_filters&quot;:[],&quot;search_text&quot;:&quot;&quot;}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -12201,13 +12164,13 @@ f.close();</stringProp>
             <stringProp name="TestPlan.comments">onhold</stringProp>
           </HTTPSamplerProxy>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-basic" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-basic Board" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:${__Random(1,100,)},&quot;rows&quot;:50},&quot;selected_filters&quot;:[{&quot;operator&quot;:&quot;IN&quot;,&quot;type&quot;:&quot;status&quot;,&quot;values&quot;:[&quot;dependent&quot;,&quot;scheduled&quot;,&quot;live&quot;,&quot;on-hold&quot;]}],&quot;search_text&quot;:&quot;&quot;}</stringProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:9999},&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;global_date&quot;,&quot;operator&quot;:&quot;BTW&quot;,&quot;values&quot;:[1672531200,1709251199]}],&quot;search_text&quot;:&quot;&quot;}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -13061,6 +13024,7 @@ f.close();</stringProp>
           <boolProp name="ThroughputController.perThread">false</boolProp>
           <intProp name="ThroughputController.maxThroughput">1</intProp>
           <stringProp name="ThroughputController.percentThroughput">${Dashboard}</stringProp>
+          <stringProp name="TestPlan.comments">datechange</stringProp>
         </ThroughputController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/goals/dashboard" enabled="true">
@@ -13069,7 +13033,7 @@ f.close();</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;start&quot;:1672531200,&quot;end&quot;:1801420199}</stringProp>
+                  <stringProp name="Argument.value">{&quot;start&quot;:1675209600,&quot;end&quot;:1803859199}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -13169,7 +13133,7 @@ f.close();</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/goal/dealer-list-filters/${__Random(5,23,)}</stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/goal/dealer-list-filters/${__Random(25,35,)}</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -13249,7 +13213,7 @@ f.close();</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/goal-summary/dealer-list/${__Random(5,23,)}</stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/goal-summary/dealer-list/${__Random(25,35,)}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -13332,7 +13296,7 @@ f.close();</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/goal/dealer-list/${__Random(5,23,)}</stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/goal/dealer-list/${__Random(25,35,)}</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -13412,7 +13376,7 @@ f.close();</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/goal-summary/dealer-score-accuracy-list/${__Random(5,23,)}</stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/goal-summary/dealer-score-accuracy-list/${__Random(25,35,)}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -13756,6 +13720,148 @@ vars.put(&quot;Type&quot;,type[i]);</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/getgroupbyimplementationsdetails" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;selected_filters&quot;:[],&quot;search_text&quot;:&quot;&quot;,&quot;sort&quot;:{&quot;field&quot;:&quot;product_status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;filter&quot;:[{&quot;type&quot;:&quot;product&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;Additional OEM (per OEM)&quot;]}]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/getgroupbyimplementationsdetails</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-01-17T11:19:09.86</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="authority" elementType="Header">
+                  <stringProp name="Header.name">authority</stringProp>
+                  <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="accept-language" elementType="Header">
+                  <stringProp name="Header.name">accept-language</stringProp>
+                  <stringProp name="Header.value">en-GB,en;q=0.6</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="origin" elementType="Header">
+                  <stringProp name="Header.name">origin</stringProp>
+                  <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                </elementProp>
+                <elementProp name="referer" elementType="Header">
+                  <stringProp name="Header.name">referer</stringProp>
+                  <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                </elementProp>
+                <elementProp name="sec-fetch-dest" elementType="Header">
+                  <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                  <stringProp name="Header.value">empty</stringProp>
+                </elementProp>
+                <elementProp name="sec-fetch-mode" elementType="Header">
+                  <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="sec-fetch-site" elementType="Header">
+                  <stringProp name="Header.name">sec-fetch-site</stringProp>
+                  <stringProp name="Header.value">same-site</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">Created from cURL on 2023-01-17T11:19:09.878</stringProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/getgroupbyimplementationsdetails" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;selected_filters&quot;:[],&quot;search_text&quot;:&quot;&quot;,&quot;sort&quot;:{&quot;field&quot;:&quot;product_status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;filter&quot;:[{&quot;type&quot;:&quot;product_status&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;signed&quot;]}]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/getgroupbyimplementationsdetails</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-01-17T11:19:49.817</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="authority" elementType="Header">
+                  <stringProp name="Header.name">authority</stringProp>
+                  <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="accept-language" elementType="Header">
+                  <stringProp name="Header.name">accept-language</stringProp>
+                  <stringProp name="Header.value">en-GB,en;q=0.6</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="origin" elementType="Header">
+                  <stringProp name="Header.name">origin</stringProp>
+                  <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                </elementProp>
+                <elementProp name="referer" elementType="Header">
+                  <stringProp name="Header.name">referer</stringProp>
+                  <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                </elementProp>
+                <elementProp name="sec-fetch-dest" elementType="Header">
+                  <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                  <stringProp name="Header.value">empty</stringProp>
+                </elementProp>
+                <elementProp name="sec-fetch-mode" elementType="Header">
+                  <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="sec-fetch-site" elementType="Header">
+                  <stringProp name="Header.name">sec-fetch-site</stringProp>
+                  <stringProp name="Header.value">same-site</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">Created from cURL on 2023-01-17T11:19:49.825</stringProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
         </hashTree>
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think TIme" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
@@ -13864,7 +13970,7 @@ vars.put(&quot;Status&quot;,status[i]);</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;strategic_discovery_id&quot;:${c_strategic_discovery_id},&quot;implementation_id&quot;:${c_impid_g1},&quot;sd_status&quot;:&quot;${Status}&quot;,&quot;start_date&quot;:1672704000,&quot;end_date&quot;:1672704000,&quot;strategic_implementation_analyst&quot;:&quot;performancetesting${__Random(1,9,)}@tekion.com&quot;,&quot;strategic_implementation_analyst_trainees&quot;:[&quot;performancetesting${__Random(1,9,)}@tekion.com&quot;],&quot;links&quot;:[],&quot;created_by&quot;:&quot;&quot;,&quot;created_at&quot;:0,&quot;modified_by&quot;:&quot;&quot;,&quot;modified_at&quot;:0}</stringProp>
+                  <stringProp name="Argument.value">{&quot;strategic_discovery_id&quot;:${c_strategic_discovery_id},&quot;implementation_id&quot;:${c_impid_g1},&quot;sd_status&quot;:&quot;${Status}&quot;,&quot;start_date&quot;:1675814400,&quot;end_date&quot;:1676851200,&quot;strategic_implementation_analyst&quot;:&quot;performancetesting${__Random(1,9,)}@tekion.com&quot;,&quot;strategic_implementation_analyst_trainees&quot;:[&quot;performancetesting${__Random(1,9,)}@tekion.com&quot;],&quot;links&quot;:[],&quot;created_by&quot;:&quot;&quot;,&quot;created_at&quot;:0,&quot;modified_by&quot;:&quot;&quot;,&quot;modified_at&quot;:0}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
