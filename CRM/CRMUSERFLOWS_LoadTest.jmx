@@ -24342,7 +24342,7 @@ vars.put(&quot;dealer_implementation_type&quot;,type[i]);</stringProp>
               <intProp name="ThroughputController.maxThroughput">1</intProp>
               <FloatProperty>
                 <name>ThroughputController.percentThroughput</name>
-                <value>100.0</value>
+                <value>5.0</value>
                 <savedValue>0.0</savedValue>
               </FloatProperty>
             </ThroughputController>
@@ -28299,7 +28299,7 @@ vars.put(&quot;dealer_implementation_type&quot;,type[i]);</stringProp>
               <intProp name="ThroughputController.maxThroughput">1</intProp>
               <FloatProperty>
                 <name>ThroughputController.percentThroughput</name>
-                <value>100.0</value>
+                <value>5.0</value>
                 <savedValue>0.0</savedValue>
               </FloatProperty>
             </ThroughputController>
