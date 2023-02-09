@@ -44186,7 +44186,7 @@ vars.put(&quot;opportunity_edited&quot;, new groovy.json.JsonBuilder(jsonData).t
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Won" enabled="true"/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Won" enabled="false"/>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT - tapapi/tap-crm-opportunity-management/public/v1/skipopportunity/[new_opportunity]" enabled="true">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -44733,6 +44733,1837 @@ vars.put(&quot;opportunity_edited&quot;, new groovy.json.JsonBuilder(jsonData).t
                 <stringProp name="RegexExtractor.default">c_account_total_staff_countNA</stringProp>
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
               </RegexExtractor>
+              <hashTree/>
+            </hashTree>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Create OrderForm" enabled="true"/>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-contract-management/public/v1/contract/dealer-eligible" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;dealer_accounts&quot;:[{&quot;dealer_account_id&quot;:${new_opp_dealer_id},&quot;dealer_name&quot;:&quot;${new_opp_dealer_name}&quot;}]}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract/dealer-eligible</stringProp>
+                <stringProp name="HTTPSampler.method">POST</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree>
+                <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                  <collectionProp name="HeaderManager.headers">
+                    <elementProp name="Accept" elementType="Header">
+                      <stringProp name="Header.name">Accept</stringProp>
+                      <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                    </elementProp>
+                    <elementProp name="Content-Type" elementType="Header">
+                      <stringProp name="Header.name">Content-Type</stringProp>
+                      <stringProp name="Header.value">application/json</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </HeaderManager>
+                <hashTree/>
+                <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_firstsellelig" enabled="true">
+                  <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                  <stringProp name="RegexExtractor.refname">c_firstsellelig</stringProp>
+                  <stringProp name="RegexExtractor.regex">first_sell_eligible&quot;:(\w+),&quot;upgrade</stringProp>
+                  <stringProp name="RegexExtractor.template">$1$</stringProp>
+                  <stringProp name="RegexExtractor.default">c_firstselleligApplicable</stringProp>
+                  <stringProp name="RegexExtractor.match_number">1</stringProp>
+                </RegexExtractor>
+                <hashTree/>
+              </hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-contract-management/public/v1/contract" enabled="false">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&#xd;
+   &quot;is_draft&quot;:true,&#xd;
+   &quot;opportunity_id&quot;:${opportunity_id},&#xd;
+   &quot;opportunity_title&quot;:&quot;${opportunity_title}&quot;,&#xd;
+   &quot;dealer_group_account_id&quot;:${new_opp_dealergroup_id},&#xd;
+   &quot;dealer_group_name&quot;:&quot;${new_opp_dealergroup_name}&quot;,&#xd;
+   &quot;dealer_group_tekion_id&quot;:${dealer_group_tekion_id},&#xd;
+   &quot;dealers&quot;:[&#xd;
+      {&#xd;
+         &quot;is_included&quot;:true,&#xd;
+         &quot;dealer_account_id&quot;:${new_opp_dealer_id},&#xd;
+         &quot;dealer_name&quot;:&quot;${new_opp_dealer_name}&quot;,&#xd;
+         &quot;dealer_size&quot;:&quot;${dealer_size}&quot;,&#xd;
+         &quot;dealer_total_staff_count&quot;:${dealer_total_staff_count},&#xd;
+         &quot;city&quot;:&quot;&quot;,&#xd;
+         &quot;state&quot;:&quot;California&quot;,&#xd;
+         &quot;dealer_tekion_id&quot;:${dealer_tekion_id},&#xd;
+         &quot;oem&quot;:[&#xd;
+            &#xd;
+         ]&#xd;
+      }&#xd;
+   ],&#xd;
+   &quot;contract_order_form&quot;:{&#xd;
+      &quot;order_form_type&quot;:&quot;first_sell&quot;,&#xd;
+      &quot;order_form_date&quot;:${__time(,)}&#xd;
+   },&#xd;
+   &quot;country&quot;:&quot;United States&quot;&#xd;
+}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract</stringProp>
+                <stringProp name="HTTPSampler.method">POST</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree>
+                <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                  <collectionProp name="HeaderManager.headers">
+                    <elementProp name="Content-Type" elementType="Header">
+                      <stringProp name="Header.name">Content-Type</stringProp>
+                      <stringProp name="Header.value">application/json</stringProp>
+                    </elementProp>
+                    <elementProp name="Accept" elementType="Header">
+                      <stringProp name="Header.name">Accept</stringProp>
+                      <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </HeaderManager>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="contract_id" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">contract_id</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.message</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                </JSONPostProcessor>
+                <hashTree/>
+              </hashTree>
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller-FirstSell" enabled="true">
+                <stringProp name="IfController.condition">&quot;${c_firstsellelig}&quot;==&quot;c_firstselleligApplicable&quot;</stringProp>
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+              </IfController>
+              <hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-contract-management/public/v1/contract" enabled="false">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">{&#xd;
+	&quot;is_draft&quot;: true,&#xd;
+	 &quot;opportunity_id&quot;:${new_opportunity},&#xd;
+   &quot;opportunity_title&quot;:&quot;${opportunity_title}&quot;,&#xd;
+	  &quot;dealer_group_account_id&quot;:${new_opp_dealergroup_id},&#xd;
+   &quot;dealer_group_name&quot;:&quot;${new_opp_dealergroup_name}&quot;,&#xd;
+	 &quot;dealer_group_tekion_id&quot;:${c_dealer_group_tekion_id},&#xd;
+	&quot;dealers&quot;: [{&#xd;
+		&quot;is_included&quot;: true,&#xd;
+		 &quot;dealer_account_id&quot;:${new_opp_dealer_id},&#xd;
+         &quot;dealer_name&quot;:&quot;${new_opp_dealer_name}&quot;,&#xd;
+         &quot;dealer_size&quot;:&quot;${dealer_size}&quot;,&#xd;
+		 &quot;dealer_total_staff_count&quot;:${dealer_total_staff_count},&#xd;
+          &quot;dealer_implementation_type&quot;: &quot;${dealer_implementation_type}&quot;,&#xd;
+		&quot;city&quot;: &quot;${c_city}&quot;,&#xd;
+		&quot;state&quot;: &quot;${State}&quot;,&#xd;
+		 &quot;dealer_tekion_id&quot;:${dealer_tekion_id},&#xd;
+		&quot;oem&quot;: []&#xd;
+	}],&#xd;
+	&quot;contract_order_form&quot;: {&#xd;
+		&quot;order_form_type&quot;: &quot;first_sell&quot;,&#xd;
+		 &quot;order_form_date&quot;:${__time(,)}&#xd;
+	},&#xd;
+	&quot;country&quot;: &quot;United States&quot;&#xd;
+}</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract</stringProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                  <stringProp name="TestPlan.comments">old</stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="Content-Type" elementType="Header">
+                        <stringProp name="Header.name">Content-Type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="Accept" elementType="Header">
+                        <stringProp name="Header.name">Accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                  <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="c_contractid" enabled="true">
+                    <stringProp name="JSONPostProcessor.referenceNames">c_contractid</stringProp>
+                    <stringProp name="JSONPostProcessor.jsonPathExprs">$.message</stringProp>
+                    <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                  </JSONPostProcessor>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-contract-management/public/v1/contract" enabled="true">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">{&#xd;
+	&quot;is_draft&quot;: true,&#xd;
+	 &quot;opportunity_id&quot;:${new_opportunity},&#xd;
+   &quot;opportunity_title&quot;:&quot;${opportunity_title}&quot;,&#xd;
+	  &quot;dealer_group_account_id&quot;:${new_opp_dealergroup_id},&#xd;
+   &quot;dealer_group_name&quot;:&quot;${new_opp_dealergroup_name}&quot;,&#xd;
+	 &quot;dealer_group_tekion_id&quot;:${c_dealer_group_tekion_id},&#xd;
+	&quot;dealers&quot;: [{&#xd;
+		&quot;is_included&quot;: true,&#xd;
+		 &quot;dealer_account_id&quot;:${new_opp_dealer_id},&#xd;
+         &quot;dealer_name&quot;:&quot;${new_opp_dealer_name}&quot;,&#xd;
+         &quot;dealer_size&quot;:&quot;${c_account_size}&quot;,&#xd;
+		 &quot;dealer_total_staff_count&quot;:${c_account_total_staff_count},&#xd;
+          &quot;dealer_implementation_type&quot;: &quot;${dealer_implementation_type}&quot;,&#xd;
+		&quot;city&quot;: &quot;${c_statecity_g2}&quot;,&#xd;
+		&quot;state&quot;: &quot;${c_statecity_g1}&quot;,&#xd;
+		 &quot;dealer_tekion_id&quot;:${dealer_tekion_id},&#xd;
+		&quot;oem&quot;: []&#xd;
+	}],&#xd;
+	&quot;contract_order_form&quot;: {&#xd;
+		&quot;order_form_type&quot;: &quot;first_sell&quot;,&#xd;
+		 &quot;order_form_date&quot;:${__time(,)}&#xd;
+	},&#xd;
+	&quot;country&quot;: &quot;United States&quot;&#xd;
+}</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract</stringProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                  <stringProp name="TestPlan.comments">chnaged dealer data</stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="Content-Type" elementType="Header">
+                        <stringProp name="Header.name">Content-Type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="Accept" elementType="Header">
+                        <stringProp name="Header.name">Accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                  <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="c_contractid" enabled="true">
+                    <stringProp name="JSONPostProcessor.referenceNames">c_contractid</stringProp>
+                    <stringProp name="JSONPostProcessor.jsonPathExprs">$.message</stringProp>
+                    <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                  </JSONPostProcessor>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-contract-management/public/v1/contract" enabled="false">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">{&#xd;
+	&quot;is_draft&quot;: true,&#xd;
+	&quot;opportunity_id&quot;: ${new_opportunity},&#xd;
+	&quot;opportunity_title&quot;:&quot;${opportunity_title}&quot;,&#xd;
+	  &quot;dealer_group_account_id&quot;:${new_opp_dealergroup_id},&#xd;
+	&quot;dealer_group_name&quot;:&quot;${new_opp_dealergroup_name}&quot;,&#xd;
+	 &quot;dealer_group_tekion_id&quot;:${c_dealer_group_tekion_id},&#xd;
+	&quot;dealers&quot;: [&#xd;
+		{&#xd;
+			&quot;is_included&quot;: true,&#xd;
+			&quot;dealer_account_id&quot;:${new_opp_dealer_id},&#xd;
+         &quot;dealer_name&quot;:&quot;${new_opp_dealer_name}&quot;,&#xd;
+			&quot;dealer_size&quot;: &quot;S&quot;,&#xd;
+			&quot;dealer_total_staff_count&quot;: 54,&#xd;
+			&quot;	&quot;: &quot;buy/sell&quot;,&#xd;
+			&quot;city&quot;: &quot;Columbus&quot;,&#xd;
+			&quot;state&quot;: &quot;Ohio&quot;,&#xd;
+			&quot;dealer_tekion_id&quot;: 2,&#xd;
+			&quot;oem&quot;: []&#xd;
+		}&#xd;
+	],&#xd;
+	&quot;contract_order_form&quot;: {&#xd;
+		&quot;order_form_type&quot;: &quot;first_sell&quot;,&#xd;
+		 &quot;order_form_date&quot;:${__time(,)}&#xd;
+	},&#xd;
+	&quot;country&quot;: &quot;United States&quot;&#xd;
+}</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract</stringProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="Content-Type" elementType="Header">
+                        <stringProp name="Header.name">Content-Type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="Accept" elementType="Header">
+                        <stringProp name="Header.name">Accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                  <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="c_contractid" enabled="true">
+                    <stringProp name="JSONPostProcessor.referenceNames">c_contractid</stringProp>
+                    <stringProp name="JSONPostProcessor.jsonPathExprs">$.message</stringProp>
+                    <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                  </JSONPostProcessor>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-contract-management/public/v1/contract/[contract_id]/basic-detail" enabled="false">
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                    <collectionProp name="Arguments.arguments"/>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract/${contract_id}/basic-detail</stringProp>
+                  <stringProp name="HTTPSampler.method">GET</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="Content-Type" elementType="Header">
+                        <stringProp name="Header.name">Content-Type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="Accept" elementType="Header">
+                        <stringProp name="Header.name">Accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-account-management/public/v1/contact/authorised-signers/[contract_id]/dealer-group" enabled="false">
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                    <collectionProp name="Arguments.arguments"/>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-account-management/public/v1/contact/authorised-signers/${contract_id}/dealer-group</stringProp>
+                  <stringProp name="HTTPSampler.method">GET</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="Content-Type" elementType="Header">
+                        <stringProp name="Header.name">Content-Type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="Accept" elementType="Header">
+                        <stringProp name="Header.name">Accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-contract-management/public/v1/contract/[contract_id]/internal-signer" enabled="false">
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                    <collectionProp name="Arguments.arguments"/>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract/${contract_id}/internal-signer</stringProp>
+                  <stringProp name="HTTPSampler.method">GET</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="Content-Type" elementType="Header">
+                        <stringProp name="Header.name">Content-Type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="Accept" elementType="Header">
+                        <stringProp name="Header.name">Accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET tapapi/tap-crm-contract-management/public/v1/contract/[c_contractid]/basic-detail" enabled="true">
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                    <collectionProp name="Arguments.arguments"/>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract/${c_contractid}/basic-detail</stringProp>
+                  <stringProp name="HTTPSampler.method">GET</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name=":authority" elementType="Header">
+                        <stringProp name="Header.name">:authority</stringProp>
+                        <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name=":scheme" elementType="Header">
+                        <stringProp name="Header.name">:scheme</stringProp>
+                        <stringProp name="Header.value">https</stringProp>
+                      </elementProp>
+                      <elementProp name="accept" elementType="Header">
+                        <stringProp name="Header.name">accept</stringProp>
+                        <stringProp name="Header.value">*/*</stringProp>
+                      </elementProp>
+                      <elementProp name="accept-encoding" elementType="Header">
+                        <stringProp name="Header.name">accept-encoding</stringProp>
+                        <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                      </elementProp>
+                      <elementProp name="accept-language" elementType="Header">
+                        <stringProp name="Header.name">accept-language</stringProp>
+                        <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                      </elementProp>
+                      <elementProp name="access-control-request-headers" elementType="Header">
+                        <stringProp name="Header.name">access-control-request-headers</stringProp>
+                        <stringProp name="Header.value">tap-api-token</stringProp>
+                      </elementProp>
+                      <elementProp name="access-control-request-method" elementType="Header">
+                        <stringProp name="Header.name">access-control-request-method</stringProp>
+                        <stringProp name="Header.value">GET</stringProp>
+                      </elementProp>
+                      <elementProp name="origin" elementType="Header">
+                        <stringProp name="Header.name">origin</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name="referer" elementType="Header">
+                        <stringProp name="Header.name">referer</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-dest" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                        <stringProp name="Header.value">empty</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-mode" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                        <stringProp name="Header.value">cors</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-site" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-site</stringProp>
+                        <stringProp name="Header.value">same-site</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                  <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_contract_order_form" enabled="true">
+                    <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                    <stringProp name="RegexExtractor.refname">c_contract_order_form</stringProp>
+                    <stringProp name="RegexExtractor.regex">contract_order_form&quot;(.+?)}</stringProp>
+                    <stringProp name="RegexExtractor.template">$1$</stringProp>
+                    <stringProp name="RegexExtractor.default">contract_order_formNA</stringProp>
+                    <stringProp name="RegexExtractor.match_number">1</stringProp>
+                  </RegexExtractor>
+                  <hashTree/>
+                  <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_contract_dealerid" enabled="true">
+                    <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                    <stringProp name="RegexExtractor.refname">c_contract_dealerid</stringProp>
+                    <stringProp name="RegexExtractor.regex">contract_dealer_id&quot;:(\d+),&quot;contract_id</stringProp>
+                    <stringProp name="RegexExtractor.template">$1$</stringProp>
+                    <stringProp name="RegexExtractor.default">c_contract_dealeridNA</stringProp>
+                    <stringProp name="RegexExtractor.match_number">1</stringProp>
+                  </RegexExtractor>
+                  <hashTree/>
+                  <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_orderformdate" enabled="true">
+                    <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                    <stringProp name="RegexExtractor.refname">c_orderformdate</stringProp>
+                    <stringProp name="RegexExtractor.regex">order_form_date&quot;:(\d+),</stringProp>
+                    <stringProp name="RegexExtractor.template">$1$</stringProp>
+                    <stringProp name="RegexExtractor.default">c_orderformdateNA</stringProp>
+                    <stringProp name="RegexExtractor.match_number">1</stringProp>
+                  </RegexExtractor>
+                  <hashTree/>
+                  <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_orderformtype" enabled="true">
+                    <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                    <stringProp name="RegexExtractor.refname">c_orderformtype</stringProp>
+                    <stringProp name="RegexExtractor.regex">order_form_type&quot;:&quot;(.+?)&quot;</stringProp>
+                    <stringProp name="RegexExtractor.template">$1$</stringProp>
+                    <stringProp name="RegexExtractor.default">c_orderformtypeNA</stringProp>
+                    <stringProp name="RegexExtractor.match_number">1</stringProp>
+                  </RegexExtractor>
+                  <hashTree/>
+                  <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_validity" enabled="true">
+                    <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                    <stringProp name="RegexExtractor.refname">c_validity</stringProp>
+                    <stringProp name="RegexExtractor.regex">validity&quot;:(\d+),</stringProp>
+                    <stringProp name="RegexExtractor.template">$1$</stringProp>
+                    <stringProp name="RegexExtractor.default">c_validityNA</stringProp>
+                    <stringProp name="RegexExtractor.match_number">1</stringProp>
+                  </RegexExtractor>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /tapapi/tap-crm-contract-management/public/v1/contract/[c_contractid]/order-form" enabled="true">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">{&quot;contract_id&quot;:${c_contractid},&quot;contract_dealer_order_sequence&quot;:[${c_contract_dealerid}],&quot;contract_order_form&quot;:{&quot;order_form_type&quot;:&quot;${c_orderformtype}&quot;,&quot;order_form_date&quot;:${c_orderformdate},&quot;contract_term_in_months&quot;:36,&quot;billing_period&quot;:&quot;Monthly&quot;,&quot;currency&quot;:&quot;&quot;},&quot;contract_enterprise_credit&quot;:{&quot;credit_name&quot;:&quot;&quot;,&quot;is_active&quot;:false,&quot;note&quot;:&quot;&quot;,&quot;implementation_credit_percentage&quot;:0,&quot;implementation_credit_flag&quot;:false,&quot;upfront_credit_percentage&quot;:0,&quot;upfront_credit_flag&quot;:false,&quot;contract_enterprise_mrr_credit&quot;:[{&quot;from_month&quot;:0,&quot;to_month&quot;:0,&quot;percentage&quot;:0}],&quot;mrr_credit_flag&quot;:false},&quot;contract_order_form_owners&quot;:[{&quot;contract_dealer_id&quot;:${c_contract_dealerid},&quot;roles&quot;:[{&quot;role&quot;:&quot;primary_owner&quot;,&quot;email&quot;:&quot;${userEmail}&quot;,&quot;share_percentage&quot;:1}]}],&quot;contract_remainders&quot;:{&quot;is_active&quot;:false,&quot;validity&quot;:${c_validity},&quot;recipients&quot;:null,&quot;days&quot;:0,&quot;remainder_time&quot;:0}}</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract/${c_contractid}/order-form</stringProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                  <stringProp name="TestPlan.comments">1669832999000</stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name=":authority" elementType="Header">
+                        <stringProp name="Header.name">:authority</stringProp>
+                        <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name=":method" elementType="Header">
+                        <stringProp name="Header.name">:method</stringProp>
+                        <stringProp name="Header.value">POST</stringProp>
+                      </elementProp>
+                      <elementProp name=":path" elementType="Header">
+                        <stringProp name="Header.name">:path</stringProp>
+                        <stringProp name="Header.value">/tapapi/tap-crm-contract-management/public/v1/contract/${contract_id}/order-form</stringProp>
+                      </elementProp>
+                      <elementProp name=":scheme" elementType="Header">
+                        <stringProp name="Header.name">:scheme</stringProp>
+                        <stringProp name="Header.value">https</stringProp>
+                      </elementProp>
+                      <elementProp name="accept" elementType="Header">
+                        <stringProp name="Header.name">accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                      <elementProp name="accept-encoding" elementType="Header">
+                        <stringProp name="Header.name">accept-encoding</stringProp>
+                        <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                      </elementProp>
+                      <elementProp name="accept-language" elementType="Header">
+                        <stringProp name="Header.name">accept-language</stringProp>
+                        <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                      </elementProp>
+                      <elementProp name="content-length" elementType="Header">
+                        <stringProp name="Header.name">content-length</stringProp>
+                        <stringProp name="Header.value">792</stringProp>
+                      </elementProp>
+                      <elementProp name="content-type" elementType="Header">
+                        <stringProp name="Header.name">content-type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="origin" elementType="Header">
+                        <stringProp name="Header.name">origin</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name="referer" elementType="Header">
+                        <stringProp name="Header.name">referer</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-dest" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                        <stringProp name="Header.value">empty</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-mode" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                        <stringProp name="Header.value">cors</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-site" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-site</stringProp>
+                        <stringProp name="Header.value">same-site</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-gpc" elementType="Header">
+                        <stringProp name="Header.name">sec-gpc</stringProp>
+                        <stringProp name="Header.value">1</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                </hashTree>
+              </hashTree>
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller-Upgrade" enabled="true">
+                <stringProp name="IfController.condition">&quot;${c_firstsellelig}&quot;==&quot;null&quot;</stringProp>
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+              </IfController>
+              <hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-contract-management/public/v1/contract" enabled="true">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">{&#xd;
+   &quot;is_draft&quot;:true,&#xd;
+   &quot;opportunity_id&quot;:${new_opportunity},&#xd;
+   &quot;opportunity_title&quot;:&quot;${opportunity_title}&quot;,&#xd;
+   &quot;dealer_group_account_id&quot;:${new_opp_dealergroup_id},&#xd;
+   &quot;dealer_group_name&quot;:&quot;${new_opp_dealergroup_name}&quot;,&#xd;
+   &quot;dealer_group_tekion_id&quot;:${dealer_group_tekion_id},&#xd;
+   &quot;dealers&quot;:[&#xd;
+      {&#xd;
+         &quot;is_included&quot;:true,&#xd;
+         &quot;dealer_account_id&quot;:${new_opp_dealer_id},&#xd;
+         &quot;dealer_name&quot;:&quot;${new_opp_dealer_name}&quot;,&#xd;
+         &quot;dealer_size&quot;:&quot;${c_account_size}&quot;,&#xd;
+         &quot;dealer_total_staff_count&quot;:${c_account_total_staff_count},&#xd;
+          &quot;dealer_implementation_type&quot;: &quot;${dealer_implementation_type}&quot;,&#xd;
+         &quot;city&quot;: &quot;${c_statecity_g2}&quot;,&#xd;
+		&quot;state&quot;: &quot;${c_statecity_g1}&quot;,&#xd;
+         &quot;dealer_tekion_id&quot;:${dealer_tekion_id},&#xd;
+         &quot;oem&quot;:[&#xd;
+            &#xd;
+         ]&#xd;
+      }&#xd;
+   ],&#xd;
+   &quot;contract_order_form&quot;:{&#xd;
+      &quot;order_form_type&quot;:&quot;upgrade&quot;,&#xd;
+      &quot;order_form_date&quot;:${__time(,)}&#xd;
+   },&#xd;
+   &quot;country&quot;:&quot;United States&quot;&#xd;
+}</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract</stringProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="Content-Type" elementType="Header">
+                        <stringProp name="Header.name">Content-Type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="Accept" elementType="Header">
+                        <stringProp name="Header.name">Accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                  <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="c_contractid" enabled="true">
+                    <stringProp name="JSONPostProcessor.referenceNames">c_contractid</stringProp>
+                    <stringProp name="JSONPostProcessor.jsonPathExprs">$.message</stringProp>
+                    <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+                  </JSONPostProcessor>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-contract-management/public/v1/contract/[contract_id]/basic-detail" enabled="false">
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                    <collectionProp name="Arguments.arguments"/>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract/${contract_id}/basic-detail</stringProp>
+                  <stringProp name="HTTPSampler.method">GET</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="Content-Type" elementType="Header">
+                        <stringProp name="Header.name">Content-Type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="Accept" elementType="Header">
+                        <stringProp name="Header.name">Accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-account-management/public/v1/contact/authorised-signers/[contract_id]/dealer-group" enabled="false">
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                    <collectionProp name="Arguments.arguments"/>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-account-management/public/v1/contact/authorised-signers/${contract_id}/dealer-group</stringProp>
+                  <stringProp name="HTTPSampler.method">GET</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="Content-Type" elementType="Header">
+                        <stringProp name="Header.name">Content-Type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="Accept" elementType="Header">
+                        <stringProp name="Header.name">Accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-contract-management/public/v1/contract/[contract_id]/internal-signer" enabled="false">
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                    <collectionProp name="Arguments.arguments"/>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract/${contract_id}/internal-signer</stringProp>
+                  <stringProp name="HTTPSampler.method">GET</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name="Content-Type" elementType="Header">
+                        <stringProp name="Header.name">Content-Type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="Accept" elementType="Header">
+                        <stringProp name="Header.name">Accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET tapapi/tap-crm-contract-management/public/v1/contract/[c_contractid]/basic-detail" enabled="true">
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                    <collectionProp name="Arguments.arguments"/>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract/${c_contractid}/basic-detail</stringProp>
+                  <stringProp name="HTTPSampler.method">GET</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name=":authority" elementType="Header">
+                        <stringProp name="Header.name">:authority</stringProp>
+                        <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name=":scheme" elementType="Header">
+                        <stringProp name="Header.name">:scheme</stringProp>
+                        <stringProp name="Header.value">https</stringProp>
+                      </elementProp>
+                      <elementProp name="accept" elementType="Header">
+                        <stringProp name="Header.name">accept</stringProp>
+                        <stringProp name="Header.value">*/*</stringProp>
+                      </elementProp>
+                      <elementProp name="accept-encoding" elementType="Header">
+                        <stringProp name="Header.name">accept-encoding</stringProp>
+                        <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                      </elementProp>
+                      <elementProp name="accept-language" elementType="Header">
+                        <stringProp name="Header.name">accept-language</stringProp>
+                        <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                      </elementProp>
+                      <elementProp name="access-control-request-headers" elementType="Header">
+                        <stringProp name="Header.name">access-control-request-headers</stringProp>
+                        <stringProp name="Header.value">tap-api-token</stringProp>
+                      </elementProp>
+                      <elementProp name="access-control-request-method" elementType="Header">
+                        <stringProp name="Header.name">access-control-request-method</stringProp>
+                        <stringProp name="Header.value">GET</stringProp>
+                      </elementProp>
+                      <elementProp name="origin" elementType="Header">
+                        <stringProp name="Header.name">origin</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name="referer" elementType="Header">
+                        <stringProp name="Header.name">referer</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-dest" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                        <stringProp name="Header.value">empty</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-mode" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                        <stringProp name="Header.value">cors</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-site" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-site</stringProp>
+                        <stringProp name="Header.value">same-site</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                  <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_contract_order_form" enabled="true">
+                    <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                    <stringProp name="RegexExtractor.refname">c_contract_order_form</stringProp>
+                    <stringProp name="RegexExtractor.regex">contract_order_form&quot;(.+?)}</stringProp>
+                    <stringProp name="RegexExtractor.template">$1$</stringProp>
+                    <stringProp name="RegexExtractor.default">contract_order_formNA</stringProp>
+                    <stringProp name="RegexExtractor.match_number">1</stringProp>
+                  </RegexExtractor>
+                  <hashTree/>
+                  <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_contract_dealerid" enabled="true">
+                    <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                    <stringProp name="RegexExtractor.refname">c_contract_dealerid</stringProp>
+                    <stringProp name="RegexExtractor.regex">contract_dealer_id&quot;:(\d+),&quot;contract_id</stringProp>
+                    <stringProp name="RegexExtractor.template">$1$</stringProp>
+                    <stringProp name="RegexExtractor.default">c_contract_dealeridNA</stringProp>
+                    <stringProp name="RegexExtractor.match_number">1</stringProp>
+                  </RegexExtractor>
+                  <hashTree/>
+                  <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_orderformdate" enabled="true">
+                    <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                    <stringProp name="RegexExtractor.refname">c_orderformdate</stringProp>
+                    <stringProp name="RegexExtractor.regex">order_form_date&quot;:(\d+),</stringProp>
+                    <stringProp name="RegexExtractor.template">$1$</stringProp>
+                    <stringProp name="RegexExtractor.default">c_orderformdateNA</stringProp>
+                    <stringProp name="RegexExtractor.match_number">1</stringProp>
+                  </RegexExtractor>
+                  <hashTree/>
+                  <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_orderformtype" enabled="true">
+                    <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                    <stringProp name="RegexExtractor.refname">c_orderformtype</stringProp>
+                    <stringProp name="RegexExtractor.regex">order_form_type&quot;:&quot;(.+?)&quot;</stringProp>
+                    <stringProp name="RegexExtractor.template">$1$</stringProp>
+                    <stringProp name="RegexExtractor.default">c_orderformtypeNA</stringProp>
+                    <stringProp name="RegexExtractor.match_number">1</stringProp>
+                  </RegexExtractor>
+                  <hashTree/>
+                  <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_validity" enabled="true">
+                    <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                    <stringProp name="RegexExtractor.refname">c_validity</stringProp>
+                    <stringProp name="RegexExtractor.regex">validity&quot;:(\d+),</stringProp>
+                    <stringProp name="RegexExtractor.template">$1$</stringProp>
+                    <stringProp name="RegexExtractor.default">c_validityNA</stringProp>
+                    <stringProp name="RegexExtractor.match_number">1</stringProp>
+                  </RegexExtractor>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /tapapi/tap-crm-contract-management/public/v1/contract/[contract_id]/order-form" enabled="false">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">{&#xd;
+	&quot;contract_id&quot;: $ {&#xd;
+		contract_id&#xd;
+	},&#xd;
+	&quot;contract_dealer_order_sequence&quot;: [$ {&#xd;
+		c_contract_dealerid&#xd;
+	}],&#xd;
+	&quot;contract_order_form&quot;: {&#xd;
+		&quot;order_form_type&quot;: &quot;${c_orderformtype}&quot;,&#xd;
+		&quot;order_form_date&quot;: $ {&#xd;
+			c_orderformdate&#xd;
+		},&#xd;
+		&quot;contract_term_in_months&quot;: 36,&#xd;
+		&quot;billing_period&quot;: &quot;Monthly&quot;,&#xd;
+		&quot;currency&quot;: &quot;&quot;&#xd;
+	},&#xd;
+	&quot;contract_enterprise_credit&quot;: {&#xd;
+		&quot;credit_name&quot;: &quot;&quot;,&#xd;
+		&quot;is_active&quot;: false,&#xd;
+		&quot;note&quot;: &quot;&quot;,&#xd;
+		&quot;implementation_credit_percentage&quot;: 0,&#xd;
+		&quot;implementation_credit_flag&quot;: false,&#xd;
+		&quot;upfront_credit_percentage&quot;: 0,&#xd;
+		&quot;upfront_credit_flag&quot;: false,&#xd;
+		&quot;contract_enterprise_mrr_credit&quot;: [{&#xd;
+			&quot;from_month&quot;: 0,&#xd;
+			&quot;to_month&quot;: 0,&#xd;
+			&quot;percentage&quot;: 0&#xd;
+		}],&#xd;
+		&quot;mrr_credit_flag&quot;: false&#xd;
+	},&#xd;
+	&quot;contract_order_form_owners&quot;: [{&#xd;
+		&quot;contract_dealer_id&quot;: $ {&#xd;
+			c_contract_dealerid&#xd;
+		},&#xd;
+		&quot;roles&quot;: [{&#xd;
+			&quot;role&quot;: &quot;primary_owner&quot;,&#xd;
+			&quot;email&quot;: &quot;performancetesting@tekion.com&quot;,&#xd;
+			&quot;share_percentage&quot;: 1&#xd;
+		}]&#xd;
+	}],&#xd;
+	&quot;contract_remainders&quot;: {&#xd;
+		&quot;is_active&quot;: false,&#xd;
+		&quot;validity&quot;: $ {&#xd;
+			c_validity&#xd;
+		},&#xd;
+		&quot;recipients&quot;: null,&#xd;
+		&quot;days&quot;: 0,&#xd;
+		&quot;remainder_time&quot;: 0&#xd;
+	}&#xd;
+}</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract/${contract_id}/order-form</stringProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                  <stringProp name="TestPlan.comments">1669832999000</stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name=":authority" elementType="Header">
+                        <stringProp name="Header.name">:authority</stringProp>
+                        <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name=":method" elementType="Header">
+                        <stringProp name="Header.name">:method</stringProp>
+                        <stringProp name="Header.value">POST</stringProp>
+                      </elementProp>
+                      <elementProp name=":path" elementType="Header">
+                        <stringProp name="Header.name">:path</stringProp>
+                        <stringProp name="Header.value">/tapapi/tap-crm-contract-management/public/v1/contract/${contract_id}/order-form</stringProp>
+                      </elementProp>
+                      <elementProp name=":scheme" elementType="Header">
+                        <stringProp name="Header.name">:scheme</stringProp>
+                        <stringProp name="Header.value">https</stringProp>
+                      </elementProp>
+                      <elementProp name="accept" elementType="Header">
+                        <stringProp name="Header.name">accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                      <elementProp name="accept-encoding" elementType="Header">
+                        <stringProp name="Header.name">accept-encoding</stringProp>
+                        <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                      </elementProp>
+                      <elementProp name="accept-language" elementType="Header">
+                        <stringProp name="Header.name">accept-language</stringProp>
+                        <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                      </elementProp>
+                      <elementProp name="content-length" elementType="Header">
+                        <stringProp name="Header.name">content-length</stringProp>
+                        <stringProp name="Header.value">792</stringProp>
+                      </elementProp>
+                      <elementProp name="content-type" elementType="Header">
+                        <stringProp name="Header.name">content-type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="origin" elementType="Header">
+                        <stringProp name="Header.name">origin</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name="referer" elementType="Header">
+                        <stringProp name="Header.name">referer</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-dest" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                        <stringProp name="Header.value">empty</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-mode" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                        <stringProp name="Header.value">cors</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-site" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-site</stringProp>
+                        <stringProp name="Header.value">same-site</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-gpc" elementType="Header">
+                        <stringProp name="Header.name">sec-gpc</stringProp>
+                        <stringProp name="Header.value">1</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /tapapi/tap-crm-contract-management/public/v1/contract/[c_contractid]/order-form" enabled="false">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">{&quot;contract_id&quot;:20024,&quot;contract_dealer_order_sequence&quot;:[20698],&quot;contract_order_form&quot;:{&quot;order_form_type&quot;:&quot;upgrade&quot;,&quot;order_form_date&quot;:1674453173425,&quot;contract_term_in_months&quot;:36,&quot;billing_period&quot;:&quot;Monthly&quot;,&quot;currency&quot;:&quot;&quot;},&quot;contract_enterprise_credit&quot;:{&quot;credit_name&quot;:&quot;&quot;,&quot;is_active&quot;:false,&quot;note&quot;:&quot;&quot;,&quot;implementation_credit_percentage&quot;:0,&quot;implementation_credit_flag&quot;:false,&quot;upfront_credit_percentage&quot;:0,&quot;upfront_credit_flag&quot;:false,&quot;contract_enterprise_mrr_credit&quot;:[{&quot;from_month&quot;:0,&quot;to_month&quot;:0,&quot;percentage&quot;:0}],&quot;mrr_credit_flag&quot;:false},&quot;contract_order_form_owners&quot;:[{&quot;contract_dealer_id&quot;:20698,&quot;roles&quot;:[{&quot;role&quot;:&quot;primary_owner&quot;,&quot;email&quot;:&quot;performancetesting@tekion.com&quot;,&quot;share_percentage&quot;:1}]}],&quot;contract_remainders&quot;:{&quot;is_active&quot;:false,&quot;validity&quot;:1677608999000,&quot;recipients&quot;:null,&quot;days&quot;:0,&quot;remainder_time&quot;:0}}</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract/${c_contractid}/order-form</stringProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                  <stringProp name="TestPlan.comments">1669832999000</stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name=":authority" elementType="Header">
+                        <stringProp name="Header.name">:authority</stringProp>
+                        <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name=":method" elementType="Header">
+                        <stringProp name="Header.name">:method</stringProp>
+                        <stringProp name="Header.value">POST</stringProp>
+                      </elementProp>
+                      <elementProp name=":path" elementType="Header">
+                        <stringProp name="Header.name">:path</stringProp>
+                        <stringProp name="Header.value">/tapapi/tap-crm-contract-management/public/v1/contract/${contract_id}/order-form</stringProp>
+                      </elementProp>
+                      <elementProp name=":scheme" elementType="Header">
+                        <stringProp name="Header.name">:scheme</stringProp>
+                        <stringProp name="Header.value">https</stringProp>
+                      </elementProp>
+                      <elementProp name="accept" elementType="Header">
+                        <stringProp name="Header.name">accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                      <elementProp name="accept-encoding" elementType="Header">
+                        <stringProp name="Header.name">accept-encoding</stringProp>
+                        <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                      </elementProp>
+                      <elementProp name="accept-language" elementType="Header">
+                        <stringProp name="Header.name">accept-language</stringProp>
+                        <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                      </elementProp>
+                      <elementProp name="content-length" elementType="Header">
+                        <stringProp name="Header.name">content-length</stringProp>
+                        <stringProp name="Header.value">792</stringProp>
+                      </elementProp>
+                      <elementProp name="content-type" elementType="Header">
+                        <stringProp name="Header.name">content-type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="origin" elementType="Header">
+                        <stringProp name="Header.name">origin</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name="referer" elementType="Header">
+                        <stringProp name="Header.name">referer</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-dest" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                        <stringProp name="Header.value">empty</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-mode" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                        <stringProp name="Header.value">cors</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-site" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-site</stringProp>
+                        <stringProp name="Header.value">same-site</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-gpc" elementType="Header">
+                        <stringProp name="Header.name">sec-gpc</stringProp>
+                        <stringProp name="Header.value">1</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                </hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /tapapi/tap-crm-contract-management/public/v1/contract/[c_contractid]/order-form" enabled="true">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value">{&quot;contract_id&quot;:${c_contractid},&quot;contract_dealer_order_sequence&quot;:[${c_contract_dealerid}],&quot;contract_order_form&quot;:{&quot;order_form_type&quot;:&quot;${c_orderformtype}&quot;,&quot;order_form_date&quot;:${c_orderformdate},&quot;contract_term_in_months&quot;:36,&quot;billing_period&quot;:&quot;Monthly&quot;,&quot;currency&quot;:&quot;&quot;},&quot;contract_enterprise_credit&quot;:{&quot;credit_name&quot;:&quot;&quot;,&quot;is_active&quot;:false,&quot;note&quot;:&quot;&quot;,&quot;implementation_credit_percentage&quot;:0,&quot;implementation_credit_flag&quot;:false,&quot;upfront_credit_percentage&quot;:0,&quot;upfront_credit_flag&quot;:false,&quot;contract_enterprise_mrr_credit&quot;:[{&quot;from_month&quot;:0,&quot;to_month&quot;:0,&quot;percentage&quot;:0}],&quot;mrr_credit_flag&quot;:false},&quot;contract_order_form_owners&quot;:[{&quot;contract_dealer_id&quot;:${c_contract_dealerid},&quot;roles&quot;:[{&quot;role&quot;:&quot;primary_owner&quot;,&quot;email&quot;:&quot;${userEmail}&quot;,&quot;share_percentage&quot;:1}]}],&quot;contract_remainders&quot;:{&quot;is_active&quot;:false,&quot;validity&quot;:${c_validity},&quot;recipients&quot;:null,&quot;days&quot;:0,&quot;remainder_time&quot;:0}}</stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">tapapi/tap-crm-contract-management/public/v1/contract/${c_contractid}/order-form</stringProp>
+                  <stringProp name="HTTPSampler.method">POST</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                  <stringProp name="TestPlan.comments">1669832999000</stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                    <collectionProp name="HeaderManager.headers">
+                      <elementProp name=":authority" elementType="Header">
+                        <stringProp name="Header.name">:authority</stringProp>
+                        <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name=":method" elementType="Header">
+                        <stringProp name="Header.name">:method</stringProp>
+                        <stringProp name="Header.value">POST</stringProp>
+                      </elementProp>
+                      <elementProp name=":path" elementType="Header">
+                        <stringProp name="Header.name">:path</stringProp>
+                        <stringProp name="Header.value">/tapapi/tap-crm-contract-management/public/v1/contract/${contract_id}/order-form</stringProp>
+                      </elementProp>
+                      <elementProp name=":scheme" elementType="Header">
+                        <stringProp name="Header.name">:scheme</stringProp>
+                        <stringProp name="Header.value">https</stringProp>
+                      </elementProp>
+                      <elementProp name="accept" elementType="Header">
+                        <stringProp name="Header.name">accept</stringProp>
+                        <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                      </elementProp>
+                      <elementProp name="accept-encoding" elementType="Header">
+                        <stringProp name="Header.name">accept-encoding</stringProp>
+                        <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                      </elementProp>
+                      <elementProp name="accept-language" elementType="Header">
+                        <stringProp name="Header.name">accept-language</stringProp>
+                        <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                      </elementProp>
+                      <elementProp name="content-length" elementType="Header">
+                        <stringProp name="Header.name">content-length</stringProp>
+                        <stringProp name="Header.value">792</stringProp>
+                      </elementProp>
+                      <elementProp name="content-type" elementType="Header">
+                        <stringProp name="Header.name">content-type</stringProp>
+                        <stringProp name="Header.value">application/json</stringProp>
+                      </elementProp>
+                      <elementProp name="origin" elementType="Header">
+                        <stringProp name="Header.name">origin</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                      </elementProp>
+                      <elementProp name="referer" elementType="Header">
+                        <stringProp name="Header.name">referer</stringProp>
+                        <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-dest" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                        <stringProp name="Header.value">empty</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-mode" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                        <stringProp name="Header.value">cors</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-fetch-site" elementType="Header">
+                        <stringProp name="Header.name">sec-fetch-site</stringProp>
+                        <stringProp name="Header.value">same-site</stringProp>
+                      </elementProp>
+                      <elementProp name="sec-gpc" elementType="Header">
+                        <stringProp name="Header.name">sec-gpc</stringProp>
+                        <stringProp name="Header.value">1</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </HeaderManager>
+                  <hashTree/>
+                </hashTree>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Won" enabled="true"/>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT - tapapi/tap-crm-opportunity-management/public/v1/skipopportunity/[new_opportunity]" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;opportunity_id&quot;:${new_opportunity},&quot;opportunity_stage_id&quot;:7,&quot;comments&quot;:&quot;&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">tapapi/tap-crm-opportunity-management/public/v1/skipopportunity/${new_opportunity}</stringProp>
+              <stringProp name="HTTPSampler.method">PUT</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-/tapapi/tap-crm-opportunity-management/public/v1/opportunity-apply-stage-rule/{new_opportunity}" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;from_stage&quot;:6,&quot;to_stage&quot;:7}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/tapapi/tap-crm-opportunity-management/public/v1/opportunity-apply-stage-rule/${new_opportunity}</stringProp>
+              <stringProp name="HTTPSampler.method">PUT</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">Created from cURL on 2022-11-24T11:44:39.651</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="authority" elementType="Header">
+                    <stringProp name="Header.name">authority</stringProp>
+                    <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                  </elementProp>
+                  <elementProp name="accept" elementType="Header">
+                    <stringProp name="Header.name">accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="accept-language" elementType="Header">
+                    <stringProp name="Header.name">accept-language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="cache-control" elementType="Header">
+                    <stringProp name="Header.name">cache-control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="content-type" elementType="Header">
+                    <stringProp name="Header.name">content-type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                  <elementProp name="origin" elementType="Header">
+                    <stringProp name="Header.name">origin</stringProp>
+                    <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                  </elementProp>
+                  <elementProp name="pragma" elementType="Header">
+                    <stringProp name="Header.name">pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="referer" elementType="Header">
+                    <stringProp name="Header.name">referer</stringProp>
+                    <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot;Google Chrome&quot;;v=&quot;107&quot;, &quot;Chromium&quot;;v=&quot;107&quot;, &quot;Not=A?Brand&quot;;v=&quot;24&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;macOS&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-fetch-dest" elementType="Header">
+                    <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                    <stringProp name="Header.value">empty</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-fetch-mode" elementType="Header">
+                    <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                    <stringProp name="Header.value">cors</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-fetch-site" elementType="Header">
+                    <stringProp name="Header.name">sec-fetch-site</stringProp>
+                    <stringProp name="Header.value">same-site</stringProp>
+                  </elementProp>
+                  <elementProp name="user-agent" elementType="Header">
+                    <stringProp name="Header.name">user-agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+                <stringProp name="TestPlan.comments">Created from cURL on 2022-11-24T11:44:39.666</stringProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-/tapapi/tap-crm-opportunity-management/public/v1/opportunity-stage-approval/{new_opportunity}" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;status&quot;:&quot;approved&quot;,&quot;reason&quot;:&quot;&quot;,&quot;comments&quot;:&quot;&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/tapapi/tap-crm-opportunity-management/public/v1/opportunity-stage-approval/${new_opportunity}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">Created from cURL on 2022-11-24T16:12:36.129</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="authority" elementType="Header">
+                    <stringProp name="Header.name">authority</stringProp>
+                    <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                  </elementProp>
+                  <elementProp name="accept" elementType="Header">
+                    <stringProp name="Header.name">accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="accept-language" elementType="Header">
+                    <stringProp name="Header.name">accept-language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="cache-control" elementType="Header">
+                    <stringProp name="Header.name">cache-control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="content-type" elementType="Header">
+                    <stringProp name="Header.name">content-type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                  <elementProp name="origin" elementType="Header">
+                    <stringProp name="Header.name">origin</stringProp>
+                    <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                  </elementProp>
+                  <elementProp name="pragma" elementType="Header">
+                    <stringProp name="Header.name">pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="referer" elementType="Header">
+                    <stringProp name="Header.name">referer</stringProp>
+                    <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot;Google Chrome&quot;;v=&quot;107&quot;, &quot;Chromium&quot;;v=&quot;107&quot;, &quot;Not=A?Brand&quot;;v=&quot;24&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;macOS&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-fetch-dest" elementType="Header">
+                    <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                    <stringProp name="Header.value">empty</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-fetch-mode" elementType="Header">
+                    <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                    <stringProp name="Header.value">cors</stringProp>
+                  </elementProp>
+                </collectionProp>
+                <stringProp name="TestPlan.comments">Created from cURL on 2022-11-24T16:12:36.136</stringProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-opportunity-management/public/v1/opportunity/[opportunity_id]" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">tapapi/tap-crm-opportunity-management/public/v1/opportunity/${new_opportunity}</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="new_opp_dealer_id" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">new_opp_dealer_id</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.account.[?(@.opportunity_record_type_id==2)].account_id</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="new_opp_dealer_name" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">new_opp_dealer_name</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.account.[?(@.account_id==${new_opp_dealer_id})].dealer_name</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="new_opp_dealergroup_id" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">new_opp_dealergroup_id</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.account.[?(@.opportunity_record_type_id==1)].account_id</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="new_opp_dealergroup_name" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">new_opp_dealergroup_name</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.account.[?(@.account_id==${new_opp_dealergroup_id})].dealer_name</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="opportunity_title" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">opportunity_title</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$..opportunity_title</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/account/dealer-additional-data/filters" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;start&quot;:0,&quot;rows&quot;:1,&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;account_id&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[${new_opp_dealer_id}]}]}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">tapapi/tap-crm-account-management/public/v1/account/dealer-additional-data/filters</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="dealer_group_tekion_id" enabled="false">
+                <stringProp name="JSONPostProcessor.referenceNames">dealer_group_tekion_id</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$..dealer_group_tekion_id</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="dealer_size" enabled="false">
+                <stringProp name="JSONPostProcessor.referenceNames">dealer_size</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$..dealer_size</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="dealer_total_staff_count" enabled="false">
+                <stringProp name="JSONPostProcessor.referenceNames">dealer_total_staff_count</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$..dealer_total_staff_count</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="dealer_tekion_id" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">dealer_tekion_id</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$..dealer_tekion_id</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET-/tapapi/tap-crm-account-management/public/v1/account/{new_opp_dealergroup_id}" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/tapapi/tap-crm-account-management/public/v1/account/${new_opp_dealergroup_id}</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">Created from cURL on 2022-11-24T12:07:30.785</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="dealer_implementation_type" enabled="false">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">dealer_implementation_type</stringProp>
+                <stringProp name="RegexExtractor.regex">dealer_implementation_type&quot;:&quot;(.+?)&quot;,&quot;dealer_dma_name</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">dealer_implementation_typeNA</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="authority" elementType="Header">
+                    <stringProp name="Header.name">authority</stringProp>
+                    <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                  </elementProp>
+                  <elementProp name="accept" elementType="Header">
+                    <stringProp name="Header.name">accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="accept-language" elementType="Header">
+                    <stringProp name="Header.name">accept-language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="cache-control" elementType="Header">
+                    <stringProp name="Header.name">cache-control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="origin" elementType="Header">
+                    <stringProp name="Header.name">origin</stringProp>
+                    <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                  </elementProp>
+                  <elementProp name="pragma" elementType="Header">
+                    <stringProp name="Header.name">pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="referer" elementType="Header">
+                    <stringProp name="Header.name">referer</stringProp>
+                    <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot;Google Chrome&quot;;v=&quot;107&quot;, &quot;Chromium&quot;;v=&quot;107&quot;, &quot;Not=A?Brand&quot;;v=&quot;24&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;macOS&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-fetch-dest" elementType="Header">
+                    <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                    <stringProp name="Header.value">empty</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-fetch-mode" elementType="Header">
+                    <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                    <stringProp name="Header.value">cors</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-fetch-site" elementType="Header">
+                    <stringProp name="Header.name">sec-fetch-site</stringProp>
+                    <stringProp name="Header.value">same-site</stringProp>
+                  </elementProp>
+                  <elementProp name="user-agent" elementType="Header">
+                    <stringProp name="Header.name">user-agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+                <stringProp name="TestPlan.comments">Created from cURL on 2022-11-24T12:07:30.815</stringProp>
+              </HeaderManager>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_dealer_group_tekion_id" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">c_dealer_group_tekion_id</stringProp>
+                <stringProp name="RegexExtractor.regex">dealer_group_tekion_id&quot;:(\d+),</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">c_dealer_group_tekion_idNA</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_statecity" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">c_statecity</stringProp>
+                <stringProp name="RegexExtractor.regex">state&quot;:&quot;(.+?)&quot;,&quot;city&quot;:&quot;(.+?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$$2$</stringProp>
+                <stringProp name="RegexExtractor.default">c_statecityNA</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_account_size" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">c_account_size</stringProp>
+                <stringProp name="RegexExtractor.regex">account_size&quot;:&quot;(\w+)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">c_account_sizeNA</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_dealer_implementation_type" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">c_dealer_implementation_type</stringProp>
+                <stringProp name="RegexExtractor.regex">dealer_implementation_type&quot;:&quot;(.+?)&quot;,</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">c_dealer_implementation_typeNA</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_account_total_staff_count" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">c_account_total_staff_count</stringProp>
+                <stringProp name="RegexExtractor.regex">account_total_staff_count&quot;:(\d+),</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">c_account_total_staff_countNA</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET-tapapi/tap-crm-account-management/public/v1/account/{c_linkedaccount}" enabled="false">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/tapapi/tap-crm-account-management/public/v1/account/${new_opp_dealergroup_id}</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">Created from cURL on 2023-02-06T12:38:39.331</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="authority" elementType="Header">
+                    <stringProp name="Header.name">authority</stringProp>
+                    <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                  </elementProp>
+                  <elementProp name="accept" elementType="Header">
+                    <stringProp name="Header.name">accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="accept-language" elementType="Header">
+                    <stringProp name="Header.name">accept-language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="cache-control" elementType="Header">
+                    <stringProp name="Header.name">cache-control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="origin" elementType="Header">
+                    <stringProp name="Header.name">origin</stringProp>
+                    <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                  </elementProp>
+                  <elementProp name="pragma" elementType="Header">
+                    <stringProp name="Header.name">pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="referer" elementType="Header">
+                    <stringProp name="Header.name">referer</stringProp>
+                    <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot;Not_A Brand&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;109&quot;, &quot;Chromium&quot;;v=&quot;109&quot;</stringProp>
+                  </elementProp>
+                </collectionProp>
+                <stringProp name="TestPlan.comments">Created from cURL on 2023-02-06T12:38:39.335</stringProp>
+              </HeaderManager>
               <hashTree/>
             </hashTree>
             <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Create OrderForm" enabled="true"/>
