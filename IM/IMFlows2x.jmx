@@ -374,7 +374,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 Random rand = new Random();
-int value = rand.nextInt(20) + 90;
+int value = rand.nextInt(20) + 60;
 
 SimpleDateFormat sdf = new SimpleDateFormat(&quot;MM/dd/yyyy&quot;);
 Calendar c = Calendar.getInstance();
@@ -4885,7 +4885,7 @@ f.close();</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;group_by&quot;:&quot;${GroupBy}&quot;,&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;selected_filters&quot;:[],&quot;search_text&quot;:&quot;&quot;,&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;ASC&quot;}}</stringProp>
+                  <stringProp name="Argument.value">{&quot;group_by&quot;:&quot;${GroupBy}&quot;,&quot;selected_filters&quot;:[],&quot;search_text&quot;:&quot;&quot;}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -5003,7 +5003,7 @@ vars.put(&quot;Type&quot;,type[i]);</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;filterKeys&quot;:[&quot;dealer_size&quot;,&quot;status&quot;,&quot;oem&quot;,&quot;product_type&quot;,&quot;state&quot;,&quot;call_status&quot;,&quot;discovery_status&quot;,&quot;sd_analyst&quot;,&quot;sd_analyst_trainees&quot;,&quot;sd_status&quot;,&quot;is_dependent&quot;,&quot;country&quot;,&quot;fixed_ops_lead&quot;,&quot;variable_ops_lead&quot;,&quot;implementation_manager_value&quot;,&quot;smi&quot;,&quot;analystics_specialist&quot;,&quot;dealer_group&quot;,&quot;makes&quot;,&quot;dms&quot;,&quot;CRM&quot;,&quot;Payroll&quot;,&quot;city&quot;]}</stringProp>
+                  <stringProp name="Argument.value">{&quot;filterKeys&quot;:[&quot;dealer_size&quot;,&quot;status&quot;,&quot;oem&quot;,&quot;product_type&quot;,&quot;state&quot;,&quot;sd_required&quot;,&quot;sd_analyst&quot;,&quot;sd_analyst_trainees&quot;,&quot;sd_status&quot;,&quot;is_dependent&quot;,&quot;is_cancelled&quot;,&quot;country&quot;,&quot;implementation_manager_value&quot;,&quot;dealer_group&quot;,&quot;makes&quot;,&quot;dms&quot;,&quot;CRM&quot;,&quot;Payroll&quot;,&quot;city&quot;,&quot;schedule_status&quot;,&quot;implementation_region&quot;]}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -5212,7 +5212,7 @@ vars.put(&quot;Type&quot;,type[i]);</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;selected_filters&quot;:[],&quot;search_text&quot;:&quot;&quot;,&quot;sort&quot;:{&quot;field&quot;:&quot;product_status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;filter&quot;:[{&quot;type&quot;:&quot;product_status&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;signed&quot;]}]}</stringProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;selected_filters&quot;:[],&quot;search_text&quot;:&quot;&quot;,&quot;sort&quot;:{&quot;field&quot;:&quot;product_status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;filter&quot;:[{&quot;type&quot;:&quot;product&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;${Values}&quot;]}]}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -5275,6 +5275,19 @@ vars.put(&quot;Type&quot;,type[i]);</stringProp>
               </collectionProp>
               <stringProp name="TestPlan.comments">Created from cURL on 2023-01-17T11:19:49.825</stringProp>
             </HeaderManager>
+            <hashTree/>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">import java.util.Random;
+
+Random rnd = new Random() ;
+def values=[&quot;Accounting&quot;,&quot;signed&quot;,&quot;live&quot;,&quot;Parts&quot;,&quot;CRM&quot;,&quot;Foundation&quot;];
+def i=rnd.nextInt(values.size());
+vars.put(&quot;Values&quot;,values[i]);</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223PreProcessor>
             <hashTree/>
           </hashTree>
         </hashTree>
@@ -5697,34 +5710,6 @@ vars.put(&quot;Status&quot;,status[i]);</stringProp>
                 <elementProp name="sec-ch-ua-mobile" elementType="Header">
                   <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
                   <stringProp name="Header.value">?0</stringProp>
-                </elementProp>
-                <elementProp name="sec-ch-ua-platform" elementType="Header">
-                  <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
-                  <stringProp name="Header.value">&quot;macOS&quot;</stringProp>
-                </elementProp>
-                <elementProp name="sec-fetch-dest" elementType="Header">
-                  <stringProp name="Header.name">sec-fetch-dest</stringProp>
-                  <stringProp name="Header.value">empty</stringProp>
-                </elementProp>
-                <elementProp name="sec-fetch-mode" elementType="Header">
-                  <stringProp name="Header.name">sec-fetch-mode</stringProp>
-                  <stringProp name="Header.value">cors</stringProp>
-                </elementProp>
-                <elementProp name="sec-fetch-site" elementType="Header">
-                  <stringProp name="Header.name">sec-fetch-site</stringProp>
-                  <stringProp name="Header.value">same-site</stringProp>
-                </elementProp>
-                <elementProp name="tap-api-token" elementType="Header">
-                  <stringProp name="Header.name">tap-api-token</stringProp>
-                  <stringProp name="Header.value">eyJraWQiOiJ0dlVUTWJFTFpNbndpS0JFQlFoUklwcEpNd1o2NXo3UDEzVzZxajBmQlJJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnZyOGkwWElrZlg0RWNsTW80cDFsV0xDZHdZbmNQeDZFczFfZm9HaC1hMkEiLCJpc3MiOiJodHRwczovL2VtcGxveWVlLnRla2lvbi5jb20vb2F1dGgyL2F1czJtcTFqN2xrV1RlNjhBNHg3IiwiYXVkIjoiYXBpOi8vZGVmYXVsdCIsImlhdCI6MTY3ODI3NDk2NywiZXhwIjoxNjc4MzAzNzY3LCJjaWQiOiIwb2Exb3gwanh5QWlFaVR2OTR4NyIsInVpZCI6IjAwdTIxNzVldXlQVjFjUjFiNHg3Iiwic2NwIjpbInByb2ZpbGUiLCJvcGVuaWQiLCJlbWFpbCJdLCJhdXRoX3RpbWUiOjE2NzgwODE2OTgsInN1YiI6InBlcmZvcm1hbmNldGVzdGluZ0B0ZWtpb24uY29tIn0.nA-muF6LGneVxWZq0PYvxCWP9QPS0R_dX8v1VlCCUHtX-0GqvYSTnlVDdEmXaY8MZSBkSMPhs1V4brsVt3T4E_Mhg2WOreh3sdPVTNNqAM_EvnrrokeVK5KNeuVWiIz787TDXmco5x0jPGXeF20MxwbedAZFapjsl_N1YHy1U-L1xe7GfldljKjFkpS_uH0n41M9-tmhjeRHPO9Dd-68ZFmP9RdUN7ExeAaehxr727PgL8yAZw0xeK1F7Bwo_PvQKtp1l7BfU8WRS60PkyTKLITyRzJMkX5fW2SUN2BWpSa6I9JywLEStDuTMGWkeaI1b8YH0xsf_v4XyioLcxjYKg</stringProp>
-                </elementProp>
-                <elementProp name="user-agent" elementType="Header">
-                  <stringProp name="Header.name">user-agent</stringProp>
-                  <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36</stringProp>
-                </elementProp>
-                <elementProp name="Accept-Encoding" elementType="Header">
-                  <stringProp name="Header.name">Accept-Encoding</stringProp>
-                  <stringProp name="Header.value">gzip, deflate</stringProp>
                 </elementProp>
               </collectionProp>
               <stringProp name="TestPlan.comments">Created from cURL on 2023-03-08T17:56:28.309</stringProp>
