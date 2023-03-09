@@ -60,7 +60,7 @@
           </elementProp>
           <elementProp name="DelayOffset_Mid" elementType="Argument">
             <stringProp name="Argument.name">DelayOffset_Mid</stringProp>
-            <stringProp name="Argument.value">7000</stringProp>
+            <stringProp name="Argument.value">6000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">5000</stringProp>
           </elementProp>
@@ -10835,29 +10835,29 @@ prev.setStartNextThreadLoop(true);
       <hashTree/>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS - Contact" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-790806394">
-            <stringProp name="53">5</stringProp>
+          <collectionProp name="1436942280">
+            <stringProp name="54">6</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1572771">3600</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1613538202">
-            <stringProp name="53">5</stringProp>
+          <collectionProp name="614210472">
+            <stringProp name="54">6</stringProp>
             <stringProp name="56313">900</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1631939489">
-            <stringProp name="53">5</stringProp>
+          <collectionProp name="595809185">
+            <stringProp name="54">6</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1477473754">
-            <stringProp name="53">5</stringProp>
+          <collectionProp name="750274920">
+            <stringProp name="54">6</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="56313">900</stringProp>
@@ -10873,7 +10873,7 @@ prev.setStartNextThreadLoop(true);
       <hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="LandingPage" enabled="true"/>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/get-crm-user-permissions" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/get-crm-user-permissions" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -10964,13 +10964,13 @@ prev.setStartNextThreadLoop(true);
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/contacts/filter" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/contacts/filter" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:20},&quot;search_text&quot;:&quot;&quot;,&quot;selected_filters&quot;:[],&quot;sort&quot;:{&quot;field&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;}}</stringProp>
+                  <stringProp name="Argument.value">{&quot;search_text&quot;:&quot;&quot;,&quot;selected_filters&quot;:[],&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;created_at&quot;,&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;}}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -11004,13 +11004,13 @@ prev.setStartNextThreadLoop(true);
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/contact/filter-options" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/contact/filter-options" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;filter_keys&quot;:[&quot;role_name&quot;,&quot;department_name&quot;,&quot;contact_stage_name&quot;,&quot;Solution Manager&quot;,&quot;Solution Development Specialist&quot;,&quot;country&quot;,&quot;state&quot;]}</stringProp>
+                  <stringProp name="Argument.value">{&quot;filter_keys&quot;:[&quot;role_name&quot;,&quot;department_name&quot;,&quot;contact_stage_name&quot;,&quot;Solutions Manager&quot;,&quot;Solution Development Specialist&quot;,&quot;country&quot;,&quot;state&quot;,&quot;tag&quot;]}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -11114,7 +11114,7 @@ prev.setStartNextThreadLoop(true);
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-account-management/public/v1/cities-by-state/[state_id]" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-account-management/public/v1/cities-by-state/[state_id]" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -11183,7 +11183,7 @@ prev.setStartNextThreadLoop(true);
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/lead-sources" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/lead-sources" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -11212,7 +11212,7 @@ prev.setStartNextThreadLoop(true);
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/lead-stages" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/lead-stages" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -11281,7 +11281,7 @@ prev.setStartNextThreadLoop(true);
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap_product_master/v1/public/providertype" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap_product_master/v1/public/providertype" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -11310,7 +11310,7 @@ prev.setStartNextThreadLoop(true);
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-opportunity-management/public/v1/opportunity-stages" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-opportunity-management/public/v1/opportunity-stages" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -11339,7 +11339,7 @@ prev.setStartNextThreadLoop(true);
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/account/filter-internal-users" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/account/filter-internal-users" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -11379,7 +11379,7 @@ prev.setStartNextThreadLoop(true);
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap_product_master/v1/public/listcountry" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap_product_master/v1/public/listcountry" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -11419,7 +11419,7 @@ prev.setStartNextThreadLoop(true);
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap_product_master/v1/public/listbillingfrequency" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap_product_master/v1/public/listbillingfrequency" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -11448,7 +11448,7 @@ prev.setStartNextThreadLoop(true);
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap_product_master/v1/public/listproduct" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap_product_master/v1/public/listproduct" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -11472,46 +11472,6 @@ prev.setStartNextThreadLoop(true);
                 <elementProp name="Accept" elementType="Header">
                   <stringProp name="Header.name">Accept</stringProp>
                   <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/basic-detail/account/dealer-group" enabled="false">
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
-            <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol">https</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">tapapi/tap-crm-account-management/public/v1/basic-detail/account/dealer-group</stringProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
-                </elementProp>
-                <elementProp name="Content-Type" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
                 </elementProp>
               </collectionProp>
             </HeaderManager>
@@ -12900,7 +12860,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
           <intProp name="ThroughputController.maxThroughput">1</intProp>
           <FloatProperty>
             <name>ThroughputController.percentThroughput</name>
-            <value>5.0</value>
+            <value>7.0</value>
             <savedValue>0.0</savedValue>
           </FloatProperty>
           <stringProp name="TestPlan.comments">5</stringProp>
@@ -15320,29 +15280,29 @@ prev.setStartNextThreadLoop(true);}</stringProp>
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS - Dealer Group" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="1436018759">
-            <stringProp name="53">5</stringProp>
+          <collectionProp name="1355535155">
+            <stringProp name="1567">10</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1572771">3600</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="613286951">
-            <stringProp name="53">5</stringProp>
+          <collectionProp name="532803347">
+            <stringProp name="1567">10</stringProp>
             <stringProp name="56313">900</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="594885664">
-            <stringProp name="53">5</stringProp>
+          <collectionProp name="514402060">
+            <stringProp name="1567">10</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="749351399">
-            <stringProp name="53">5</stringProp>
+          <collectionProp name="668867795">
+            <stringProp name="1567">10</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="56313">900</stringProp>
@@ -15449,13 +15409,13 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/account/filter/dealer-groups" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/account/filter/dealer-groups" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;selected_filters&quot;:[],&quot;sort&quot;:{&quot;field&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;}}</stringProp>
+                  <stringProp name="Argument.value">{&quot;search_text&quot;:&quot;&quot;,&quot;selected_filters&quot;:[],&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;,&quot;field&quot;:&quot;created_at&quot;}}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -15801,7 +15761,7 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/contacts/basic-info" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/contacts/basic-info" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -16044,7 +16004,7 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/account/filter-internal-users" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/account/filter-internal-users" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -16153,7 +16113,7 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap_product_master/v1/public/listbillingfrequency" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap_product_master/v1/public/listbillingfrequency" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -16182,13 +16142,13 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/basic-detail/account/dealer-group" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/basic-detail/account/dealer-group" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{}</stringProp>
+                  <stringProp name="Argument.value">{&quot;filter_keys&quot;:[&quot;city&quot;,&quot;country&quot;,&quot;decision_making&quot;,&quot;dms_provider_name&quot;,&quot;makes_name&quot;,&quot;oem_name&quot;,&quot;stage&quot;,&quot;state&quot;,&quot;account_territory_name&quot;,&quot;tag&quot;]}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -16690,7 +16650,7 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
             <intProp name="ThroughputController.maxThroughput">1</intProp>
             <FloatProperty>
               <name>ThroughputController.percentThroughput</name>
-              <value>5.0</value>
+              <value>3.0</value>
               <savedValue>0.0</savedValue>
             </FloatProperty>
           </ThroughputController>
@@ -26338,7 +26298,7 @@ vars.put(&quot;dealer_implementation_type&quot;,type[i]);</stringProp>
             <intProp name="ThroughputController.maxThroughput">1</intProp>
             <FloatProperty>
               <name>ThroughputController.percentThroughput</name>
-              <value>10.0</value>
+              <value>7.0</value>
               <savedValue>0.0</savedValue>
             </FloatProperty>
           </ThroughputController>
@@ -26810,29 +26770,29 @@ vars.put(&quot;dealer_implementation_type&quot;,type[i]);</stringProp>
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS - Lead" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-896087788">
-            <stringProp name="50">2</stringProp>
+          <collectionProp name="1434171717">
+            <stringProp name="51">3</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1572771">3600</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1718819596">
-            <stringProp name="50">2</stringProp>
+          <collectionProp name="611439909">
+            <stringProp name="51">3</stringProp>
             <stringProp name="56313">900</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1737220883">
-            <stringProp name="50">2</stringProp>
+          <collectionProp name="593038622">
+            <stringProp name="51">3</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1582755148">
-            <stringProp name="50">2</stringProp>
+          <collectionProp name="747504357">
+            <stringProp name="51">3</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="56313">900</stringProp>
@@ -26906,7 +26866,7 @@ vars.put(&quot;dealer_implementation_type&quot;,type[i]);</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/lead-filter-options" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/lead-filter-options" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -26935,13 +26895,13 @@ vars.put(&quot;dealer_implementation_type&quot;,type[i]);</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-lead-management/public/v1/leads/filter" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-lead-management/public/v1/leads/filter" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;selected_filters&quot;:[],&quot;sort&quot;:{&quot;field&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;}}</stringProp>
+                  <stringProp name="Argument.value">{&quot;search_text&quot;:&quot;&quot;,&quot;selected_filters&quot;:[],&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;,&quot;field&quot;:&quot;created_at&quot;}}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -27619,7 +27579,7 @@ vars.put(&quot;dealer_implementation_type&quot;,type[i]);</stringProp>
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/campaign-statuses" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/campaign-statuses" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -27648,7 +27608,7 @@ vars.put(&quot;dealer_implementation_type&quot;,type[i]);</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/campaign-types" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/campaign-types" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -29657,7 +29617,7 @@ vars.put(&quot;lead_edited&quot;, new groovy.json.JsonBuilder(jsonData).toPretty
           <intProp name="ThroughputController.maxThroughput">1</intProp>
           <FloatProperty>
             <name>ThroughputController.percentThroughput</name>
-            <value>5.0</value>
+            <value>7.0</value>
             <savedValue>0.0</savedValue>
           </FloatProperty>
         </ThroughputController>
@@ -34046,29 +34006,29 @@ vars.put(&quot;lead_edited&quot;, new groovy.json.JsonBuilder(jsonData).toPretty
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS - Opportunity" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="1433248196">
-            <stringProp name="50">2</stringProp>
+          <collectionProp name="1435095238">
+            <stringProp name="52">4</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1572771">3600</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="610516388">
-            <stringProp name="50">2</stringProp>
+          <collectionProp name="612363430">
+            <stringProp name="52">4</stringProp>
             <stringProp name="56313">900</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="592115101">
-            <stringProp name="50">2</stringProp>
+          <collectionProp name="593962143">
+            <stringProp name="52">4</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="746580836">
-            <stringProp name="50">2</stringProp>
+          <collectionProp name="748427878">
+            <stringProp name="52">4</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="56313">900</stringProp>
@@ -34175,13 +34135,13 @@ vars.put(&quot;lead_edited&quot;, new groovy.json.JsonBuilder(jsonData).toPretty
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-opportunity-management/public/v1/opportunities" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-opportunity-management/public/v1/opportunities" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;start&quot;:0,&quot;rows&quot;:50,&quot;selected_filters&quot;:[],&quot;sorting&quot;:{&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;}}</stringProp>
+                  <stringProp name="Argument.value">{&quot;start&quot;:0,&quot;rows&quot;:50,&quot;search_text&quot;:&quot;&quot;,&quot;selected_filters&quot;:[],&quot;sorting&quot;:{&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;}}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -34215,7 +34175,7 @@ vars.put(&quot;lead_edited&quot;, new groovy.json.JsonBuilder(jsonData).toPretty
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-opportunity-management/public/v1/opportunity-getfilteroptions" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-opportunity-management/public/v1/opportunity-getfilteroptions" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -34588,7 +34548,7 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-opportunity-management/public/v1/opportunity-stages" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-opportunity-management/public/v1/opportunity-stages" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -34617,7 +34577,7 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-opportunity-management/public/v1/lost-reasons" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-opportunity-management/public/v1/lost-reasons" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -34882,7 +34842,7 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-opportunity-management/public/v1/prospect-forecasts" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-opportunity-management/public/v1/prospect-forecasts" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -41965,7 +41925,7 @@ vars.put(&quot;opportunity_edited&quot;, new groovy.json.JsonBuilder(jsonData).t
           <intProp name="ThroughputController.maxThroughput">1</intProp>
           <FloatProperty>
             <name>ThroughputController.percentThroughput</name>
-            <value>5.0</value>
+            <value>10.0</value>
             <savedValue>0.0</savedValue>
           </FloatProperty>
         </ThroughputController>
@@ -46367,13 +46327,13 @@ vars.put(&quot;opportunity_edited&quot;, new groovy.json.JsonBuilder(jsonData).t
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-lead-management/public/v1/campaigns/filter" enabled="false">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-lead-management/public/v1/campaigns/filter" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;selected_filters&quot;:[],&quot;sort&quot;:{&quot;field&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;}}</stringProp>
+                  <stringProp name="Argument.value">{&quot;search_text&quot;:&quot;&quot;,&quot;selected_filters&quot;:[],&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;,&quot;field&quot;:&quot;created_at&quot;}}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -48472,7 +48432,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
           <intProp name="ThroughputController.maxThroughput">1</intProp>
           <FloatProperty>
             <name>ThroughputController.percentThroughput</name>
-            <value>5.0</value>
+            <value>7.0</value>
             <savedValue>0.0</savedValue>
           </FloatProperty>
           <stringProp name="TestPlan.comments">5</stringProp>
@@ -52159,7 +52119,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
         </TestAction>
         <hashTree>
           <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
-            <stringProp name="ConstantTimer.delay">${DelayOffset_Mid}</stringProp>
+            <stringProp name="ConstantTimer.delay">9000</stringProp>
             <stringProp name="RandomTimer.range">${DelayMax}</stringProp>
           </UniformRandomTimer>
           <hashTree/>
