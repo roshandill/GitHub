@@ -123,6 +123,11 @@
             <stringProp name="Argument.value">hot,cold</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="DelayMaxActivity" elementType="Argument">
+            <stringProp name="Argument.name">DelayMaxActivity</stringProp>
+            <stringProp name="Argument.value">2500</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -52127,7 +52132,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS - Activity" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="1434171717">
+          <collectionProp name="-860993990">
             <stringProp name="51">3</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="48625">100</stringProp>
@@ -53291,7 +53296,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
-          <stringProp name="ActionProcessor.duration">${DelayMax}</stringProp>
+          <stringProp name="ActionProcessor.duration">${DelayMaxActivity}</stringProp>
         </TestAction>
         <hashTree/>
       </hashTree>
