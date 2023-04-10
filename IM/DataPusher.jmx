@@ -1,0 +1,2264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.2.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="imscript1" enabled="true">
+      <stringProp name="TestPlan.comments">This test plan was created by the BlazeMeter converter v.3.1.23. Please contact support@blazemeter.com for further support.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="sec-ch-ua" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua</stringProp>
+            <stringProp name="Header.value">&quot;Chromium&quot;;v=&quot;110&quot;, &quot;Not A(Brand&quot;;v=&quot;24&quot;, &quot;Google Chrome&quot;;v=&quot;110&quot;</stringProp>
+          </elementProp>
+          <elementProp name="sec-ch-ua-mobile" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+            <stringProp name="Header.value">?0</stringProp>
+          </elementProp>
+          <elementProp name="sec-ch-ua-platform" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+            <stringProp name="Header.value">&quot;macOS&quot;</stringProp>
+          </elementProp>
+          <elementProp name="User-Agent" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="BASE_URL_2" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_2</stringProp>
+            <stringProp name="Argument.value">perftap-api.tekionkloud.xyz</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ThinkTime" elementType="Argument">
+            <stringProp name="Argument.name">ThinkTime</stringProp>
+            <stringProp name="Argument.value">1000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Pacing" elementType="Argument">
+            <stringProp name="Argument.name">Pacing</stringProp>
+            <stringProp name="Argument.value">15000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">email</stringProp>
+            <stringProp name="Header.value">${userEmail}</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">tap-api-token</stringProp>
+            <stringProp name="Header.value">${token}</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="filename">Generatedtokens.csv</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames">userEmail,token</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">stopthread</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">30</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">20</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">0</stringProp>
+        <stringProp name="ThreadGroup.delay">0</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="signed" enabled="true"/>
+        <hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Random Date" enabled="true">
+            <stringProp name="scriptLanguage">java</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+Random rand = new Random();
+int value = rand.nextInt(60) + 60;
+
+SimpleDateFormat sdf = new SimpleDateFormat(&quot;MM/dd/yyyy&quot;);
+Calendar c = Calendar.getInstance();
+c.setTime(new Date());
+c.add(Calendar.DATE, value);
+String ProjDate= sdf.format(c.getTime());
+
+c.add(Calendar.DATE, 4);
+String PreProdGoLiveDate= sdf.format(c.getTime());
+ 
+c.add(Calendar.DATE, 6);
+String ProdGoLiveDate= sdf.format(c.getTime());
+
+
+c.add(Calendar.DATE, 10);
+String BillingStartDate= sdf.format(c.getTime());
+
+c.add(Calendar.DATE, 15);
+String BillingWaiverFromDate= sdf.format(c.getTime());
+
+c.add(Calendar.DATE, 20);
+String BillingWaiverToDate= sdf.format(c.getTime());
+
+SimpleDateFormat dateformat1 = new SimpleDateFormat(&quot;MM/dd/yyyy&quot;); 
+date = dateformat1.parse(ProjDate);
+date1= dateformat1.parse(ProdGoLiveDate);
+date2= dateformat1.parse(PreProdGoLiveDate);
+date4= dateformat1.parse(BillingStartDate);
+date5= dateformat1.parse(BillingWaiverFromDate);
+date6= dateformat1.parse(BillingWaiverToDate);
+
+long epochOffset = date.getTime();
+String ProjectedDate = Long.toString(epochOffset);
+long epochOffset = date1.getTime();
+String ProdGoliveDate = Long.toString(epochOffset);
+long epochOffset = date2.getTime();
+String PreProdGoLiveDate = Long.toString(epochOffset);
+long epochOffset = date4.getTime();
+String BillingStartDate = Long.toString(epochOffset);
+long epochOffset = date5.getTime();
+String BillingWaiverFromDate = Long.toString(epochOffset);
+long epochOffset = date6.getTime();
+String BillingWaiverToDate = Long.toString(epochOffset);
+
+vars.put(&quot;ProjectedDate&quot;,ProjectedDate);
+vars.put(&quot;ProdGoliveDate&quot;,ProdGoliveDate);
+vars.put(&quot;PreProdGoLiveDate&quot;,PreProdGoLiveDate);
+vars.put(&quot;BillingStartDate&quot;,BillingStartDate);
+vars.put(&quot;BillingWaiverFromDate&quot;,BillingWaiverFromDate);
+vars.put(&quot;BillingWaiverToDate&quot;,BillingWaiverToDate);
+
+//log.info(sDate);</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-basic" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;signed&quot;]}],&quot;search_text&quot;:&quot;&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/implementations-basic</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">impID</stringProp>
+              <stringProp name="RegexExtractor.regex">{&quot;implementation_id&quot;:(.*?),&quot;tekion_id&quot;:&quot;(.*?)&quot;,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$$2$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <stringProp name="RegexExtractor.match_number">0</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="field" enabled="false">
+              <stringProp name="scriptLanguage">java</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import java.util.Random;
+
+
+String[] state1={&quot;ASC&quot;,&quot;DESC&quot;};
+
+String[] type={&quot;dealer_size&quot;,&quot;status&quot;,&quot;oem&quot;,&quot;product_type&quot;,&quot;state&quot;,&quot;call_status&quot;,&quot;discovery_status&quot;,&quot;sd_required&quot;,&quot;sd_analyst&quot;,&quot;sd_analyst_trainees&quot;,&quot;sd_status&quot;,&quot;is_dependent&quot;,&quot;is_cancelled&quot;,&quot;country&quot;,&quot;implementation_manager_value&quot;,&quot;analystics_specialist&quot;,&quot;dealer_group&quot;,&quot;makes&quot;,&quot;dms&quot;,&quot;city&quot;,&quot;schedule_status&quot;,&quot;implementation_region&quot;};
+
+String[] groupby={&quot;implementation_manager_value&quot;,&quot;status&quot;,&quot;state&quot;,&quot;oem&quot;,&quot;product&quot;};
+
+
+Random rand=new Random();
+
+int stateRandom=rand.nextInt(state1.length);
+
+int typical=rand.nextInt(type.length);
+
+int group=rand.nextInt(groupby.length);
+
+
+String stateval=state1[stateRandom];
+
+String typeval=type[typical];
+
+String group1=groupby[group];
+
+
+
+
+vars.put(&quot;order&quot;,stateval);
+
+vars.put(&quot;type&quot;,typeval);
+
+vars.put(&quot;groupby&quot;,group1);
+</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/manager" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;implementation_id&quot;:${impID_g1},&quot;implementation_manager_role&quot;:&quot;implementation_manager&quot;,&quot;user_id&quot;:1,&quot;email_id&quot;:&quot;performancetesting${__Random(1,9)}@tekion.com&quot;,&quot;manager_id&quot;:0}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/manager</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-03-09T11:02:06.368</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think TIme" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${ThinkTime}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Projected" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/projected-date" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;implementation_id&quot;:${impID_g1},&quot;date&quot;:${__jexl3(${ProjectedDate}/1000,)}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/projected-date</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-basic" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;${order}&quot;},&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;projected&quot;]}],&quot;search_text&quot;:&quot;&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/implementations-basic</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-03-09T09:47:36.57</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET-tapapi/tap-crm-implementations-backend/public/v1/get/[impID_g2]-ProjectedGET" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/get/${impID_g2}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-03-09T15:35:38.827</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="goliveID" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">goliveID</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;production_go_live_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">goliveIDNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="goliveID1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">goliveID1</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;production_go_live_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">goliveID1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">2</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="goliveID3" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">goliveID3</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;production_go_live_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">goliveID1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">3</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="goliveID4" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">goliveID4</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;production_go_live_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">goliveID1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">4</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="software1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">software1</stringProp>
+              <stringProp name="RegexExtractor.regex">{&quot;software_schedule_id&quot;:(.*?)&quot;production_go_live_id&quot;:${goliveID},</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">software1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="softwareG1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">softwareG1</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;pre_prod_requirement&quot;:(.*?)},</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">softwareG1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="software2" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">software2</stringProp>
+              <stringProp name="RegexExtractor.regex">{&quot;software_schedule_id&quot;:(.*?)&quot;production_go_live_id&quot;:${goliveID1},</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">software2NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">2</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="softwareG2" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">softwareG2</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;pre_prod_requirement&quot;:(.*?)}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">softwareG2NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="skucount" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">skucount</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;sku_id&quot;:&quot;(.+?)&quot;,&quot;feature</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">skucountNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="software1NA check" enabled="false">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">if(vars.get(&quot;software1&quot;)==&quot;software1NA&quot;) // to ensure response failed double negation
+{
+prev.setSuccessful(false);
+prev.setStartNextThreadLoop(true);}</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="softwareG2NA check" enabled="false">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">if(vars.get(&quot;softwareG2&quot;)==&quot;softwareG2NA&quot;) // to ensure response failed double negation
+{
+prev.setSuccessful(false);
+prev.setStartNextThreadLoop(true);}</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="softwareG1NA check" enabled="false">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">if(vars.get(&quot;softwareG1&quot;)==&quot;softwareG1NA&quot;) // to ensure response failed double negation
+{
+prev.setSuccessful(false);
+prev.setStartNextThreadLoop(true);}</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Schedule" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${software1_1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG1_1}},{&quot;software_schedule_id&quot;:${software1_2}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_2}},{&quot;software_schedule_id&quot;:${software1_3}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,),&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_3}},{&quot;software_schedule_id&quot;:${software1_4}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,),&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_4}}]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">4 at a try</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Schedule" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${software1_1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG1_1}},{&quot;software_schedule_id&quot;:${software1_2}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_2}},{&quot;software_schedule_id&quot;:${software1_3}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:null,&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:null,&quot;pre_prod_requirement&quot;:${softwareG2_3}},{&quot;software_schedule_id&quot;:${software1_4}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:null,&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:null,&quot;pre_prod_requirement&quot;:${softwareG2_4}}]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Correct</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Schedule" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${software1_1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG1_1}},{&quot;software_schedule_id&quot;:${software1_2}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_2}},{&quot;software_schedule_id&quot;:${software1_3}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_3}},{&quot;software_schedule_id&quot;:${software1_4}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_4}}]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Correct</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="OneOrTwoProjected" enabled="false"/>
+          <hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="OneProjected" enabled="true">
+              <stringProp name="IfController.condition">${skucount_matchNr}==1</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+            </IfController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/{c_tekionid}-Move to Schedule" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${software1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG1}}]}&#xd;
+&#xd;
+&#xd;
+</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+                <stringProp name="HTTPSampler.method">PUT</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="TwoProjected" enabled="true">
+              <stringProp name="IfController.condition">${skucount_matchNr}==2</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+            </IfController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Schedule" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${software1_1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG1_1}},{&quot;software_schedule_id&quot;:${software1_2}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2}}]}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+                <stringProp name="HTTPSampler.method">PUT</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                <stringProp name="TestPlan.comments">Created from cURL on 2023-03-13T12:36:49.756</stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="FourProjected" enabled="true">
+              <stringProp name="IfController.condition">${skucount_matchNr}==4</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+            </IfController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Schedule" enabled="false">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${software1_1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG1_1}},{&quot;software_schedule_id&quot;:${software1_2}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;signed&quot;,&quot;order_id&quot;:&quot;TEK/10078/1/2023&quot;,&quot;order_form_created_date&quot;:1680087509605,&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:0,&quot;pre_production_go_live_status_id&quot;:0,&quot;pre_production_sku_status&quot;:&quot;&quot;,&quot;pre_production_go_live_status&quot;:0,&quot;pre_production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_id&quot;:0,&quot;production_sku_status&quot;:&quot;&quot;,&quot;production_go_live_status&quot;:0,&quot;pre_production_event_id&quot;:&quot;&quot;,&quot;production_event_id&quot;:&quot;&quot;,&quot;product_master_product_type&quot;:&quot;ARC&quot;,&quot;contract_id&quot;:8152,&quot;mrr_qty&quot;:1,&quot;upfront_qty&quot;:0,&quot;implementation_qty&quot;:0,&quot;billing_frequency&quot;:&quot;monthly&quot;,&quot;mrr_fee_per_qty&quot;:150,&quot;mrr_fee&quot;:150,&quot;mrr_credit&quot;:0,&quot;mrr_final_fee&quot;:150,&quot;upfront_fee_per_qty&quot;:0,&quot;upfront_fee&quot;:0,&quot;upfront_credit&quot;:0,&quot;upfront_final_fee&quot;:0,&quot;implementation_fee_per_qty&quot;:0,&quot;implementation_fee&quot;:0,&quot;implementation_credit&quot;:0,&quot;implementation_final_fee&quot;:0,&quot;mrr_pricing_type&quot;:&quot;flat_fee&quot;,&quot;upfront_pricing_type&quot;:&quot;&quot;,&quot;implementation_pricing_type&quot;:&quot;&quot;,&quot;trial&quot;:0,&quot;trial_days_override_flag&quot;:false,&quot;oem_name&quot;:&quot;Volkswagen&quot;,&quot;makes_list_json&quot;:&quot;[\&quot;Volkswagen\&quot;]&quot;,&quot;user_product_id&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;,&quot;is_active&quot;:1,&quot;created_by&quot;:&quot;performancetesting3@tekion.com&quot;,&quot;created_at&quot;:1680087590,&quot;modified_by&quot;:&quot;&quot;,&quot;modified_at&quot;:1680087590},{&quot;software_schedule_id&quot;:20425,&quot;implementation_id&quot;:2842,&quot;sku_id&quot;:&quot;UCOLD&quot;,&quot;feature_flag&quot;:&quot;&quot;,&quot;product&quot;:&quot;Cold Storage&quot;,&quot;product_id&quot;:2231,&quot;package_id&quot;:0,&quot;package_name&quot;:&quot;&quot;,&quot;parent_product_id&quot;:0,&quot;parent_sku_id&quot;:&quot;&quot;,&quot;scheduled_go_live_date&quot;:0,&quot;actual_onboarding_start_date_id&quot;:0,&quot;actual_onboarding_start_date&quot;:0,&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:null,&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:null,&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;signed&quot;,&quot;order_id&quot;:&quot;TEK/10078/1/2023&quot;,&quot;order_form_created_date&quot;:1680087509605,&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:0,&quot;pre_production_go_live_status_id&quot;:0,&quot;pre_production_sku_status&quot;:&quot;&quot;,&quot;pre_production_go_live_status&quot;:0,&quot;pre_production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_id&quot;:0,&quot;production_sku_status&quot;:&quot;&quot;,&quot;production_go_live_status&quot;:0,&quot;pre_production_event_id&quot;:&quot;&quot;,&quot;production_event_id&quot;:&quot;&quot;,&quot;product_master_product_type&quot;:&quot;CS&quot;,&quot;contract_id&quot;:8152,&quot;mrr_qty&quot;:1,&quot;upfront_qty&quot;:0,&quot;implementation_qty&quot;:0,&quot;billing_frequency&quot;:&quot;monthly&quot;,&quot;mrr_fee_per_qty&quot;:49,&quot;mrr_fee&quot;:49,&quot;mrr_credit&quot;:0,&quot;mrr_final_fee&quot;:49,&quot;upfront_fee_per_qty&quot;:0,&quot;upfront_fee&quot;:0,&quot;upfront_credit&quot;:0,&quot;upfront_final_fee&quot;:0,&quot;implementation_fee_per_qty&quot;:0,&quot;implementation_fee&quot;:0,&quot;implementation_credit&quot;:0,&quot;implementation_final_fee&quot;:0,&quot;mrr_pricing_type&quot;:&quot;per_unit&quot;,&quot;upfront_pricing_type&quot;:&quot;&quot;,&quot;implementation_pricing_type&quot;:&quot;&quot;,&quot;trial&quot;:0,&quot;trial_days_override_flag&quot;:false,&quot;oem_name&quot;:&quot;Volkswagen&quot;,&quot;makes_list_json&quot;:&quot;[\&quot;Volkswagen\&quot;]&quot;,&quot;user_product_id&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;,&quot;is_active&quot;:1,&quot;created_by&quot;:&quot;performancetesting3@tekion.com&quot;,&quot;created_at&quot;:1680087590,&quot;modified_by&quot;:&quot;&quot;,&quot;modified_at&quot;:1680087590},{&quot;software_schedule_id&quot;:20427,&quot;implementation_id&quot;:2842,&quot;sku_id&quot;:&quot;UCOM&quot;,&quot;feature_flag&quot;:&quot;&quot;,&quot;product&quot;:&quot;Communication&quot;,&quot;product_id&quot;:2217,&quot;package_id&quot;:0,&quot;package_name&quot;:&quot;&quot;,&quot;parent_product_id&quot;:0,&quot;parent_sku_id&quot;:&quot;&quot;,&quot;scheduled_go_live_date&quot;:0,&quot;actual_onboarding_start_date_id&quot;:0,&quot;actual_onboarding_start_date&quot;:0,&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:null,&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:null,&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;signed&quot;,&quot;order_id&quot;:&quot;TEK/10078/1/2023&quot;,&quot;order_form_created_date&quot;:1680087509605,&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:0,&quot;pre_production_go_live_status_id&quot;:0,&quot;pre_production_sku_status&quot;:&quot;&quot;,&quot;pre_production_go_live_status&quot;:0,&quot;pre_production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_id&quot;:0,&quot;production_sku_status&quot;:&quot;&quot;,&quot;production_go_live_status&quot;:0,&quot;pre_production_event_id&quot;:&quot;&quot;,&quot;production_event_id&quot;:&quot;&quot;,&quot;product_master_product_type&quot;:&quot;DSE&quot;,&quot;contract_id&quot;:8152,&quot;mrr_qty&quot;:1,&quot;upfront_qty&quot;:0,&quot;implementation_qty&quot;:0,&quot;billing_frequency&quot;:&quot;monthly&quot;,&quot;mrr_fee_per_qty&quot;:300,&quot;mrr_fee&quot;:300,&quot;mrr_credit&quot;:0,&quot;mrr_final_fee&quot;:300,&quot;upfront_fee_per_qty&quot;:0,&quot;upfront_fee&quot;:0,&quot;upfront_credit&quot;:0,&quot;upfront_final_fee&quot;:0,&quot;implementation_fee_per_qty&quot;:0,&quot;implementation_fee&quot;:0,&quot;implementation_credit&quot;:0,&quot;implementation_final_fee&quot;:0,&quot;mrr_pricing_type&quot;:&quot;dealership_size&quot;,&quot;upfront_pricing_type&quot;:&quot;&quot;,&quot;implementation_pricing_type&quot;:&quot;&quot;,&quot;trial&quot;:0,&quot;trial_days_override_flag&quot;:false,&quot;oem_name&quot;:&quot;Volkswagen&quot;,&quot;makes_list_json&quot;:&quot;[\&quot;Volkswagen\&quot;]&quot;,&quot;user_product_id&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;,&quot;is_active&quot;:1,&quot;created_by&quot;:&quot;performancetesting3@tekion.com&quot;,&quot;created_at&quot;:1680087590,&quot;modified_by&quot;:&quot;&quot;,&quot;modified_at&quot;:1680087590}]}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+                <stringProp name="HTTPSampler.method">PUT</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                <stringProp name="TestPlan.comments">Created from cURL on 2023-03-13T12:36:49.756</stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Schedule" enabled="false">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${software1_1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG1_1}},{&quot;software_schedule_id&quot;:${software1_2}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_2}},{&quot;software_schedule_id&quot;:${software1_3}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:null,&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:null,&quot;pre_prod_requirement&quot;:${softwareG2_3}},{&quot;software_schedule_id&quot;:${software1_4}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:null,&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:null,&quot;pre_prod_requirement&quot;:${softwareG2_4}}]}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+                <stringProp name="HTTPSampler.method">PUT</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                <stringProp name="TestPlan.comments">Correct</stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/actual-launch-date" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;implementation_id&quot;:${impID_g1},&quot;launch_date&quot;:${__jexl3(${ProjectedDate}/1000,)},&quot;productType&quot;:&quot;ARC&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/actual-launch-date</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PATCH-/tapapi/tap-crm-implementations-backend/public/v1/addTrack/10102" enabled="false">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/addTrack/${impID_g2}</stringProp>
+            <stringProp name="HTTPSampler.method">PATCH</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-03-29T21:27:53.892</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="authority" elementType="Header">
+                  <stringProp name="Header.name">authority</stringProp>
+                  <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="accept-language" elementType="Header">
+                  <stringProp name="Header.name">accept-language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+                </elementProp>
+                <elementProp name="cache-control" elementType="Header">
+                  <stringProp name="Header.name">cache-control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="origin" elementType="Header">
+                  <stringProp name="Header.name">origin</stringProp>
+                  <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                </elementProp>
+                <elementProp name="pragma" elementType="Header">
+                  <stringProp name="Header.name">pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="referer" elementType="Header">
+                  <stringProp name="Header.name">referer</stringProp>
+                  <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                </elementProp>
+                <elementProp name="sec-ch-ua" elementType="Header">
+                  <stringProp name="Header.name">sec-ch-ua</stringProp>
+                  <stringProp name="Header.value">&quot;Google Chrome&quot;;v=&quot;111&quot;, &quot;Not(A:Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;111&quot;</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">Created from cURL on 2023-03-29T21:27:53.899</stringProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think TIme" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${ThinkTime}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Scheduled" enabled="false"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-basic" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;${order}&quot;},&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;scheduled&quot;]}],&quot;search_text&quot;:&quot;&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/implementations-basic</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET-tapapi/tap-crm-implementations-backend/public/v1/get/[tekionID]-ScheduledGET" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/get/${impID_g2}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="sched" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">sched</stringProp>
+              <stringProp name="RegexExtractor.regex">\[{&quot;software_schedule_id&quot;:(.*?)&quot;pre_prod_requirement&quot;:true,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_sched" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_sched</stringProp>
+              <stringProp name="RegexExtractor.regex">software_schedule_id&quot;:(.*?)&quot;pre_prod_requirement&quot;:true,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_schedNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_billingID" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_billingID</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;actual_billing_start_date_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">billingIDNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="billingID" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">billingID</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;actual_billing_start_date_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">billingIDNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="billingID" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">billingID1</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;actual_billing_start_date_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">billingID1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">2</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_schedG3" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_schedG3</stringProp>
+              <stringProp name="RegexExtractor.regex">,&quot;order_id&quot;:(.*?)&quot;actual_billing_start_date_id&quot;:${c_billingID_3}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedG1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_schedG4" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_schedG4</stringProp>
+              <stringProp name="RegexExtractor.regex">,&quot;order_id&quot;:(.*?)&quot;actual_billing_start_date_id&quot;:${c_billingID_4}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedG1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="schedG1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">schedG1</stringProp>
+              <stringProp name="RegexExtractor.regex">,&quot;order_id&quot;:(.*?)&quot;actual_billing_start_date_id&quot;:${billingID}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedG1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="schedG2" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">schedG2</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;pre_production_go_live_status_id&quot;:(.*?)},</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedG2NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="schedGH" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">schedGH</stringProp>
+              <stringProp name="RegexExtractor.regex">{&quot;software_schedule_id&quot;:(.*?)&quot;pre_prod_requirement&quot;:true,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedGHNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">2</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="schedGH1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">schedGH1</stringProp>
+              <stringProp name="RegexExtractor.regex">,&quot;order_id&quot;:(.*?)&quot;actual_billing_start_date_id&quot;:${billingID1}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedGH1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="schedGH2" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">schedGH2</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;pre_production_go_live_status_id&quot;:(.*?)}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedGH2NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">2</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_schedGH2" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_schedGH2</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;pre_production_go_live_status_id&quot;:(.*?)}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedGH2NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_sec" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_sec</stringProp>
+              <stringProp name="RegexExtractor.regex">software_schedules&quot;:(.+?)&quot;product_status</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_secNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_sec1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_sec1</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;order_id&quot;:&quot;(.+?),&quot;actual_billing_start_date&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_sec1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_sec2" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_sec2</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;pre_production_go_live_status_id&quot;:(.+?)}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_sec2NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="OneOrTwoScheduling" enabled="true"/>
+          <hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="OneProductScheduling" enabled="true">
+              <stringProp name="IfController.condition">${skucount_matchNr}==1</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+            </IfController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Live" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;software_schedules&quot;:${c_sec}&quot;product_status&quot;:&quot;live&quot;,&quot;order_id&quot;:&quot;${c_sec1},&quot;actual_billing_start_date&quot;:${__jexl3(${BillingStartDate}/1000,)},&quot;pre_production_go_live_status_id&quot;:${c_sec2}}]}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+                <stringProp name="HTTPSampler.method">PUT</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="FOurProductScheduling" enabled="true">
+              <stringProp name="IfController.condition">${skucount_matchNr}==4</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+            </IfController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Live" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${sched}&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;live&quot;,&quot;order_id&quot;:${schedG1}&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:${__jexl3(${BillingStartDate}/1000,)},&quot;pre_production_go_live_status_id&quot;:${schedG2}},{&quot;software_schedule_id&quot;:${schedGH}&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;live&quot;,&quot;order_id&quot;:${schedGH1}&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:${__jexl3(${BillingStartDate}/1000,)},&quot;pre_production_go_live_status_id&quot;:${schedGH2}},{&quot;software_schedule_id&quot;:${c_sched_3}&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;live&quot;,&quot;order_id&quot;:${c_schedG3}&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:${__jexl3(${BillingStartDate}/1000,)},&quot;pre_production_go_live_status_id&quot;:${c_schedGH2_3}},{&quot;software_schedule_id&quot;:${c_sched_4}&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;live&quot;,&quot;order_id&quot;:${c_schedG4}&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:${__jexl3(${BillingStartDate}/1000,)},&quot;pre_production_go_live_status_id&quot;:${c_schedGH2_4}}]}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+                <stringProp name="HTTPSampler.method">PUT</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                <stringProp name="TestPlan.comments">Created from cURL on 2023-03-09T10:19:31.977</stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="TwoProductScheduling" enabled="true">
+              <stringProp name="IfController.condition">${skucount_matchNr}==2</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+            </IfController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Live" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${c_sched_1}&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;live&quot;,&quot;order_id&quot;:${schedG1}&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:${__jexl3(${BillingStartDate}/1000,)},&quot;pre_production_go_live_status_id&quot;:${schedG2}},{&quot;software_schedule_id&quot;:${c_sched_2}&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;live&quot;,&quot;order_id&quot;:${schedGH1}&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:${__jexl3(${BillingStartDate}/1000,)},&quot;pre_production_go_live_status_id&quot;:${schedGH2}}]}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+                <stringProp name="HTTPSampler.method">PUT</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                <stringProp name="TestPlan.comments">Created from cURL on 2023-03-09T10:19:31.977</stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think time" enabled="false">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${ThinkTime}</stringProp>
+        </TestAction>
+        <hashTree/>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Ultimate Thread Group" enabled="false">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="1619987987">
+            <stringProp name="49">1</stringProp>
+            <stringProp name="49">1</stringProp>
+            <stringProp name="53">5</stringProp>
+            <stringProp name="50547">300</stringProp>
+            <stringProp name="48">0</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">stopthread</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Launch" enabled="false"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET-tapapi/v2/usermanagement/users" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/v2/usermanagement/users</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think TIme" enabled="false">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${ThinkTime}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="signed" enabled="true"/>
+        <hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Random Date" enabled="true">
+            <stringProp name="scriptLanguage">java</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+Random rand = new Random();
+int value = rand.nextInt(20) + 60;
+
+SimpleDateFormat sdf = new SimpleDateFormat(&quot;MM/dd/yyyy&quot;);
+Calendar c = Calendar.getInstance();
+c.setTime(new Date());
+c.add(Calendar.DATE, value);
+String ProjDate= sdf.format(c.getTime());
+
+c.add(Calendar.DATE, 4);
+String PreProdGoLiveDate= sdf.format(c.getTime());
+ 
+c.add(Calendar.DATE, 6);
+String ProdGoLiveDate= sdf.format(c.getTime());
+
+
+c.add(Calendar.DATE, 10);
+String BillingStartDate= sdf.format(c.getTime());
+
+c.add(Calendar.DATE, 15);
+String BillingWaiverFromDate= sdf.format(c.getTime());
+
+c.add(Calendar.DATE, 20);
+String BillingWaiverToDate= sdf.format(c.getTime());
+
+SimpleDateFormat dateformat1 = new SimpleDateFormat(&quot;MM/dd/yyyy&quot;); 
+date = dateformat1.parse(ProjDate);
+date1= dateformat1.parse(ProdGoLiveDate);
+date2= dateformat1.parse(PreProdGoLiveDate);
+date4= dateformat1.parse(BillingStartDate);
+date5= dateformat1.parse(BillingWaiverFromDate);
+date6= dateformat1.parse(BillingWaiverToDate);
+
+long epochOffset = date.getTime();
+String ProjectedDate = Long.toString(epochOffset);
+long epochOffset = date1.getTime();
+String ProdGoliveDate = Long.toString(epochOffset);
+long epochOffset = date2.getTime();
+String PreProdGoLiveDate = Long.toString(epochOffset);
+long epochOffset = date4.getTime();
+String BillingStartDate = Long.toString(epochOffset);
+long epochOffset = date5.getTime();
+String BillingWaiverFromDate = Long.toString(epochOffset);
+long epochOffset = date6.getTime();
+String BillingWaiverToDate = Long.toString(epochOffset);
+
+vars.put(&quot;ProjectedDate&quot;,ProjectedDate);
+vars.put(&quot;ProdGoliveDate&quot;,ProdGoliveDate);
+vars.put(&quot;PreProdGoLiveDate&quot;,PreProdGoLiveDate);
+vars.put(&quot;BillingStartDate&quot;,BillingStartDate);
+vars.put(&quot;BillingWaiverFromDate&quot;,BillingWaiverFromDate);
+vars.put(&quot;BillingWaiverToDate&quot;,BillingWaiverToDate);
+
+//log.info(sDate);</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-basic" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;signed&quot;]}],&quot;search_text&quot;:&quot;TMIM&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/implementations-basic</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">impID</stringProp>
+              <stringProp name="RegexExtractor.regex">{&quot;implementation_id&quot;:(.*?),&quot;tekion_id&quot;:&quot;(.*?)&quot;,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$$2$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <stringProp name="RegexExtractor.match_number">0</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="field" enabled="true">
+              <stringProp name="scriptLanguage">java</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">import java.util.Random;
+
+
+String[] state1={&quot;ASC&quot;,&quot;DESC&quot;};
+
+String[] type={&quot;dealer_size&quot;,&quot;status&quot;,&quot;oem&quot;,&quot;product_type&quot;,&quot;state&quot;,&quot;call_status&quot;,&quot;discovery_status&quot;,&quot;sd_required&quot;,&quot;sd_analyst&quot;,&quot;sd_analyst_trainees&quot;,&quot;sd_status&quot;,&quot;is_dependent&quot;,&quot;is_cancelled&quot;,&quot;country&quot;,&quot;implementation_manager_value&quot;,&quot;analystics_specialist&quot;,&quot;dealer_group&quot;,&quot;makes&quot;,&quot;dms&quot;,&quot;city&quot;,&quot;schedule_status&quot;,&quot;implementation_region&quot;};
+
+String[] groupby={&quot;implementation_manager_value&quot;,&quot;status&quot;,&quot;state&quot;,&quot;oem&quot;,&quot;product&quot;};
+
+
+Random rand=new Random();
+
+int stateRandom=rand.nextInt(state1.length);
+
+int typical=rand.nextInt(type.length);
+
+int group=rand.nextInt(groupby.length);
+
+
+String stateval=state1[stateRandom];
+
+String typeval=type[typical];
+
+String group1=groupby[group];
+
+
+
+
+vars.put(&quot;order&quot;,stateval);
+
+vars.put(&quot;type&quot;,typeval);
+
+vars.put(&quot;groupby&quot;,group1);
+</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/manager" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;implementation_id&quot;:${impID_g1},&quot;implementation_manager_role&quot;:&quot;implementation_manager&quot;,&quot;user_id&quot;:1,&quot;email_id&quot;:&quot;performancetesting${__Random(1,9)}@tekion.com&quot;,&quot;manager_id&quot;:0}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/manager</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-03-09T11:02:06.368</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think TIme" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${ThinkTime}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Projected" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/projected-date" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;implementation_id&quot;:${impID_g1},&quot;date&quot;:${__jexl3(${ProjectedDate}/1000,)}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/projected-date</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-basic" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;${order}&quot;},&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;projected&quot;]}],&quot;search_text&quot;:&quot;&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/implementations-basic</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-03-09T09:47:36.57</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET-tapapi/tap-crm-implementations-backend/public/v1/get/[impID_g2]-ProjectedGET" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/get/${impID_g2}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-03-09T15:35:38.827</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="goliveID" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">goliveID</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;production_go_live_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">goliveIDNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="goliveID1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">goliveID1</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;production_go_live_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">goliveID1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">2</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="goliveID3" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">goliveID3</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;production_go_live_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">goliveID1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">3</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="goliveID4" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">goliveID4</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;production_go_live_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">goliveID1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">4</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="software1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">software1</stringProp>
+              <stringProp name="RegexExtractor.regex">{&quot;software_schedule_id&quot;:(.*?)&quot;production_go_live_id&quot;:${goliveID},</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">software1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="softwareG1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">softwareG1</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;pre_prod_requirement&quot;:(.*?)},</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">softwareG1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="software2" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">software2</stringProp>
+              <stringProp name="RegexExtractor.regex">{&quot;software_schedule_id&quot;:(.*?)&quot;production_go_live_id&quot;:${goliveID1},</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">software2NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">2</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="softwareG2" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">softwareG2</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;pre_prod_requirement&quot;:(.*?)}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">softwareG2NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="skucount" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">skucount</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;sku_id&quot;:&quot;(.+?)&quot;,&quot;feature</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">skucountNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="OneOrTwoProjected" enabled="true"/>
+          <hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="OneProjected" enabled="true">
+              <stringProp name="IfController.condition">${skucount_matchNr}==1</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+            </IfController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/{c_tekionid}-Move to Schedule" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${software1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG1}}]}&#xd;
+&#xd;
+&#xd;
+</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+                <stringProp name="HTTPSampler.method">PUT</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="TwoProjected" enabled="true">
+              <stringProp name="IfController.condition">${skucount_matchNr}==2</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+            </IfController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Schedule" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${software1_1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG1_1}},{&quot;software_schedule_id&quot;:${software1_2}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2}}]}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+                <stringProp name="HTTPSampler.method">PUT</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                <stringProp name="TestPlan.comments">Created from cURL on 2023-03-13T12:36:49.756</stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="FourProjected" enabled="true">
+              <stringProp name="IfController.condition">${skucount_matchNr}==4</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+            </IfController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Schedule" enabled="false">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:20333,&quot;implementation_id&quot;:2831,&quot;sku_id&quot;:&quot;PPARTS&quot;,&quot;feature_flag&quot;:&quot;&quot;,&quot;product&quot;:&quot;Parts&quot;,&quot;product_id&quot;:2242,&quot;package_id&quot;:0,&quot;package_name&quot;:&quot;&quot;,&quot;parent_product_id&quot;:0,&quot;parent_sku_id&quot;:&quot;&quot;,&quot;scheduled_go_live_date&quot;:0,&quot;actual_onboarding_start_date_id&quot;:0,&quot;actual_onboarding_start_date&quot;:0,&quot;production_go_live_id&quot;:4709,&quot;production_go_live&quot;:1681948800,&quot;pre_production_go_live_id&quot;:3703,&quot;pre_production_go_live&quot;:1681689600,&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;scheduled&quot;,&quot;order_id&quot;:&quot;TEK/10064/1/2023&quot;,&quot;order_form_created_date&quot;:1680087364727,&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:0,&quot;pre_production_go_live_status_id&quot;:1,&quot;pre_production_sku_status&quot;:&quot;Scheduled&quot;,&quot;pre_production_go_live_status&quot;:0,&quot;pre_production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_id&quot;:1,&quot;production_sku_status&quot;:&quot;Scheduled&quot;,&quot;production_go_live_status&quot;:0,&quot;pre_production_event_id&quot;:&quot;64243bb4c0497cdd7e5aacd0&quot;,&quot;production_event_id&quot;:&quot;64243bb4c0497cdd7e5aacd1&quot;,&quot;product_master_product_type&quot;:&quot;ARC&quot;,&quot;contract_id&quot;:8136,&quot;mrr_qty&quot;:1,&quot;upfront_qty&quot;:0,&quot;implementation_qty&quot;:0,&quot;billing_frequency&quot;:&quot;monthly&quot;,&quot;mrr_fee_per_qty&quot;:750,&quot;mrr_fee&quot;:750,&quot;mrr_credit&quot;:0,&quot;mrr_final_fee&quot;:750,&quot;upfront_fee_per_qty&quot;:0,&quot;upfront_fee&quot;:0,&quot;upfront_credit&quot;:0,&quot;upfront_final_fee&quot;:0,&quot;implementation_fee_per_qty&quot;:0,&quot;implementation_fee&quot;:0,&quot;implementation_credit&quot;:0,&quot;implementation_final_fee&quot;:0,&quot;mrr_pricing_type&quot;:&quot;flat_fee&quot;,&quot;upfront_pricing_type&quot;:&quot;&quot;,&quot;implementation_pricing_type&quot;:&quot;&quot;,&quot;trial&quot;:0,&quot;trial_days_override_flag&quot;:false,&quot;oem_name&quot;:&quot;QA_IM_OEM_2&quot;,&quot;makes_list_json&quot;:&quot;[\&quot;QA_IM_OEM_2\&quot;]&quot;,&quot;user_product_id&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;,&quot;is_active&quot;:1,&quot;created_by&quot;:&quot;&quot;,&quot;created_at&quot;:0,&quot;modified_by&quot;:&quot;performancetesting@tekion.com&quot;,&quot;modified_at&quot;:1680096207},{&quot;software_schedule_id&quot;:20335,&quot;implementation_id&quot;:2831,&quot;sku_id&quot;:&quot;AACCT&quot;,&quot;feature_flag&quot;:&quot;&quot;,&quot;product&quot;:&quot;Accounting&quot;,&quot;product_id&quot;:2232,&quot;package_id&quot;:0,&quot;package_name&quot;:&quot;&quot;,&quot;parent_product_id&quot;:0,&quot;parent_sku_id&quot;:&quot;&quot;,&quot;scheduled_go_live_date&quot;:0,&quot;actual_onboarding_start_date_id&quot;:0,&quot;actual_onboarding_start_date&quot;:0,&quot;production_go_live_id&quot;:4710,&quot;production_go_live&quot;:1681948800,&quot;pre_production_go_live_id&quot;:3704,&quot;pre_production_go_live&quot;:1681689600,&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;scheduled&quot;,&quot;order_id&quot;:&quot;TEK/10064/1/2023&quot;,&quot;order_form_created_date&quot;:1680087364727,&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:0,&quot;pre_production_go_live_status_id&quot;:1,&quot;pre_production_sku_status&quot;:&quot;Scheduled&quot;,&quot;pre_production_go_live_status&quot;:0,&quot;pre_production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_id&quot;:1,&quot;production_sku_status&quot;:&quot;Scheduled&quot;,&quot;production_go_live_status&quot;:0,&quot;pre_production_event_id&quot;:&quot;64243bb4c0497cdd7e5aacd2&quot;,&quot;production_event_id&quot;:&quot;64243bb4c0497cdd7e5aacd3&quot;,&quot;product_master_product_type&quot;:&quot;ARC&quot;,&quot;contract_id&quot;:8136,&quot;mrr_qty&quot;:1,&quot;upfront_qty&quot;:0,&quot;implementation_qty&quot;:0,&quot;billing_frequency&quot;:&quot;monthly&quot;,&quot;mrr_fee_per_qty&quot;:150,&quot;mrr_fee&quot;:150,&quot;mrr_credit&quot;:0,&quot;mrr_final_fee&quot;:150,&quot;upfront_fee_per_qty&quot;:0,&quot;upfront_fee&quot;:0,&quot;upfront_credit&quot;:0,&quot;upfront_final_fee&quot;:0,&quot;implementation_fee_per_qty&quot;:0,&quot;implementation_fee&quot;:0,&quot;implementation_credit&quot;:0,&quot;implementation_final_fee&quot;:0,&quot;mrr_pricing_type&quot;:&quot;flat_fee&quot;,&quot;upfront_pricing_type&quot;:&quot;&quot;,&quot;implementation_pricing_type&quot;:&quot;&quot;,&quot;trial&quot;:0,&quot;trial_days_override_flag&quot;:false,&quot;oem_name&quot;:&quot;QA_IM_OEM_2&quot;,&quot;makes_list_json&quot;:&quot;[\&quot;QA_IM_OEM_2\&quot;]&quot;,&quot;user_product_id&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;,&quot;is_active&quot;:1,&quot;created_by&quot;:&quot;&quot;,&quot;created_at&quot;:0,&quot;modified_by&quot;:&quot;performancetesting@tekion.com&quot;,&quot;modified_at&quot;:1680096207},{&quot;software_schedule_id&quot;:20337,&quot;implementation_id&quot;:2831,&quot;sku_id&quot;:&quot;RCRM&quot;,&quot;feature_flag&quot;:&quot;&quot;,&quot;product&quot;:&quot;CRM&quot;,&quot;product_id&quot;:2246,&quot;package_id&quot;:0,&quot;package_name&quot;:&quot;&quot;,&quot;parent_product_id&quot;:0,&quot;parent_sku_id&quot;:&quot;&quot;,&quot;scheduled_go_live_date&quot;:0,&quot;actual_onboarding_start_date_id&quot;:0,&quot;actual_onboarding_start_date&quot;:0,&quot;production_go_live_id&quot;:4711,&quot;production_go_live&quot;:1681948800,&quot;pre_production_go_live_id&quot;:3705,&quot;pre_production_go_live&quot;:1681689600,&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;scheduled&quot;,&quot;order_id&quot;:&quot;TEK/10064/1/2023&quot;,&quot;order_form_created_date&quot;:1680087364727,&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:0,&quot;pre_production_go_live_status_id&quot;:1,&quot;pre_production_sku_status&quot;:&quot;Scheduled&quot;,&quot;pre_production_go_live_status&quot;:0,&quot;pre_production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_id&quot;:1,&quot;production_sku_status&quot;:&quot;Scheduled&quot;,&quot;production_go_live_status&quot;:0,&quot;pre_production_event_id&quot;:&quot;64243bcfc0497cdd7e5aacd4&quot;,&quot;production_event_id&quot;:&quot;64243bcfc0497cdd7e5aacd5&quot;,&quot;product_master_product_type&quot;:&quot;CRM&quot;,&quot;contract_id&quot;:8136,&quot;mrr_qty&quot;:1,&quot;upfront_qty&quot;:0,&quot;implementation_qty&quot;:0,&quot;billing_frequency&quot;:&quot;monthly&quot;,&quot;mrr_fee_per_qty&quot;:1200,&quot;mrr_fee&quot;:1200,&quot;mrr_credit&quot;:0,&quot;mrr_final_fee&quot;:1200,&quot;upfront_fee_per_qty&quot;:0,&quot;upfront_fee&quot;:0,&quot;upfront_credit&quot;:0,&quot;upfront_final_fee&quot;:0,&quot;implementation_fee_per_qty&quot;:0,&quot;implementation_fee&quot;:0,&quot;implementation_credit&quot;:0,&quot;implementation_final_fee&quot;:0,&quot;mrr_pricing_type&quot;:&quot;dealership_size&quot;,&quot;upfront_pricing_type&quot;:&quot;&quot;,&quot;implementation_pricing_type&quot;:&quot;&quot;,&quot;trial&quot;:0,&quot;trial_days_override_flag&quot;:false,&quot;oem_name&quot;:&quot;QA_IM_OEM_2&quot;,&quot;makes_list_json&quot;:&quot;[\&quot;QA_IM_OEM_2\&quot;]&quot;,&quot;user_product_id&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;,&quot;is_active&quot;:1,&quot;created_by&quot;:&quot;&quot;,&quot;created_at&quot;:0,&quot;modified_by&quot;:&quot;performancetesting@tekion.com&quot;,&quot;modified_at&quot;:1680096207},{&quot;software_schedule_id&quot;:20339,&quot;implementation_id&quot;:2831,&quot;sku_id&quot;:&quot;UCOM&quot;,&quot;feature_flag&quot;:&quot;&quot;,&quot;product&quot;:&quot;Communication&quot;,&quot;product_id&quot;:2217,&quot;package_id&quot;:0,&quot;package_name&quot;:&quot;&quot;,&quot;parent_product_id&quot;:0,&quot;parent_sku_id&quot;:&quot;&quot;,&quot;scheduled_go_live_date&quot;:0,&quot;actual_onboarding_start_date_id&quot;:0,&quot;actual_onboarding_start_date&quot;:0,&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:1681948800,&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:1681689600,&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;signed&quot;,&quot;order_id&quot;:&quot;TEK/10064/1/2023&quot;,&quot;order_form_created_date&quot;:1680087364727,&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:0,&quot;pre_production_go_live_status_id&quot;:0,&quot;pre_production_sku_status&quot;:&quot;&quot;,&quot;pre_production_go_live_status&quot;:0,&quot;pre_production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_id&quot;:0,&quot;production_sku_status&quot;:&quot;&quot;,&quot;production_go_live_status&quot;:0,&quot;pre_production_event_id&quot;:&quot;&quot;,&quot;production_event_id&quot;:&quot;&quot;,&quot;product_master_product_type&quot;:&quot;DSE&quot;,&quot;contract_id&quot;:8136,&quot;mrr_qty&quot;:1,&quot;upfront_qty&quot;:0,&quot;implementation_qty&quot;:0,&quot;billing_frequency&quot;:&quot;monthly&quot;,&quot;mrr_fee_per_qty&quot;:300,&quot;mrr_fee&quot;:300,&quot;mrr_credit&quot;:0,&quot;mrr_final_fee&quot;:300,&quot;upfront_fee_per_qty&quot;:0,&quot;upfront_fee&quot;:0,&quot;upfront_credit&quot;:0,&quot;upfront_final_fee&quot;:0,&quot;implementation_fee_per_qty&quot;:0,&quot;implementation_fee&quot;:0,&quot;implementation_credit&quot;:0,&quot;implementation_final_fee&quot;:0,&quot;mrr_pricing_type&quot;:&quot;dealership_size&quot;,&quot;upfront_pricing_type&quot;:&quot;&quot;,&quot;implementation_pricing_type&quot;:&quot;&quot;,&quot;trial&quot;:0,&quot;trial_days_override_flag&quot;:false,&quot;oem_name&quot;:&quot;QA_IM_OEM_2&quot;,&quot;makes_list_json&quot;:&quot;[\&quot;QA_IM_OEM_2\&quot;]&quot;,&quot;user_product_id&quot;:&quot;&quot;,&quot;category&quot;:&quot;&quot;,&quot;is_active&quot;:1,&quot;created_by&quot;:&quot;&quot;,&quot;created_at&quot;:0,&quot;modified_by&quot;:&quot;performancetesting@tekion.com&quot;,&quot;modified_at&quot;:1680096207}]}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+                <stringProp name="HTTPSampler.method">PUT</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                <stringProp name="TestPlan.comments">Created from cURL on 2023-03-13T12:36:49.756</stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Schedule" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${software1_1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG1_1}},{&quot;software_schedule_id&quot;:${software1_2}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_2}},{&quot;software_schedule_id&quot;:${software1_3}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_3}},,{&quot;software_schedule_id&quot;:${software1_4}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_4}}]}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+                <stringProp name="HTTPSampler.method">PUT</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                <stringProp name="TestPlan.comments">Created from cURL on 2023-03-13T12:36:49.756</stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/actual-launch-date" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;implementation_id&quot;:${impID_g1},&quot;launch_date&quot;:${__jexl3(${ProjectedDate}/1000,)},&quot;productType&quot;:&quot;ARC&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/actual-launch-date</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think TIme" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${ThinkTime}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Scheduled" enabled="false"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-basic" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;${order}&quot;},&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;scheduled&quot;]}],&quot;search_text&quot;:&quot;&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/implementations-basic</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET-tapapi/tap-crm-implementations-backend/public/v1/get/[tekionID]-ScheduledGET" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/get/${impID_g2}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="sched" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">sched</stringProp>
+              <stringProp name="RegexExtractor.regex">\[{&quot;software_schedule_id&quot;:(.*?)&quot;pre_prod_requirement&quot;:true,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="billingID" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">billingID</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;actual_billing_start_date_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">billingIDNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="billingID" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">billingID1</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;actual_billing_start_date_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">billingID1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">2</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="schedG1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">schedG1</stringProp>
+              <stringProp name="RegexExtractor.regex">,&quot;order_id&quot;:(.*?)&quot;actual_billing_start_date_id&quot;:${billingID}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedG1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="schedG2" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">schedG2</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;pre_production_go_live_status_id&quot;:(.*?)},</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedG2NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="schedGH" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">schedGH</stringProp>
+              <stringProp name="RegexExtractor.regex">{&quot;software_schedule_id&quot;:(.*?)&quot;pre_prod_requirement&quot;:true,</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedGHNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">2</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="schedGH1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">schedGH1</stringProp>
+              <stringProp name="RegexExtractor.regex">,&quot;order_id&quot;:(.*?)&quot;actual_billing_start_date_id&quot;:${billingID1}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedGH1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="schedGH2" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">schedGH2</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;pre_production_go_live_status_id&quot;:(.*?)}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">schedGH2NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">2</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_sec" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_sec</stringProp>
+              <stringProp name="RegexExtractor.regex">software_schedules&quot;:(.+?)&quot;product_status</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_secNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_sec1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_sec1</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;order_id&quot;:&quot;(.+?),&quot;actual_billing_start_date&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_sec1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_sec2" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_sec2</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;pre_production_go_live_status_id&quot;:(.+?)}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_sec2NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="OneOrTwoScheduling" enabled="true"/>
+          <hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="OneProductScheduling" enabled="true">
+              <stringProp name="IfController.condition">${skucount_matchNr}==1</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+            </IfController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Live" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;software_schedules&quot;:${c_sec}&quot;product_status&quot;:&quot;live&quot;,&quot;order_id&quot;:&quot;${c_sec1},&quot;actual_billing_start_date&quot;:${__jexl3(${BillingStartDate}/1000,)},&quot;pre_production_go_live_status_id&quot;:${c_sec2}}]}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+                <stringProp name="HTTPSampler.method">PUT</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="FourProductScheduling" enabled="true">
+              <stringProp name="IfController.condition">${skucount_matchNr}==2</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+            </IfController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Live" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${sched}&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;live&quot;,&quot;order_id&quot;:${schedG1}&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:${__jexl3(${BillingStartDate}/1000,)},&quot;pre_production_go_live_status_id&quot;:${schedG2}},{&quot;software_schedule_id&quot;:${schedGH}&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;live&quot;,&quot;order_id&quot;:${schedGH1}&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:${__jexl3(${BillingStartDate}/1000,)},&quot;pre_production_go_live_status_id&quot;:${schedGH2}}]}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+                <stringProp name="HTTPSampler.method">PUT</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                <stringProp name="TestPlan.comments">Created from cURL on 2023-03-09T10:19:31.977</stringProp>
+              </HTTPSamplerProxy>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think time" enabled="false">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${ThinkTime}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="IMPLEMENTATION-BASIC" enabled="false">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <FloatProperty>
+            <name>ThroughputController.percentThroughput</name>
+            <value>70.0</value>
+            <savedValue>0.0</savedValue>
+          </FloatProperty>
+        </ThroughputController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-filter" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;filterKeys&quot;:[&quot;dealer_size&quot;,&quot;status&quot;,&quot;oem&quot;,&quot;product_type&quot;,&quot;state&quot;,&quot;call_status&quot;,&quot;discovery_status&quot;,&quot;sd_required&quot;,&quot;sd_analyst&quot;,&quot;sd_analyst_trainees&quot;,&quot;sd_status&quot;,&quot;is_dependent&quot;,&quot;is_cancelled&quot;,&quot;country&quot;,&quot;implementation_manager_value&quot;,&quot;analystics_specialist&quot;,&quot;dealer_group&quot;,&quot;makes&quot;,&quot;dms&quot;,&quot;CRM&quot;,&quot;Payroll&quot;,&quot;city&quot;,&quot;schedule_status&quot;,&quot;implementation_region&quot;]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/implementations-filter</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="value" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">value</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..${type}[*]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">valueNA</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-basic-SEARCH" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;signed&quot;]}],&quot;search_text&quot;:&quot;performance_dealer_${__Random(1,90)}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/implementations-basic</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-03-27T15:26:06.442</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-basic-FILTER" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;signed&quot;]},{&quot;type&quot;:&quot;${type}&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;${value}&quot;]}],&quot;search_text&quot;:&quot;&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/implementations-basic</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-03-27T15:29:35.08</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Think time" enabled="false">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${ThinkTime}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller" enabled="false">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <FloatProperty>
+            <name>ThroughputController.percentThroughput</name>
+            <value>70.0</value>
+            <savedValue>0.0</savedValue>
+          </FloatProperty>
+        </ThroughputController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/group-by-implementations" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;group_by&quot;:&quot;${groupby}&quot;,&quot;selected_filters&quot;:[],&quot;search_text&quot;:&quot;&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/group-by-implementations</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-03-27T16:16:39.781</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="group" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">group</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..field_name</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-basic-GROUPBY" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;selected_filters&quot;:[],&quot;search_text&quot;:&quot;&quot;,&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;filter&quot;:[{&quot;type&quot;:&quot;${groupby}&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;${group}&quot;]}]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/implementations-basic</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-03-27T16:40:06.158</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Pacing" enabled="false">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${Pacing}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="InfluxDB Listener" enabled="false">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="influxdbMetricsSender" elementType="Argument">
+                <stringProp name="Argument.name">influxdbMetricsSender</stringProp>
+                <stringProp name="Argument.value">org.apache.jmeter.visualizers.backend.influxdb.HttpMetricsSender</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="influxdbUrl" elementType="Argument">
+                <stringProp name="Argument.name">influxdbUrl</stringProp>
+                <stringProp name="Argument.value">http://localhost:8086/write?db=InfluxDB</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="application" elementType="Argument">
+                <stringProp name="Argument.name">application</stringProp>
+                <stringProp name="Argument.value">TAP CRM</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="measurement" elementType="Argument">
+                <stringProp name="Argument.name">measurement</stringProp>
+                <stringProp name="Argument.value">jmeter</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="summaryOnly" elementType="Argument">
+                <stringProp name="Argument.name">summaryOnly</stringProp>
+                <stringProp name="Argument.value">false</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="samplersRegex" elementType="Argument">
+                <stringProp name="Argument.name">samplersRegex</stringProp>
+                <stringProp name="Argument.value">.*</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="percentiles" elementType="Argument">
+                <stringProp name="Argument.name">percentiles</stringProp>
+                <stringProp name="Argument.value">90;95;99</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="testTitle" elementType="Argument">
+                <stringProp name="Argument.name">testTitle</stringProp>
+                <stringProp name="Argument.value">TAP CRM</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="eventTags" elementType="Argument">
+                <stringProp name="Argument.name">eventTags</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient</stringProp>
+        </BackendListener>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="filename">tekionid.csv</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">true</boolProp>
+        <stringProp name="variableNames">impID_g1,impID_g2</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
