@@ -1122,7 +1122,7 @@ f.close();</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/get/${impID_g2}</stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/get/${c_impid_g2}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1269,7 +1269,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
               <stringProp name="HTTPSampler.port"></stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+              <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${c_impid_g2}</stringProp>
               <stringProp name="HTTPSampler.method">PUT</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
