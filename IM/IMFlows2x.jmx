@@ -1114,45 +1114,214 @@ f.close();</stringProp>
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/{c_tekionid}" enabled="true">
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;software_schedules&quot;:${c_sched1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${c_soft2}}]}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET-tapapi/tap-crm-implementations-backend/public/v1/get/[impID_g2]-ProjectedGET" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
             </elementProp>
             <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${c_impid_g2}</stringProp>
-            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/get/${impID_g2}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
             <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
             <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-03-09T15:35:38.827</stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Accept" elementType="Header">
-                  <stringProp name="Header.name">Accept</stringProp>
-                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
-                </elementProp>
-                <elementProp name="Content-Type" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="goliveID" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">goliveID</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;production_go_live_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">goliveIDNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
             <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="goliveID1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">goliveID1</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;production_go_live_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">goliveID1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">2</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="goliveID3" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">goliveID3</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;production_go_live_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">goliveID1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">3</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="goliveID4" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">goliveID4</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;production_go_live_id&quot;:(.*?),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">goliveID1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">4</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="software1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">software1</stringProp>
+              <stringProp name="RegexExtractor.regex">{&quot;software_schedule_id&quot;:(.*?)&quot;production_go_live_id&quot;:${goliveID},</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">software1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="softwareG1" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">softwareG1</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;pre_prod_requirement&quot;:(.*?)},</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">softwareG1NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="software2" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">software2</stringProp>
+              <stringProp name="RegexExtractor.regex">{&quot;software_schedule_id&quot;:(.*?)&quot;production_go_live_id&quot;:${goliveID1},</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">software2NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">2</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="softwareG2" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">softwareG2</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;pre_prod_requirement&quot;:(.*?)}</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">softwareG2NA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="skucount" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">skucount</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;sku_id&quot;:&quot;(.+?)&quot;,&quot;feature</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">skucountNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="software1NA check" enabled="false">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">if(vars.get(&quot;software1&quot;)==&quot;software1NA&quot;) // to ensure response failed double negation
+{
+prev.setSuccessful(false);
+prev.setStartNextThreadLoop(true);}</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="softwareG2NA check" enabled="false">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">if(vars.get(&quot;softwareG2&quot;)==&quot;softwareG2NA&quot;) // to ensure response failed double negation
+{
+prev.setSuccessful(false);
+prev.setStartNextThreadLoop(true);}</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="softwareG1NA check" enabled="false">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">if(vars.get(&quot;softwareG1&quot;)==&quot;softwareG1NA&quot;) // to ensure response failed double negation
+{
+prev.setSuccessful(false);
+prev.setStartNextThreadLoop(true);}</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+          </hashTree>
+          <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="Random Controller" enabled="true">
+            <intProp name="InterleaveControl.style">1</intProp>
+          </RandomController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/[tekionID]-Move to Schedule" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${software1_1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG1_1}},{&quot;software_schedule_id&quot;:${software1_2}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_2}},{&quot;software_schedule_id&quot;:${software1_3}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_3}},{&quot;software_schedule_id&quot;:${software1_4}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_4}}]}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${impID_g2}</stringProp>
+              <stringProp name="HTTPSampler.method">PUT</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="TestPlan.comments">Correct</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/{c_tekionid}" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;software_schedules&quot;:${c_sched1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${c_soft2}}]}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${c_impid_g2}</stringProp>
+              <stringProp name="HTTPSampler.method">PUT</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/actual-launch-date" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
