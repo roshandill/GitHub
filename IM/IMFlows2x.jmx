@@ -92,7 +92,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Throughput for LOAD Test" enabled="false">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Throughput for LOAD Test" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="AddMigCred" elementType="Argument">
             <stringProp name="Argument.name">AddMigCred</stringProp>
@@ -187,7 +187,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Throughput for Smoke" enabled="true">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Throughput for Smoke" enabled="false">
         <collectionProp name="Arguments.arguments">
           <elementProp name="AddMigCred" elementType="Argument">
             <stringProp name="Argument.name">AddMigCred</stringProp>
