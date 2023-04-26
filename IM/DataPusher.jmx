@@ -140,7 +140,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 Random rand = new Random();
-int value = rand.nextInt(60) + 30;
+int value = rand.nextInt(170) + 10;
 
 SimpleDateFormat sdf = new SimpleDateFormat(&quot;MM/dd/yyyy&quot;);
 Calendar c = Calendar.getInstance();
