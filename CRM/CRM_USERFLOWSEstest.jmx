@@ -55717,7 +55717,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">stage-nca-tap-api.tekioncloud.xyz</stringProp>
+          <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
