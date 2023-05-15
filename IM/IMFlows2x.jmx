@@ -1934,6 +1934,46 @@ prev.setStartNextThreadLoop(true);}</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${software1_1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${BillingWaiverFromDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG1_1}},{&quot;software_schedule_id&quot;:${software1_2}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_2}},{&quot;software_schedule_id&quot;:${software1_3}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_3}},{&quot;software_schedule_id&quot;:${software1_4}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_4}}]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${c_impid_g2}</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/{c_tekionid}-DatechangeFirst" enabled="false">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&quot;software_schedules&quot;:${c_sec}&quot;product_status&quot;:&quot;live&quot;,&quot;order_id&quot;:&quot;${c_sec1},&quot;actual_billing_start_date&quot;:${__jexl3(${BillingWaiverFromDate}/1000,)},&quot;pre_production_go_live_status_id&quot;:${c_sec2}}]}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -2061,13 +2101,53 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/{c_tekionid}-DateChangeSecond" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/{c_tekionid}-DateChangeSecond" enabled="false">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&quot;software_schedules&quot;:${c_sec}&quot;product_status&quot;:&quot;live&quot;,&quot;order_id&quot;:&quot;${c_sec1},&quot;actual_billing_start_date&quot;:${__jexl3(${BillingWaiverToDate}/1000,)},&quot;pre_production_go_live_status_id&quot;:${c_sec2}}]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-implementations-backend/public/v1/software-schedule/${c_impid_g2}</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/{c_tekionid}-DateChangeSecond" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;software_schedules&quot;:[{&quot;software_schedule_id&quot;:${software1_1}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${BillingWaiverToDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG1_1}},{&quot;software_schedule_id&quot;:${software1_2}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_2}},{&quot;software_schedule_id&quot;:${software1_3}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_3}},{&quot;software_schedule_id&quot;:${software1_4}&quot;production_go_live_id&quot;:0,&quot;production_go_live&quot;:${__jexl3(${ProdGoliveDate}/1000,)},&quot;pre_production_go_live_id&quot;:0,&quot;pre_production_go_live&quot;:${__jexl3(${PreProdGoLiveDate}/1000,)},&quot;pre_prod_requirement&quot;:${softwareG2_4}}]}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
