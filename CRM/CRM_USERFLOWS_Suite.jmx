@@ -12865,7 +12865,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;search_text&quot;:&quot;perf&quot;,&quot;selected_filters&quot;:[],&quot;sort&quot;:{&quot;field&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;}}</stringProp>
+                  <stringProp name="Argument.value">{&quot;search_text&quot;:&quot;&quot;,&quot;selected_filters&quot;:[],&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;created_at&quot;,&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;}}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -29066,7 +29066,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">tapapi/tap-crm-lead-management/public/v1/lead/${lead_id}</stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-lead-management/public/v1/lead/${new_lead_id}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -29661,20 +29661,7 @@ vars.put(&quot;lead_edited&quot;, new groovy.json.JsonBuilder(jsonData).toPretty
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&#xd;
-   &quot;search_text&quot;:&quot;&quot;,&#xd;
-   &quot;sort&quot;:{&#xd;
-      &quot;field&quot;:&quot;created_at&quot;,&#xd;
-      &quot;order&quot;:&quot;DESC&quot;&#xd;
-   },&#xd;
-   &quot;page_info&quot;:{&#xd;
-      &quot;start&quot;:0,&#xd;
-      &quot;rows&quot;:50&#xd;
-   },&#xd;
-   &quot;selected_filters&quot;:[&#xd;
-      &#xd;
-   ]&#xd;
-}</stringProp>
+                  <stringProp name="Argument.value">{&quot;search_text&quot;:&quot;&quot;,&quot;selected_filters&quot;:[],&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;,&quot;field&quot;:&quot;created_at&quot;}}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -29707,17 +29694,35 @@ vars.put(&quot;lead_edited&quot;, new groovy.json.JsonBuilder(jsonData).toPretty
               </collectionProp>
             </HeaderManager>
             <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="lead_id" enabled="true">
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="lead_id" enabled="false">
               <stringProp name="JSONPostProcessor.referenceNames">lead_id</stringProp>
               <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.[?(@.lead_title=~ /.*Perf.*/i)].lead_id</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
             </JSONPostProcessor>
             <hashTree/>
-            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="lead_title" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="lead_id" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">lead_id</stringProp>
+              <stringProp name="RegexExtractor.regex">lead_id&quot;:(\d+),&quot;lead_currency</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">lead_idNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">0</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="lead_title" enabled="false">
               <stringProp name="JSONPostProcessor.referenceNames">lead_title</stringProp>
               <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.[?(@.lead_id==${lead_id})].lead_title</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
             </JSONPostProcessor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="lead_title" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">lead_title</stringProp>
+              <stringProp name="RegexExtractor.regex">lead_id&quot;:${lead_id},&quot;lead_currency_id&quot;:1,&quot;lead_title&quot;:&quot;(.+?)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">lead_titleNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/account/internal_user_by_role" enabled="true">
@@ -35856,7 +35861,7 @@ vars.put(&quot;record_type_name&quot;,record_type_name)</stringProp>
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-opportunity-management/public/v1/opportunity" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-opportunity-management/public/v1/opportunity-Create" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -47511,7 +47516,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">tapapi/tap-crm-lead-management/public/v1/campaign/${campaign_id}</stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-lead-management/public/v1/campaign/${new_campaign_id}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -47563,7 +47568,7 @@ vars.put(&quot;campaign_edited&quot;, new groovy.json.JsonBuilder(jsonData).toPr
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">tapapi/tap-crm-lead-management/public/v1/campaign/${campaign_id}</stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-lead-management/public/v1/campaign/${new_campaign_id}</stringProp>
             <stringProp name="HTTPSampler.method">PUT</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -48463,8 +48468,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;selected_filters&quot;:[],&quot;sort&quot;:{&quot;field&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;}}&#xd;
-</stringProp>
+                  <stringProp name="Argument.value">{&quot;search_text&quot;:&quot;&quot;,&quot;selected_filters&quot;:[],&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;,&quot;field&quot;:&quot;created_at&quot;}}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -56082,21 +56086,21 @@ prev.setStartNextThreadLoop(true);}</stringProp>
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS - Campaign ES" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-1710136676">
+          <collectionProp name="-496251458">
             <stringProp name="49">1</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="1785246419">
+          <collectionProp name="-1295835659">
             <stringProp name="49">1</stringProp>
             <stringProp name="56313">900</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="972321939">
+          <collectionProp name="-2108760139">
             <stringProp name="49">1</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="48625">100</stringProp>
@@ -56631,21 +56635,21 @@ prev.setStartNextThreadLoop(true);}</stringProp>
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS - Opportunities ES" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-1710136676">
+          <collectionProp name="-496251458">
             <stringProp name="49">1</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="1785246419">
+          <collectionProp name="-1295835659">
             <stringProp name="49">1</stringProp>
             <stringProp name="56313">900</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="972321939">
+          <collectionProp name="-2108760139">
             <stringProp name="49">1</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="48625">100</stringProp>
@@ -57235,21 +57239,21 @@ prev.setStartNextThreadLoop(true);}</stringProp>
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS - Contact ES" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-1709213155">
+          <collectionProp name="256418157">
             <stringProp name="50">2</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="1786169940">
+          <collectionProp name="-543166044">
             <stringProp name="50">2</stringProp>
             <stringProp name="56313">900</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="973245460">
+          <collectionProp name="-1356090524">
             <stringProp name="50">2</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="48625">100</stringProp>
@@ -57765,21 +57769,21 @@ prev.setStartNextThreadLoop(true);}</stringProp>
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS - Lead ES" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-1710136676">
+          <collectionProp name="-496251458">
             <stringProp name="49">1</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="1785246419">
+          <collectionProp name="-1295835659">
             <stringProp name="49">1</stringProp>
             <stringProp name="56313">900</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="972321939">
+          <collectionProp name="-2108760139">
             <stringProp name="49">1</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="48625">100</stringProp>
@@ -58256,21 +58260,21 @@ prev.setStartNextThreadLoop(true);}</stringProp>
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS - Orderforms ES" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-1710136676">
+          <collectionProp name="-496251458">
             <stringProp name="49">1</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="1785246419">
+          <collectionProp name="-1295835659">
             <stringProp name="49">1</stringProp>
             <stringProp name="56313">900</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="972321939">
+          <collectionProp name="-2108760139">
             <stringProp name="49">1</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="48625">100</stringProp>
