@@ -1394,7 +1394,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
               <stringProp name="TestPlan.comments">Correct</stringProp>
             </HTTPSamplerProxy>
             <hashTree/>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/{c_tekionid}" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/software-schedule/{c_tekionid}" enabled="false">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                 <collectionProp name="Arguments.arguments">
@@ -2067,7 +2067,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;software_schedules&quot;:${c_sec}&quot;product_status&quot;:&quot;live&quot;,&quot;order_id&quot;:&quot;${c_sec1},&quot;actual_billing_start_date&quot;:${__jexl3(${BillingWaiverFromDate}/1000,)},&quot;pre_production_go_live_status_id&quot;:${c_sec2}}]}</stringProp>
+                  <stringProp name="Argument.value">{&quot;software_schedules&quot;:${c_sec}&quot;product_status&quot;:&quot;live&quot;,&quot;order_id&quot;:&quot;${c_sec1},&quot;actual_billing_start_date&quot;:${__jexl3(${BillingWaiverToDate}/1000,)},&quot;pre_production_go_live_status_id&quot;:${c_sec2}}]}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
