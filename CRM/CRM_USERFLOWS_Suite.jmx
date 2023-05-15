@@ -12906,14 +12906,15 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             <hashTree/>
             <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="contact_first_name" enabled="true">
               <stringProp name="JSONPostProcessor.referenceNames">contact_first_name</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.[?(@.contact_id==${contact_id})].contact_first_name</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data[?(@.contact_id==${contact_id})].contact_first_name</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
             </JSONPostProcessor>
             <hashTree/>
             <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="contact_last_name" enabled="true">
               <stringProp name="JSONPostProcessor.referenceNames">contact_last_name</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.[?(@.contact_id==${contact_id})].contact_last_name</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data[?(@.contact_id==${contact_id})].contact_last_name</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="TestPlan.comments">contact_last_name</stringProp>
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
@@ -18435,19 +18436,7 @@ ${__jexl3(${__timeShift(,,P15D,,)}/1000,expiry)}
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">{&#xd;
-   &quot;page_info&quot;:{&#xd;
-      &quot;start&quot;:0,&#xd;
-      &quot;rows&quot;:50&#xd;
-   },&#xd;
-   &quot;selected_filters&quot;:[&#xd;
-      &#xd;
-   ],&#xd;
-   &quot;sort&quot;:{&#xd;
-      &quot;field&quot;:&quot;created_at&quot;,&#xd;
-      &quot;order&quot;:&quot;DESC&quot;&#xd;
-   }&#xd;
-}</stringProp>
+                      <stringProp name="Argument.value">{&quot;search_text&quot;:&quot;&quot;,&quot;selected_filters&quot;:[],&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;,&quot;field&quot;:&quot;created_at&quot;}}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                     </elementProp>
                   </collectionProp>
@@ -18488,7 +18477,7 @@ ${__jexl3(${__timeShift(,,P15D,,)}/1000,expiry)}
                 <hashTree/>
                 <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="dealer_name" enabled="true">
                   <stringProp name="JSONPostProcessor.referenceNames">dealer_name</stringProp>
-                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.[?(@.account_id==${dealer_id})].basic_detail.dealer_name</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data[?(@.account_id==${dealer_id})].basic_detail.dealer_name</stringProp>
                   <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
                 </JSONPostProcessor>
                 <hashTree/>
@@ -22392,7 +22381,7 @@ ${__jexl3(${__timeShift(,,P15D,,)}/1000,expiry)}
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;selected_filters&quot;:[],&quot;sort&quot;:{&quot;field&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;}}</stringProp>
+                      <stringProp name="Argument.value">{&quot;search_text&quot;:&quot;&quot;,&quot;selected_filters&quot;:[],&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;,&quot;field&quot;:&quot;created_at&quot;}}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                     </elementProp>
                   </collectionProp>
@@ -22433,7 +22422,7 @@ ${__jexl3(${__timeShift(,,P15D,,)}/1000,expiry)}
                 <hashTree/>
                 <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="dealer_group_name" enabled="true">
                   <stringProp name="JSONPostProcessor.referenceNames">dealer_group_name</stringProp>
-                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.[?(@.account_id==${dealer_group_id})].basic_detail.dealer_group_name</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data[?(@.account_id==${dealer_group_id})].basic_detail.dealer_group_name</stringProp>
                   <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
                 </JSONPostProcessor>
                 <hashTree/>
@@ -29273,7 +29262,7 @@ vars.put(&quot;lead_edited&quot;, new groovy.json.JsonBuilder(jsonData).toPretty
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">tapapi/tap-crm-lead-management/public/v1/lead/${lead_id}</stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-lead-management/public/v1/lead/${new_lead_id}</stringProp>
             <stringProp name="HTTPSampler.method">PUT</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -35022,7 +35011,7 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
             <hashTree/>
             <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="campaign_name" enabled="true">
               <stringProp name="JSONPostProcessor.referenceNames">campaign_name</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.[?(@.campaign_id == ${campaign_id})].campaign_name</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.data[?(@.campaign_id == ${campaign_id})].campaign_name</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
             </JSONPostProcessor>
             <hashTree/>
@@ -36304,7 +36293,7 @@ vars.put(&quot;record_type_name&quot;,record_type_name)</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">tapapi/tap-crm-opportunity-management/public/v1/opportunity/${opportunity_id}</stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-opportunity-management/public/v1/opportunity/${new_opportunity}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -36326,7 +36315,7 @@ vars.put(&quot;record_type_name&quot;,record_type_name)</stringProp>
             <hashTree/>
             <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="opportunity_dealer_group_id" enabled="true">
               <stringProp name="JSONPostProcessor.referenceNames">opportunity_dealer_group_id</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.account.[?(@.opportunity_record_type_id==1)].account_id</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.account[?(@.opportunity_record_type_id==1)].account_id</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
             </JSONPostProcessor>
             <hashTree/>
@@ -36528,7 +36517,7 @@ vars.put(&quot;opportunity_edited&quot;, new groovy.json.JsonBuilder(jsonData).t
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">tapapi/tap-crm-opportunity-management/public/v1/opportunity/${opportunity_id}</stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-opportunity-management/public/v1/opportunity/${new_opportunity}</stringProp>
             <stringProp name="HTTPSampler.method">PUT</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -41967,7 +41956,7 @@ vars.put(&quot;opportunity_edited&quot;, new groovy.json.JsonBuilder(jsonData).t
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;start&quot;:0,&quot;rows&quot;:50,&quot;selected_filters&quot;:[],&quot;sorting&quot;:{&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;}}</stringProp>
+                  <stringProp name="Argument.value">{&quot;start&quot;:0,&quot;rows&quot;:50,&quot;search_text&quot;:&quot;&quot;,&quot;selected_filters&quot;:[],&quot;sorting&quot;:{&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;}}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -42002,13 +41991,13 @@ vars.put(&quot;opportunity_edited&quot;, new groovy.json.JsonBuilder(jsonData).t
             <hashTree/>
             <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="opportunity_id" enabled="true">
               <stringProp name="JSONPostProcessor.referenceNames">opportunity_id</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.result.[?(@.opportunity_title=~ /.*Perf.*/i)].opportunity_id</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.result.[*].opportunity_id</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
             </JSONPostProcessor>
             <hashTree/>
             <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="opportunity_title" enabled="true">
               <stringProp name="JSONPostProcessor.referenceNames">opportunity_title</stringProp>
-              <stringProp name="JSONPostProcessor.jsonPathExprs">$.result.[?(@.opportunity_id==${opportunity_id})].opportunity_title</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.result[?(@.opportunity_id==${opportunity_id})].opportunity_title</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
             </JSONPostProcessor>
             <hashTree/>
@@ -56052,7 +56041,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
-          <stringProp name="ActionProcessor.duration">${DelayMaxActivity}</stringProp>
+          <stringProp name="ActionProcessor.duration">10000</stringProp>
         </TestAction>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="false">
