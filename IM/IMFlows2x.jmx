@@ -61,7 +61,7 @@
           </elementProp>
           <elementProp name="DelayOffset_Mid" elementType="Argument">
             <stringProp name="Argument.name">DelayOffset_Mid</stringProp>
-            <stringProp name="Argument.value">9000</stringProp>
+            <stringProp name="Argument.value">8000</stringProp>
             <stringProp name="Argument.desc">5000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
@@ -372,13 +372,6 @@
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="49586">200</stringProp>
             <stringProp name="1515111">1800</stringProp>
-            <stringProp name="10">10</stringProp>
-          </collectionProp>
-          <collectionProp name="647216678">
-            <stringProp name="1598">20</stringProp>
-            <stringProp name="1543941">2700</stringProp>
-            <stringProp name="49586">200</stringProp>
-            <stringProp name="56313">900</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
         </collectionProp>
