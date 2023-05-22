@@ -15273,7 +15273,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS - Dealer Group" enabled="true">
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS - Dealer Group" enabled="false">
         <collectionProp name="ultimatethreadgroupdata">
           <collectionProp name="291511955">
             <stringProp name="51">3</stringProp>
@@ -52477,22 +52477,22 @@ vars.put(&quot;CampaignFilter&quot;,campaign[i]);</stringProp>
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS - FilterCalls Xtras" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="256418157">
-            <stringProp name="50">2</stringProp>
+          <collectionProp name="-496251458">
+            <stringProp name="49">1</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-543166044">
-            <stringProp name="50">2</stringProp>
+          <collectionProp name="-1295835659">
+            <stringProp name="49">1</stringProp>
             <stringProp name="56313">900</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="-1356090524">
-            <stringProp name="50">2</stringProp>
+          <collectionProp name="-2108760139">
+            <stringProp name="49">1</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="56313">900</stringProp>
@@ -52765,7 +52765,7 @@ vars.put(&quot;CampaignFilter&quot;,campaign[i]);</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Filter option dealer grp" enabled="true">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Filter option dealer grp" enabled="false">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
           <stringProp name="TestPlan.comments">3</stringProp>
@@ -52777,8 +52777,7 @@ vars.put(&quot;CampaignFilter&quot;,campaign[i]);</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;search_text&quot;:&quot;&quot;,&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;dealer_first_sell_implementation_status&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;cancelled&quot;,&quot;consolidated&quot;,&quot;contract_drafted&quot;,&quot;launch_scheduled&quot;,&quot;merged&quot;,&quot;on_hold&quot;,&quot;pending_approval&quot;,&quot;rollout_completed&quot;,&quot;signed_lost&quot;,&quot;signup_completed&quot;],&quot;additional&quot;:{&quot;value&quot;:[&quot;cancelled&quot;],&quot;option&quot;:[{&quot;formattedLabel&quot;:{&quot;key&quot;:null,&quot;ref&quot;:null,&quot;props&quot;:{&quot;label&quot;:&quot;cancelled&quot;,&quot;value&quot;:&quot;cancelled&quot;,&quot;role&quot;:&quot;&quot;},&quot;_owner&quot;:null},&quot;label&quot;:&quot;Cancelled&quot;,&quot;value&quot;:&quot;cancelled&quot;}],&quot;eventDetails&quot;:{&quot;action&quot;:&quot;deselect-option&quot;,&quot;option&quot;:{&quot;formattedLabel&quot;:{&quot;key&quot;:null,&quot;ref&quot;:null,&quot;props&quot;:{&quot;label&quot;:&quot;signup_initiated&quot;,&quot;value&quot;:&quot;signup_initiated&quot;,&quot;role&quot;:&quot;&quot;},&quot;_owner&quot;:null},&quot;label&quot;:&quot;Signup Initiated&quot;,&quot;value&quot;:&quot;signup_initiated&quot;}}}}],&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:1000000},&quot;sort&quot;:{&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;,&quot;field&quot;:&quot;created_at&quot;}}&#xd;
-</stringProp>
+                  <stringProp name="Argument.value">{&quot;search_text&quot;:&quot;&quot;,&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;state&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;Alberta&quot;,&quot;Hawaii&quot;],&quot;additional&quot;:{&quot;value&quot;:[&quot;Alberta&quot;,&quot;Hawaii&quot;],&quot;option&quot;:[{&quot;formattedLabel&quot;:{&quot;key&quot;:null,&quot;ref&quot;:null,&quot;props&quot;:{&quot;label&quot;:&quot;Alberta&quot;,&quot;value&quot;:&quot;Alberta&quot;,&quot;role&quot;:&quot;&quot;},&quot;_owner&quot;:null},&quot;label&quot;:&quot;Alberta&quot;,&quot;value&quot;:&quot;Alberta&quot;},{&quot;formattedLabel&quot;:{&quot;key&quot;:null,&quot;ref&quot;:null,&quot;props&quot;:{&quot;label&quot;:&quot;Hawaii&quot;,&quot;value&quot;:&quot;Hawaii&quot;,&quot;role&quot;:&quot;&quot;},&quot;_owner&quot;:null},&quot;label&quot;:&quot;Hawaii&quot;,&quot;value&quot;:&quot;Hawaii&quot;}],&quot;eventDetails&quot;:{&quot;action&quot;:&quot;select-option&quot;,&quot;option&quot;:{&quot;formattedLabel&quot;:{&quot;key&quot;:null,&quot;ref&quot;:null,&quot;props&quot;:{&quot;label&quot;:&quot;Hawaii&quot;,&quot;value&quot;:&quot;Hawaii&quot;,&quot;role&quot;:&quot;&quot;},&quot;_owner&quot;:null},&quot;label&quot;:&quot;Hawaii&quot;,&quot;value&quot;:&quot;Hawaii&quot;}}}}],&quot;page_info&quot;:{&quot;start&quot;:0,&quot;rows&quot;:50},&quot;sort&quot;:{&quot;key&quot;:&quot;created_at&quot;,&quot;order&quot;:&quot;DESC&quot;,&quot;field&quot;:&quot;created_at&quot;}}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -52868,18 +52867,18 @@ vars.put(&quot;CampaignFilter&quot;,campaign[i]);</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Filter option dealer" enabled="false">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Filter option dealer group" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">3</stringProp>
+          <stringProp name="LoopController.loops">2</stringProp>
         </LoopController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-account-management/public/v1/account/filter-option/dealer" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-account-management/public/v1/account/filter-option/dealer" enabled="false">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;filter_keys&quot;:[&quot;role_name&quot;,&quot;department_name&quot;,&quot;contact_stage_name&quot;,&quot;Solutions Manager&quot;,&quot;Solution Development Specialist&quot;,&quot;country&quot;,&quot;state&quot;,&quot;tag&quot;]}</stringProp>
+                  <stringProp name="Argument.value">{&quot;filter_keys&quot;:[&quot;city&quot;,&quot;country&quot;,&quot;decision_making&quot;,&quot;dms_provider_name&quot;,&quot;makes_name&quot;,&quot;oem_name&quot;,&quot;stage&quot;,&quot;state&quot;,&quot;account_territory_name&quot;,&quot;tag&quot;]}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -52966,6 +52965,89 @@ vars.put(&quot;CampaignFilter&quot;,campaign[i]);</stringProp>
               <stringProp name="ConstantTimer.delay">${DelayOffset_Mid}</stringProp>
               <stringProp name="RandomTimer.range">${DelayMax}</stringProp>
             </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-account-management/public/v1/account/filter-option/dealer-group" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;filter_keys&quot;:[&quot;city&quot;,&quot;country&quot;,&quot;decision_making&quot;,&quot;dms_provider_name&quot;,&quot;makes_name&quot;,&quot;oem_name&quot;,&quot;stage&quot;,&quot;state&quot;,&quot;account_territory_name&quot;,&quot;tag&quot;]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-account-management/public/v1/account/filter-option/dealer-group</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2022-10-31T18:07:47.319</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="authority" elementType="Header">
+                  <stringProp name="Header.name">authority</stringProp>
+                  <stringProp name="Header.value">perftap-api.tekionkloud.xyz</stringProp>
+                </elementProp>
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="accept-language" elementType="Header">
+                  <stringProp name="Header.name">accept-language</stringProp>
+                  <stringProp name="Header.value">en-GB,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="origin" elementType="Header">
+                  <stringProp name="Header.name">origin</stringProp>
+                  <stringProp name="Header.value">https://perftap.tekionkloud.xyz</stringProp>
+                </elementProp>
+                <elementProp name="referer" elementType="Header">
+                  <stringProp name="Header.name">referer</stringProp>
+                  <stringProp name="Header.value">https://perftap.tekionkloud.xyz/</stringProp>
+                </elementProp>
+                <elementProp name="sec-fetch-dest" elementType="Header">
+                  <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                  <stringProp name="Header.value">empty</stringProp>
+                </elementProp>
+                <elementProp name="sec-fetch-mode" elementType="Header">
+                  <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="sec-fetch-site" elementType="Header">
+                  <stringProp name="Header.name">sec-fetch-site</stringProp>
+                  <stringProp name="Header.value">same-site</stringProp>
+                </elementProp>
+                <elementProp name="sec-gpc" elementType="Header">
+                  <stringProp name="Header.name">sec-gpc</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="user-agent" elementType="Header">
+                  <stringProp name="Header.name">user-agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">Created from cURL on 2022-10-31T18:07:47.32</stringProp>
+            </HeaderManager>
             <hashTree/>
           </hashTree>
         </hashTree>
