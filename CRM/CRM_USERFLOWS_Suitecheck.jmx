@@ -16708,7 +16708,7 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
             </FloatProperty>
           </ThroughputController>
           <hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="EditDealerGroup" enabled="false"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="EditDealerGroup" enabled="true"/>
             <hashTree>
               <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/tap-crm-account-management/public/v1/account/filter/dealer-groups" enabled="true">
                 <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -17272,7 +17272,7 @@ ${__jexl3(${__timeShift(,,P15D,,)}/1000,expiry)}
                 </HeaderManager>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT - tapapi/tap-crm-account-management/public/v1/account/dealer-group/[dealer_group_id]" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT - tapapi/tap-crm-account-management/public/v1/account/dealer-group/[dealer_group_id]" enabled="false">
                 <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                   <collectionProp name="Arguments.arguments">
