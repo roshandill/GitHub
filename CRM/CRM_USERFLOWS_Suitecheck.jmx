@@ -52868,7 +52868,7 @@ vars.put(&quot;CampaignFilter&quot;,campaign[i]);</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Filter option dealer" enabled="true">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Filter option dealer" enabled="false">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">3</stringProp>
         </LoopController>
