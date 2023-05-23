@@ -17037,7 +17037,7 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
                 </HeaderManager>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/v2/usermanagement/users-details" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST - tapapi/v2/usermanagement/users-details" enabled="false">
                 <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                   <collectionProp name="Arguments.arguments">
