@@ -16643,7 +16643,7 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
           <intProp name="InterleaveControl.style">1</intProp>
         </RandomController>
         <hashTree>
-          <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="DeleteDealerGroup" enabled="true">
+          <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="DeleteDealerGroup" enabled="false">
             <intProp name="ThroughputController.style">1</intProp>
             <boolProp name="ThroughputController.perThread">false</boolProp>
             <intProp name="ThroughputController.maxThroughput">1</intProp>
@@ -17441,13 +17441,13 @@ ${__jexl3(${__timeShift(,,P15D,,)}/1000,expiry)}
                   </collectionProp>
                 </HeaderManager>
                 <hashTree/>
-                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="campaign_id" enabled="true">
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="campaign_id" enabled="false">
                   <stringProp name="JSONPostProcessor.referenceNames">campaign_id</stringProp>
                   <stringProp name="JSONPostProcessor.jsonPathExprs">$.data..campaign_id</stringProp>
                   <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
                 </JSONPostProcessor>
                 <hashTree/>
-                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="campaign_name" enabled="true">
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="campaign_name" enabled="false">
                   <stringProp name="JSONPostProcessor.referenceNames">campaign_name</stringProp>
                   <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.[?(@.campaign_id == ${campaign_id})].campaign_name</stringProp>
                   <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
@@ -17754,7 +17754,7 @@ ${__jexl3(${__timeShift(,,P15D,,)}/1000,expiry)}
                   </collectionProp>
                 </HeaderManager>
                 <hashTree/>
-                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="contact_id" enabled="true">
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="contact_id" enabled="false">
                   <stringProp name="JSONPostProcessor.referenceNames">contact_id</stringProp>
                   <stringProp name="JSONPostProcessor.jsonPathExprs">$..contact_id</stringProp>
                   <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
@@ -25719,7 +25719,7 @@ ${__jexl3(${__timeShift(,,P15D,,)}/1000,expiry)}
               </hashTree>
             </hashTree>
           </hashTree>
-          <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="MergeDealer" enabled="true">
+          <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="MergeDealer" enabled="false">
             <intProp name="ThroughputController.style">1</intProp>
             <boolProp name="ThroughputController.perThread">false</boolProp>
             <intProp name="ThroughputController.maxThroughput">1</intProp>
