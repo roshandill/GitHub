@@ -363,22 +363,22 @@
       <hashTree/>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="IM FLOWS Ultimate - All Flows" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-1808577313">
-            <stringProp name="1598">20</stringProp>
+          <collectionProp name="138799601">
+            <stringProp name="1572">15</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="49586">200</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="1686805782">
-            <stringProp name="1598">20</stringProp>
+          <collectionProp name="-660784600">
+            <stringProp name="1572">15</stringProp>
             <stringProp name="56313">900</stringProp>
             <stringProp name="49586">200</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp reference="../../collectionProp/stringProp[5]"/>
           </collectionProp>
-          <collectionProp name="873881302">
-            <stringProp name="1598">20</stringProp>
+          <collectionProp name="-1473709080">
+            <stringProp name="1572">15</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="49586">200</stringProp>
             <stringProp name="56313">900</stringProp>
