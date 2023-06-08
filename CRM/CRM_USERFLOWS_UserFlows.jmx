@@ -148,6 +148,11 @@
             <stringProp name="Argument.value">20000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="DelayMaxcontact" elementType="Argument">
+            <stringProp name="Argument.name">DelayMaxcontact</stringProp>
+            <stringProp name="Argument.value">5000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -10873,21 +10878,21 @@ vars.put(&quot;Order&quot;,order[i]);</stringProp>
       <hashTree/>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CRM FLOWS - Contact" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-1708289634">
+          <collectionProp name="291511955">
             <stringProp name="51">3</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1543941">2700</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="1787093461">
+          <collectionProp name="-508072246">
             <stringProp name="51">3</stringProp>
             <stringProp name="56313">900</stringProp>
             <stringProp name="48625">100</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="10">10</stringProp>
           </collectionProp>
-          <collectionProp name="974168981">
+          <collectionProp name="-1320996726">
             <stringProp name="51">3</stringProp>
             <stringProp name="1515111">1800</stringProp>
             <stringProp name="48625">100</stringProp>
@@ -55094,7 +55099,7 @@ vars.put(&quot;CampaignFilter&quot;,campaign[i]);</stringProp>
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
-          <stringProp name="ActionProcessor.duration">${DelayMax}</stringProp>
+          <stringProp name="ActionProcessor.duration">${DelayMaxcontact}</stringProp>
         </TestAction>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-account-management/public/v1/contacts/filter-Search" enabled="true">
@@ -55128,7 +55133,7 @@ vars.put(&quot;CampaignFilter&quot;,campaign[i]);</stringProp>
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
-          <stringProp name="ActionProcessor.duration">${DelayMax}</stringProp>
+          <stringProp name="ActionProcessor.duration">${DelayMaxcontact}</stringProp>
         </TestAction>
         <hashTree/>
         <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="Random Controller-Filter" enabled="true">
@@ -55252,7 +55257,7 @@ vars.put(&quot;CampaignFilter&quot;,campaign[i]);</stringProp>
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
-          <stringProp name="ActionProcessor.duration">${DelayMax}</stringProp>
+          <stringProp name="ActionProcessor.duration">${DelayMaxcontact}</stringProp>
         </TestAction>
         <hashTree/>
         <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="Random Controller-GroupBY" enabled="true">
