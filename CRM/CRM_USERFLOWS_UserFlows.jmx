@@ -35,7 +35,7 @@
           </elementProp>
           <elementProp name="DelayMax" elementType="Argument">
             <stringProp name="Argument.name">DelayMax</stringProp>
-            <stringProp name="Argument.value">1000</stringProp>
+            <stringProp name="Argument.value">1500</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="DelayOffset_Low" elementType="Argument">
@@ -150,7 +150,7 @@
           </elementProp>
           <elementProp name="DelayMaxcontact" elementType="Argument">
             <stringProp name="Argument.name">DelayMaxcontact</stringProp>
-            <stringProp name="Argument.value">10000</stringProp>
+            <stringProp name="Argument.value">20000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
