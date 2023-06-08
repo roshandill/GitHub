@@ -16680,7 +16680,7 @@ vars.put(&quot;State&quot;,states[i]);</stringProp>
           </UniformRandomTimer>
           <hashTree/>
         </hashTree>
-        <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="Random Controller" enabled="false">
+        <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="Random Controller" enabled="true">
           <intProp name="InterleaveControl.style">1</intProp>
         </RandomController>
         <hashTree>
