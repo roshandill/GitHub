@@ -138,6 +138,11 @@
             <stringProp name="Argument.value">${__Random(1,20,)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="Order" elementType="Argument">
+            <stringProp name="Argument.name">Order</stringProp>
+            <stringProp name="Argument.value">ASC</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -10848,7 +10853,7 @@ prev.setStartNextThreadLoop(true);
         <stringProp name="classname">org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient</stringProp>
       </BackendListener>
       <hashTree/>
-      <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+      <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="false">
         <stringProp name="scriptLanguage">groovy</stringProp>
         <stringProp name="parameters"></stringProp>
         <stringProp name="filename"></stringProp>
