@@ -12861,7 +12861,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/lead-by-contact-id/[contact_id]" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET - tapapi/tap-crm-lead-management/public/v1/lead-by-entity-id/[contact_id]/contact" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
@@ -12869,7 +12869,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">tapapi/tap-crm-lead-management/public/v1/lead-by-contact-id/${contact_id}</stringProp>
+            <stringProp name="HTTPSampler.path">tapapi/tap-crm-lead-management/public/v1/lead-by-entity-id/${contact_id}/contact</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -12878,6 +12878,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">tapapi/tap-crm-lead-management/public/v1/lead-by-entity-id/190213/contact</stringProp>
           </HTTPSamplerProxy>
           <hashTree>
             <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
