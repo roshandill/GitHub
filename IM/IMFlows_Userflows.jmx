@@ -1850,7 +1850,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
           </UniformRandomTimer>
           <hashTree/>
         </hashTree>
-        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="DateChange" enabled="true">
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="DateChange" enabled="false">
           <intProp name="ThroughputController.style">1</intProp>
           <boolProp name="ThroughputController.perThread">false</boolProp>
           <intProp name="ThroughputController.maxThroughput">1</intProp>
@@ -1859,6 +1859,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             <value>20.0</value>
             <savedValue>0.0</savedValue>
           </FloatProperty>
+          <stringProp name="TestPlan.comments">APIs removed</stringProp>
         </ThroughputController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET-tapapi/tap-crm-implementations-backend/public/v1/get/{c_tekionid}" enabled="true">
@@ -2226,7 +2227,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PATCH-tapapi/tap-crm-implementations-backend/public/v1/addTrack/{c_tekionid}" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PATCH-tapapi/tap-crm-implementations-backend/public/v1/addTrack/{c_tekionid}" enabled="false">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
             </elementProp>
