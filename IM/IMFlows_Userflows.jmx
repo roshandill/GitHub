@@ -199,6 +199,11 @@
             <stringProp name="Argument.value">5</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="signedlostsku" elementType="Argument">
+            <stringProp name="Argument.name">signedlostsku</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
@@ -4222,7 +4227,7 @@ prev.setStartNextThreadLoop(true);}</stringProp>
             <stringProp name="TestPlan.comments">All</stringProp>
           </HTTPSamplerProxy>
           <hashTree/>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-basic" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-basic" enabled="false">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -7219,6 +7224,200 @@ vars.put(&quot;Status&quot;,status[i]);</stringProp>
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
             <stringProp name="TestPlan.comments">Created from cURL on 2023-07-10T22:00:01.669</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="SignedlostEligiblity" enabled="true">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <stringProp name="ThroughputController.percentThroughput">${signedlostsku}</stringProp>
+        </ThroughputController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/implementations-basic-Scheduled" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;page_info&quot;:{&quot;start&quot;:${__Random(1,10,)},&quot;rows&quot;:50},&quot;sort&quot;:{&quot;field&quot;:&quot;status&quot;,&quot;order&quot;:&quot;ASC&quot;},&quot;selected_filters&quot;:[{&quot;type&quot;:&quot;status&quot;,&quot;operator&quot;:&quot;IN&quot;,&quot;values&quot;:[&quot;scheduled&quot;]}],&quot;search_text&quot;:&quot;&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/implementations-basic</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-09-13T17:51:28.716</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_impidddd" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_impidddd</stringProp>
+              <stringProp name="RegexExtractor.regex">mplementation_id&quot;:(\d+),&quot;tekion_id&quot;:&quot;(\d+)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$$2$</stringProp>
+              <stringProp name="RegexExtractor.default">c_impidNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">0</stringProp>
+              <stringProp name="TestPlan.comments">Just disable this</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_tekioniddd" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_tekioniddd</stringProp>
+              <stringProp name="RegexExtractor.regex">mplementation_id&quot;:(${c_impidddd_g1}),&quot;tekion_id&quot;:&quot;(\d+)&quot;,&quot;con</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_tekionidNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET-tapapi/tap-crm-implementations-backend/public/v1/get/{c_tekionid}" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/get/${c_impidddd_g2}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-09-13T18:18:10.075</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_contract_id" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_contract_id</stringProp>
+              <stringProp name="RegexExtractor.regex">contract_id&quot;: (\d+),</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_contract_idNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-contract-management/private/v1/contract/{c_impid_g2}/product-details" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;contract_details&quot;: [&#xd;
+        {&#xd;
+            &quot;contract_id&quot;: ${c_contract_id},&#xd;
+            &quot;sku_details&quot;: [&#xd;
+                {&#xd;
+                    &quot;sku_id&quot;: &quot;PRNC2436DWTRAY&quot;,&#xd;
+                    &quot;product_id&quot;: 7157,&#xd;
+                    &quot;product_name&quot;: &quot;250-Sheet Tray for Lexmark C3426dw&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        }&#xd;
+    ]&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">4914</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-contract-management/private/v1/contract/${c_impidddd_g2}/product-details</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-09-13T19:18:17.306</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-crm-implementations-backend/public/v1/signed-lost-eligibility/{c_tekionid}" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;contract_details&quot;:[{&quot;contract_id&quot;:13165,&quot;sku_details&quot;:[{&quot;software_schedule_id&quot;:41223,&quot;implementation_id&quot;:5436,&quot;sku_id&quot;:&quot;AR-10057&quot;,&quot;feature_flag&quot;:&quot;&quot;,&quot;product&quot;:&quot;Additional Site&quot;,&quot;product_id&quot;:2429,&quot;package_id&quot;:0,&quot;package_name&quot;:&quot;&quot;,&quot;parent_product_id&quot;:0,&quot;parent_sku_id&quot;:&quot;&quot;,&quot;scheduled_go_live_date&quot;:0,&quot;actual_onboarding_start_date&quot;:0,&quot;production_go_live_id&quot;:9362,&quot;production_go_live&quot;:1706572800,&quot;pre_production_go_live_id&quot;:8352,&quot;pre_production_go_live&quot;:1701302400,&quot;pre_prod_requirement&quot;:true,&quot;product_status&quot;:&quot;scheduled&quot;,&quot;product_group&quot;:&quot;software&quot;,&quot;order_id&quot;:&quot;TEK/5277/1/2023&quot;,&quot;order_form_created_date&quot;:1683734533979,&quot;actual_billing_start_date_id&quot;:0,&quot;actual_billing_start_date&quot;:0,&quot;pre_production_go_live_status_id&quot;:1,&quot;pre_production_sku_status&quot;:&quot;Scheduled&quot;,&quot;pre_production_go_live_status&quot;:0,&quot;pre_production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_message&quot;:&quot;&quot;,&quot;production_go_live_status_id&quot;:1,&quot;production_sku_status&quot;:&quot;Scheduled&quot;,&quot;production_go_live_status&quot;:0,&quot;pre_production_event_id&quot;:&quot;649eb4d5dab95a1c6ebcaa3d&quot;,&quot;production_event_id&quot;:&quot;649eb4d5dab95a1c6ebcaa3e&quot;,&quot;product_master_product_type&quot;:&quot;ARC&quot;,&quot;contract_id&quot;:13165,&quot;mrr_qty&quot;:1,&quot;upfront_qty&quot;:0,&quot;implementation_qty&quot;:0,&quot;billing_frequency&quot;:&quot;monthly&quot;,&quot;mrr_fee_per_qty&quot;:1590,&quot;mrr_fee&quot;:1590,&quot;mrr_credit&quot;:0,&quot;mrr_final_fee&quot;:1590,&quot;upfront_fee_per_qty&quot;:0,&quot;upfront_fee&quot;:0,&quot;upfront_credit&quot;:0,&quot;upfront_final_fee&quot;:0,&quot;implementation_fee_per_qty&quot;:0,&quot;implementation_fee&quot;:0,&quot;implementation_credit&quot;:0,&quot;implementation_final_fee&quot;:0,&quot;mrr_pricing_type&quot;:&quot;per_unit&quot;,&quot;upfront_pricing_type&quot;:&quot;&quot;,&quot;implementation_pricing_type&quot;:&quot;&quot;,&quot;trial&quot;:0,&quot;trial_days_override_flag&quot;:false,&quot;oem_name&quot;:&quot;QA_IM_OEM_3&quot;,&quot;makes_list_json&quot;:&quot;QA_IM_OEM_3&quot;,&quot;user_product_id&quot;:&quot;AR-10057&quot;,&quot;category&quot;:&quot;&quot;,&quot;product_tags&quot;:null,&quot;is_active&quot;:1,&quot;created_by&quot;:&quot;&quot;,&quot;created_at&quot;:0,&quot;modified_by&quot;:&quot;performancetesting@tekion.com&quot;,&quot;modified_at&quot;:1688468099,&quot;id&quot;:41223,&quot;schedule_id&quot;:41223,&quot;product_name&quot;:&quot;Additional Site&quot;}]}]}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">tst-nca-tap-api.tekion.xyz</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/signed-lost-eligibility/${c_impidddd_g2}</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-09-13T12:06:19.719</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="c_skudetails" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">c_skudetails</stringProp>
+              <stringProp name="RegexExtractor.regex">sku_details&quot;:(.+?),&quot;signed_lost_quantity</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">c_skudetailsNA</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-crm-implementations-backend/public/v1/signed_lost-sku/{c_tekionid}" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;signed_lost_sku_input&quot;:${c_skudetails},&quot;signed_lost_quantity&quot;:1}],&quot;active_quantity&quot;:1,&quot;signed_lost_quantity&quot;:1}],&quot;updated_by&quot;:&quot;${userEmail}&quot;,&quot;signed_lost_date&quot;:${__jexl3(${BillingWaiverFromDate}/1000,)},&quot;reason&quot;:&quot;Product didn&apos;t meet expectations&quot;,&quot;comment&quot;:&quot;Perf_sample_comment_${__Random(00000000000,99999999999,)}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">perftap-api.tekionkloud.xyz</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/tapapi/tap-crm-implementations-backend/public/v1/signed_lost-sku/${c_impidddd_g2}</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2023-09-13T17:36:02.063</stringProp>
           </HTTPSamplerProxy>
           <hashTree/>
         </hashTree>
