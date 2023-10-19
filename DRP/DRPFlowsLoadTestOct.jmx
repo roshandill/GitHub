@@ -54,29 +54,6 @@
             <stringProp name="Argument.value">3000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="DelayMax" elementType="Argument">
-            <stringProp name="Argument.name">DelayMax</stringProp>
-            <stringProp name="Argument.value">1000</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="DelayOffset_Mid" elementType="Argument">
-            <stringProp name="Argument.name">DelayOffset_Mid</stringProp>
-            <stringProp name="Argument.value">6000</stringProp>
-            <stringProp name="Argument.desc">5000</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="DelayOffset_High" elementType="Argument">
-            <stringProp name="Argument.name">DelayOffset_High</stringProp>
-            <stringProp name="Argument.value">10000</stringProp>
-            <stringProp name="Argument.desc">7500</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="DelayOffset_VHigh" elementType="Argument">
-            <stringProp name="Argument.name">DelayOffset_VHigh</stringProp>
-            <stringProp name="Argument.value">15000</stringProp>
-            <stringProp name="Argument.desc">10000</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="DelayOffset_Pacing" elementType="Argument">
             <stringProp name="Argument.name">DelayOffset_Pacing</stringProp>
             <stringProp name="Argument.value">10000</stringProp>
@@ -102,6 +79,29 @@
           <elementProp name="log_to_time" elementType="Argument">
             <stringProp name="Argument.name">log_to_time</stringProp>
             <stringProp name="Argument.value">${__jexl3(${__timeShift(,,P-2DT1H,,)}/1000,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DelayMax" elementType="Argument">
+            <stringProp name="Argument.name">DelayMax</stringProp>
+            <stringProp name="Argument.value">2000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DelayOffset_Mid" elementType="Argument">
+            <stringProp name="Argument.name">DelayOffset_Mid</stringProp>
+            <stringProp name="Argument.value">6000</stringProp>
+            <stringProp name="Argument.desc">5000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DelayOffset_High" elementType="Argument">
+            <stringProp name="Argument.name">DelayOffset_High</stringProp>
+            <stringProp name="Argument.value">9000</stringProp>
+            <stringProp name="Argument.desc">7500</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DelayOffset_VHigh" elementType="Argument">
+            <stringProp name="Argument.name">DelayOffset_VHigh</stringProp>
+            <stringProp name="Argument.value">12000</stringProp>
+            <stringProp name="Argument.desc">12000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -453,6 +453,18 @@
             </HTTPSamplerProxy>
             <hashTree/>
           </hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration"></stringProp>
+          </TestAction>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
+              <stringProp name="ConstantTimer.delay">${DelayOffset_Mid}</stringProp>
+              <stringProp name="RandomTimer.range">${DelayMax}</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
           <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller-Search" enabled="true">
             <intProp name="ThroughputController.style">1</intProp>
             <boolProp name="ThroughputController.perThread">false</boolProp>
@@ -492,6 +504,18 @@
               <stringProp name="HTTPSampler.response_timeout"></stringProp>
               <stringProp name="TestPlan.comments">Created from cURL on 2023-08-03T15:11:50.994</stringProp>
             </HTTPSamplerProxy>
+            <hashTree/>
+          </hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration"></stringProp>
+          </TestAction>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
+              <stringProp name="ConstantTimer.delay">${DelayOffset_Mid}</stringProp>
+              <stringProp name="RandomTimer.range">${DelayMax}</stringProp>
+            </UniformRandomTimer>
             <hashTree/>
           </hashTree>
           <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="Throughput Controller_filter" enabled="true">
@@ -596,6 +620,18 @@
             <stringProp name="TestPlan.comments">Created from cURL on 2023-08-03T15:34:24.394</stringProp>
           </HTTPSamplerProxy>
           <hashTree/>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration"></stringProp>
+          </TestAction>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
+              <stringProp name="ConstantTimer.delay">${DelayOffset_Mid}</stringProp>
+              <stringProp name="RandomTimer.range">${DelayMax}</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
           <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="FieldUpdate-DealerPage" enabled="true">
             <intProp name="ThroughputController.style">1</intProp>
             <boolProp name="ThroughputController.perThread">false</boolProp>
@@ -723,6 +759,18 @@
               <stringProp name="TestPlan.comments">Created from cURL on 2023-10-18T12:12:07.519</stringProp>
             </HTTPSamplerProxy>
             <hashTree/>
+            <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
+              <intProp name="ActionProcessor.action">1</intProp>
+              <intProp name="ActionProcessor.target">0</intProp>
+              <stringProp name="ActionProcessor.duration"></stringProp>
+            </TestAction>
+            <hashTree>
+              <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
+                <stringProp name="ConstantTimer.delay">${DelayOffset_Mid}</stringProp>
+                <stringProp name="RandomTimer.range">${DelayMax}</stringProp>
+              </UniformRandomTimer>
+              <hashTree/>
+            </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-tapapi/tap-drp-implementation/public/v1/contact-DealerChampion" enabled="true">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -840,6 +888,18 @@
               <stringProp name="HTTPSampler.response_timeout"></stringProp>
               <stringProp name="TestPlan.comments">Created from cURL on 2023-10-18T12:38:13.526</stringProp>
             </HTTPSamplerProxy>
+            <hashTree/>
+          </hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration"></stringProp>
+          </TestAction>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
+              <stringProp name="ConstantTimer.delay">${DelayOffset_Mid}</stringProp>
+              <stringProp name="RandomTimer.range">${DelayMax}</stringProp>
+            </UniformRandomTimer>
             <hashTree/>
           </hashTree>
         </hashTree>
@@ -1297,6 +1357,18 @@
             </hashTree>
           </hashTree>
         </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration"></stringProp>
+        </TestAction>
+        <hashTree>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
+            <stringProp name="ConstantTimer.delay">${DelayOffset_Mid}</stringProp>
+            <stringProp name="RandomTimer.range">${DelayMax}</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
         <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="ProgramSchedule Flow" enabled="true">
           <intProp name="ThroughputController.style">1</intProp>
           <boolProp name="ThroughputController.perThread">false</boolProp>
@@ -1634,10 +1706,34 @@ vars.put(&quot;golivedateDate&quot;,golivedate);
             <stringProp name="TestPlan.comments">Created from cURL on 2023-08-08T18:08:14.302</stringProp>
           </HTTPSamplerProxy>
           <hashTree/>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration"></stringProp>
+          </TestAction>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
+              <stringProp name="ConstantTimer.delay">${DelayOffset_Mid}</stringProp>
+              <stringProp name="RandomTimer.range">${DelayMax}</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
           <RandomController guiclass="RandomControlGui" testclass="RandomController" testname="Random Controller - Field Update" enabled="true">
             <intProp name="InterleaveControl.style">1</intProp>
           </RandomController>
           <hashTree>
+            <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
+              <intProp name="ActionProcessor.action">1</intProp>
+              <intProp name="ActionProcessor.target">0</intProp>
+              <stringProp name="ActionProcessor.duration"></stringProp>
+            </TestAction>
+            <hashTree>
+              <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
+                <stringProp name="ConstantTimer.delay">${DelayOffset_Mid}</stringProp>
+                <stringProp name="RandomTimer.range">${DelayMax}</stringProp>
+              </UniformRandomTimer>
+              <hashTree/>
+            </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-drp-implementation/public/v1/program_information-DealerURL" enabled="true">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -1666,6 +1762,18 @@ vars.put(&quot;golivedateDate&quot;,golivedate);
               <stringProp name="TestPlan.comments">Created from cURL on 2023-08-08T18:07:28.275</stringProp>
             </HTTPSamplerProxy>
             <hashTree/>
+            <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
+              <intProp name="ActionProcessor.action">1</intProp>
+              <intProp name="ActionProcessor.target">0</intProp>
+              <stringProp name="ActionProcessor.duration"></stringProp>
+            </TestAction>
+            <hashTree>
+              <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
+                <stringProp name="ConstantTimer.delay">${DelayOffset_Mid}</stringProp>
+                <stringProp name="RandomTimer.range">${DelayMax}</stringProp>
+              </UniformRandomTimer>
+              <hashTree/>
+            </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-drp-implementation/public/v1/program_information-DealershipURL" enabled="true">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -1722,6 +1830,18 @@ vars.put(&quot;golivedateDate&quot;,golivedate);
               <stringProp name="TestPlan.comments">Created from cURL on 2023-08-23T17:50:10.248</stringProp>
             </HTTPSamplerProxy>
             <hashTree/>
+            <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
+              <intProp name="ActionProcessor.action">1</intProp>
+              <intProp name="ActionProcessor.target">0</intProp>
+              <stringProp name="ActionProcessor.duration"></stringProp>
+            </TestAction>
+            <hashTree>
+              <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
+                <stringProp name="ConstantTimer.delay">${DelayOffset_Mid}</stringProp>
+                <stringProp name="RandomTimer.range">${DelayMax}</stringProp>
+              </UniformRandomTimer>
+              <hashTree/>
+            </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-drp-implementation/public/v1/program_information - Comments" enabled="true">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -1750,6 +1870,18 @@ vars.put(&quot;golivedateDate&quot;,golivedate);
               <stringProp name="TestPlan.comments">Created from cURL on 2023-08-23T17:52:09.278</stringProp>
             </HTTPSamplerProxy>
             <hashTree/>
+            <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
+              <intProp name="ActionProcessor.action">1</intProp>
+              <intProp name="ActionProcessor.target">0</intProp>
+              <stringProp name="ActionProcessor.duration"></stringProp>
+            </TestAction>
+            <hashTree>
+              <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
+                <stringProp name="ConstantTimer.delay">${DelayOffset_Mid}</stringProp>
+                <stringProp name="RandomTimer.range">${DelayMax}</stringProp>
+              </UniformRandomTimer>
+              <hashTree/>
+            </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PUT-tapapi/tap-drp-implementation/public/v1/program_information - Movetocomplete" enabled="true">
               <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -1835,6 +1967,18 @@ vars.put(&quot;golivedateDate&quot;,golivedate);
             </HTTPSamplerProxy>
             <hashTree/>
           </hashTree>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration"></stringProp>
+        </TestAction>
+        <hashTree>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
+            <stringProp name="ConstantTimer.delay">${DelayOffset_Mid}</stringProp>
+            <stringProp name="RandomTimer.range">${DelayMax}</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
         </hashTree>
       </hashTree>
       <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="InfluxDB Listener" enabled="true">
